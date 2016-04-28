@@ -95,6 +95,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConfigurarHotel.aspx" />
     <Content Include="CrearHotel.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -117,6 +118,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurarHotel.aspx.cs">
+      <DependentUpon>ConfigurarHotel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurarHotel.aspx.designer.cs">
+      <DependentUpon>ConfigurarHotel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CrearHotel.aspx.cs">
       <DependentUpon>CrearHotel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
