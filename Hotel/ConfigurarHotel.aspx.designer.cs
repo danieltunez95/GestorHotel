@@ -85,6 +85,15 @@ namespace GestorHotel {
         protected global::System.Web.UI.WebControls.Button plantillaButton;
         
         /// <summary>
+        /// plantaActualTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label plantaActualTextBox;
+        
+        /// <summary>
         /// hotelPanel control.
         /// </summary>
         /// <remarks>

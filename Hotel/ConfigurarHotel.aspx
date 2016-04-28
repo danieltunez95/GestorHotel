@@ -28,6 +28,8 @@
         <asp:TextBox ID="plantasTextBox" runat="server"></asp:TextBox>
         <br />
         <asp:Button ID="plantillaButton" runat="server" OnClick="plantillaButton_Click" Text="plantillaButton plantilla" />
+        <br />
+        <asp:Label ID="plantaActualTextBox" runat="server" BorderStyle="None"></asp:Label>
         <asp:Panel ID="hotelPanel" runat="server">
         </asp:Panel>
         <br />
