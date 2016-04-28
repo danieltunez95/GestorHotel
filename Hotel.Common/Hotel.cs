@@ -8,7 +8,8 @@ namespace GestorHotel.Common
 {
     public class Hotel
     {
-        private Guid id;
+        private Guid guid;
+        private int id;
 
         /* Datos físicos */
         private string nombre;
@@ -17,7 +18,7 @@ namespace GestorHotel.Common
         private string poblacion;
         private string pais;
 
-        private int habitaciones;
+        private List<Habitacion> habitaciones;
         private int plantas;
 
         private int ancho;

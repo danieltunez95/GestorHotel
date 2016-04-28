@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace GestorHotel.bus
 {
-    public class Class1
+    public class HotelBus
     {
-        //dummy change
-        // Dammit dani
+        
     }
 }

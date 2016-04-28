@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using GestorHotel.bus;
 
 namespace GestorHotel
 {
@@ -12,14 +13,12 @@ namespace GestorHotel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            HotelBus hotelBus = new HotelBus();
             string hotelString = Request.Form["hotel"] != null ? Request.Form["hotel"] : String.Empty;
-
-            if (!String.IsNullOrEmpty(hotelString)){
-                string[] hotel = hotelString.Split('/');
-                for (int i = 0; i < hotel.Length; i++)
-                {
-                    string[] habitaciones = hotel[i].Split(',');
-                }
+            string[] hotel = hotelString.Split('/');
+            for (int i = 0; i < hotel.Length; i++)
+            {
+                string[] habitaciones = hotel[i].Split(',');
             }
         }
 

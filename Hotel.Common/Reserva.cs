@@ -8,16 +8,20 @@ namespace GestorHotel.Common
 {
     public class Reserva
     {
-        private Guid id;
-        private Guid clienteId;
+        private Guid guid;
+        private Guid clienteGuid;
+        private int id;
+        private int clienteId;
         private DateTime fechaReserva;
         private DateTime fechaInicio;
         private DateTime fechaFinal;
         private float precio;
         private int tipo;
 
-        public Guid Id { get; set; }
-        public Guid ClienteId { get; set; }
+        public Guid Guid { get; set; }
+        public Guid ClienteGuid { get; set; }
+        public int Id { get; set; }
+        public int ClienteId { get; set; }
         public DateTime FechaReserva { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinal { get; set; }
