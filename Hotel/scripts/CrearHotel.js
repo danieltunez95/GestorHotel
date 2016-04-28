@@ -1,11 +1,6 @@
 ﻿function cellClick(id) {
     if (MATRIZ.length == 0) {
-        var largo = document.getElementById("largoTextBox").value;
-        var ancho = document.getElementById("anchoTextBox").value;
-
-        for (var i = 0; i < ancho; i++) {
-            MATRIZ[i] = new Array();
-        }
+        generarPlantilla();
     }
 
     var celda = document.getElementById(id);
@@ -24,7 +19,21 @@ function rellenarTabla(x, y) {
         MATRIZ[x][y] = 1;
     else
         MATRIZ[x][y] = 0;
-    document.getElementById("matrizOculta").innerText = MATRIZ.join(',');
+}
+function generarPlantilla() {
+    var x = document.getElementById("largoTextBox").value;
+    var y = document.getElementById("anchoTextBox").value;
+
+    for (var i = 0; i < x; i++) {
+        MATRIZ[i] = new Array();
+        for (var t = 0; t < y; t++) {
+            MATRIZ[i][t] = "0";
+        }
+    }
+}
+
+function crearHotel() {
+    document.getElementById("hiddenHotel").innerText = MATRIZ.join("/");
 }
 
 var MATRIZ = new Array();

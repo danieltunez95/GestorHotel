@@ -145,9 +145,13 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hotel.bus\Hotel.Bus.csproj">
+    <ProjectReference Include="..\Hotel.bus\GestorHotel.Bus.csproj">
       <Project>{a3f33bfc-0bbb-47f8-b63f-459c8c6c50bf}</Project>
-      <Name>Hotel.Bus</Name>
+      <Name>GestorHotel.Bus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hotel.Common\GestorHotel.Common.csproj">
+      <Project>{1d9d163b-a321-4ce6-a8be-0b84fa4f5c77}</Project>
+      <Name>GestorHotel.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

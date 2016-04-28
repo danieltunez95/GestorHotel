@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConfigurarHotel.aspx.cs" Inherits="Hotel.CrearHotel" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConfigurarHotel.aspx.cs" Inherits="GestorHotel.CrearHotel" %>
 
 <!DOCTYPE html>
 
@@ -7,6 +7,11 @@
     <title></title>
     <link href="style/Style.css" rel="stylesheet" type="text/css" />
     <script src="scripts/CrearHotel.js"></script>
+    <style type="text/css">
+        #Text1 {
+            margin-bottom: 0px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,12 +27,14 @@
         <asp:Label ID="Label3" runat="server" Text="Plantas: "></asp:Label>
         <asp:TextBox ID="plantasTextBox" runat="server"></asp:TextBox>
         <br />
-        <input type="text" id="matrizOculta" runat="server"/>
-        <br />
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Generar plantilla" />
+        <asp:Button ID="plantillaButton" runat="server" OnClick="plantillaButton_Click" Text="plantillaButton plantilla" />
         <asp:Panel ID="hotelPanel" runat="server">
         </asp:Panel>
-        <asp:Button ID="crearButton" runat="server" Text="Crear hotel" OnClick="crearButton_Click"></asp:Button>
+        <br />
+        <br />
+        <input id="hiddenHotel" type="text" />
+        <input type="button" id="crearButton" value="Crear hotel" onclick="crearHotel();"/>
+
     </form>
     
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotel.Dao
+namespace GestorHotel.Dao
 {
     public class Class1
     {

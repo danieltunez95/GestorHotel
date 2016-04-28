@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Presentation", "Hotel\Hotel.Presentation.csproj", "{37749DAC-B1A0-4FBB-BB27-85266898592D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorHotel.Presentation", "Hotel\GestorHotel.Presentation.csproj", "{37749DAC-B1A0-4FBB-BB27-85266898592D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hotel.Dao", "hotel.Dao\hotel.Dao.csproj", "{7BE6025D-98C4-4D89-94E5-DF2E737B695A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorHotel.Dao", "hotel.Dao\GestorHotel.Dao.csproj", "{7BE6025D-98C4-4D89-94E5-DF2E737B695A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Bus", "Hotel.bus\Hotel.Bus.csproj", "{A3F33BFC-0BBB-47F8-B63F-459C8C6C50BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorHotel.Bus", "Hotel.bus\GestorHotel.Bus.csproj", "{A3F33BFC-0BBB-47F8-B63F-459C8C6C50BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Common", "Hotel.Common\Hotel.Common.csproj", "{1D9D163B-A321-4CE6-A8BE-0B84FA4F5C77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorHotel.Common", "Hotel.Common\GestorHotel.Common.csproj", "{1D9D163B-A321-4CE6-A8BE-0B84FA4F5C77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentación", "Documentación", "{5B384AC1-0E55-4543-B906-5329042D9B5B}"
+	ProjectSection(SolutionItems) = preProject
+		Documentación\Sistema de creación del hotel.docx = Documentación\Sistema de creación del hotel.docx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
