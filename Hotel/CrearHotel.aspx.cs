@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace GestorHotel
 {
-    public partial class CrearHotel1 : System.Web.UI.Page
+    public partial class CrearHotel1 : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,6 +16,10 @@ namespace GestorHotel
 
             if (!String.IsNullOrEmpty(hotelString)){
                 string[] hotel = hotelString.Split('/');
+                for (int i = 0; i < hotel.Length; i++)
+                {
+                    string[] habitaciones = hotel[i].Split(',');
+                }
             }
         }
 

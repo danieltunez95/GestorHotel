@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentación", "Documenta
 		Documentación\Sistema de creación del hotel.docx = Documentación\Sistema de creación del hotel.docx
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Testing", "Hotel.Testing\Hotel.Testing.csproj", "{997533D4-698E-4CBD-AFC2-B7AA83F47FF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorHotel.Testing", "Hotel.Testing\GestorHotel.Testing.csproj", "{997533D4-698E-4CBD-AFC2-B7AA83F47FF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

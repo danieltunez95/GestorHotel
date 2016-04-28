@@ -1,8 +1,8 @@
 ﻿using System;
-using Hotel.Common;
+using GestorHotel.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Hotel.Testing
+namespace GestorHotel.Testing
 {
     [TestClass]
     public class HotelTest
@@ -10,7 +10,7 @@ namespace Hotel.Testing
         [TestMethod]
         public void GetHotel()
         {
-            Common.Hotel hotel = new Common.Hotel();
+            Hotel hotel = new Hotel();
             string hotelString = "1,0,1,1/0,0,1,0/1,1,0,1";
             string[] habitaciones = hotelString.Split('/');
             for (int i = 0; i < habitaciones.Length; i++)
@@ -24,6 +24,7 @@ namespace Hotel.Testing
                     }
                 }
             }
+            
             Assert.IsTrue(hotel.Habitaciones == 7);
         }
     }
