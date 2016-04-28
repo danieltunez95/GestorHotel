@@ -22,6 +22,7 @@ namespace GestorHotel.Common
 
         private int ancho;
         private int largo;
+        private string forma;
 
         public string Nombre { get; set; }
         public string Calle { get; set; }

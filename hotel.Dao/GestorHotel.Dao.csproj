@@ -7,8 +7,8 @@
     <ProjectGuid>{7BE6025D-98C4-4D89-94E5-DF2E737B695A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>hotel.Dao</RootNamespace>
-    <AssemblyName>hotel.Dao</AssemblyName>
+    <RootNamespace>GestorHotel.Dao</RootNamespace>
+    <AssemblyName>GestorHotel.Dao</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
