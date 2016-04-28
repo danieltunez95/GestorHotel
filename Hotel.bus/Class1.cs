@@ -9,5 +9,6 @@ namespace Hotel.bus
     public class Class1
     {
         //dummy change
+        // Dammit dani
     }
 }
