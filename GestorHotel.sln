@@ -13,6 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorHotel.Common", "Hotel
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentación", "Documentación", "{5B384AC1-0E55-4543-B906-5329042D9B5B}"
 	ProjectSection(SolutionItems) = preProject
+		Documentación\puntos hotel.docx = Documentación\puntos hotel.docx
 		Documentación\Sistema de creación del hotel.docx = Documentación\Sistema de creación del hotel.docx
 	EndProjectSection
 EndProject

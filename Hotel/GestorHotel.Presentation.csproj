@@ -95,14 +95,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConfigurarHotel.aspx" />
-    <Content Include="CrearHotel.aspx" />
+    <Content Include="Creación\ConfigurarHotel.aspx" />
+    <Content Include="Creación\CrearHotel.aspx" />
+    <Content Include="Gestor\style\master.css" />
+    <Content Include="Gestor\WebForm1.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="scripts\CrearHotel.js" />
+    <Content Include="Creación\scripts\CrearHotel.js" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Gestor\gestor.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -112,25 +115,39 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.aspx" />
-    <Content Include="scripts\ai.0.15.0-build58334.js" />
-    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Creación\scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Creación\scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="style\Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigurarHotel.aspx.cs">
+    <Compile Include="Creación\ConfigurarHotel.aspx.cs">
       <DependentUpon>ConfigurarHotel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ConfigurarHotel.aspx.designer.cs">
+    <Compile Include="Creación\ConfigurarHotel.aspx.designer.cs">
       <DependentUpon>ConfigurarHotel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CrearHotel.aspx.cs">
+    <Compile Include="Creación\CrearHotel.aspx.cs">
       <DependentUpon>CrearHotel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CrearHotel.aspx.designer.cs">
+    <Compile Include="Creación\CrearHotel.aspx.designer.cs">
       <DependentUpon>CrearHotel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\gestor.Master.cs">
+      <DependentUpon>gestor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestor\gestor.Master.designer.cs">
+      <DependentUpon>gestor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Gestor\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestor\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
