@@ -12,7 +12,11 @@ namespace Hotel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string hotelString = Request.Form["hotel"] != null ? Request.Form["hotel"] : String.Empty;
 
+            if (!String.IsNullOrEmpty(hotelString)){
+                string[] hotel = hotelString.Split('/');
+            }
         }
 
         [WebMethod(EnableSession = true)]
