@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Hotel {
+namespace GestorHotel {
     
     
     public partial class CrearHotel {
@@ -76,22 +76,13 @@ namespace Hotel {
         protected global::System.Web.UI.WebControls.TextBox plantasTextBox;
         
         /// <summary>
-        /// matrizOculta control.
+        /// plantillaButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText matrizOculta;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button plantillaButton;
         
         /// <summary>
         /// hotelPanel control.
@@ -101,14 +92,5 @@ namespace Hotel {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel hotelPanel;
-        
-        /// <summary>
-        /// crearButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button crearButton;
     }
 }

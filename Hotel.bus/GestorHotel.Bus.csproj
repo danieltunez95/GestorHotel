@@ -44,13 +44,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hotel.Common\Hotel.Common.csproj">
+    <ProjectReference Include="..\Hotel.Common\GestorHotel.Common.csproj">
       <Project>{1d9d163b-a321-4ce6-a8be-0b84fa4f5c77}</Project>
-      <Name>Hotel.Common</Name>
+      <Name>GestorHotel.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\hotel.Dao\hotel.Dao.csproj">
+    <ProjectReference Include="..\hotel.Dao\GestorHotel.Dao.csproj">
       <Project>{7be6025d-98c4-4d89-94e5-df2e737b695a}</Project>
-      <Name>hotel.Dao</Name>
+      <Name>GestorHotel.Dao</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

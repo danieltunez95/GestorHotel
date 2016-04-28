@@ -6,7 +6,7 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Hotel
+namespace GestorHotel
 {
     public partial class CrearHotel1 : System.Web.UI.Page
     {

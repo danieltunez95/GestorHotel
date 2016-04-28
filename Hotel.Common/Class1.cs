@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.Common
+namespace GestorHotel.Common
 {
     public class Class1
     {
