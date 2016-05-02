@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GestorHotel.Common
 {
-    public class Reserva
+    public class Reserva : Base
     {
-        private Guid guid;
         private Guid clienteGuid;
-        private int id;
         private int clienteId;
         private DateTime fechaReserva;
         private DateTime fechaInicio;
@@ -18,14 +12,46 @@ namespace GestorHotel.Common
         private float precio;
         private int tipo;
 
-        public Guid Guid { get; set; }
-        public Guid ClienteGuid { get; set; }
-        public int Id { get; set; }
-        public int ClienteId { get; set; }
-        public DateTime FechaReserva { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFinal { get; set; }
-        public float Precio { get; set; }
-        public int Tipo { get; set; }
+        public Guid ClienteGuid
+        {
+            get { return clienteGuid; }
+            set { clienteGuid = value; }
+        }
+
+        public int ClienteId
+        {
+            get { return clienteId; }
+            set { clienteId = value; }
+        }
+
+        public DateTime FechaReserva
+        {
+            get { return fechaReserva; }
+            set { fechaReserva = value; }
+        }
+
+        public DateTime FechaInicio
+        {
+            get { return fechaInicio; }
+            set { fechaInicio = value; }
+        }
+
+        public DateTime FechaFinal
+        {
+            get { return fechaFinal; }
+            set { fechaFinal = value; }
+        }
+
+        public float Precio
+        {
+            get { return precio; }
+            set { precio = value; }
+        }
+
+        public int Tipo
+        {
+            get { return tipo; }
+            set { tipo = value; }
+        }
     }
 }

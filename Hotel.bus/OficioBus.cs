@@ -5,36 +5,36 @@ using System.Collections.Generic;
 
 namespace GestorHotel.Bus
 {
-    public class HotelBus : IBus<Hotel>
+    public class OficioBus : IBus<Oficio>
     {
-        HotelDao dao = null;
+        OficioDao dao = null;
 
-        public HotelBus()
+        public OficioBus()
         {
-            dao = new HotelDao();
+            dao = new OficioDao();
         }
 
-        public Hotel Add(Hotel adding)
+        public Oficio Add(Oficio adding)
         {
             return dao.Add(adding);
         }
 
-        public int Delete(Hotel deleting)
+        public int Delete(Oficio deleting)
         {
             return dao.Delete(deleting);
         }
 
-        public List<Hotel> GetAll()
+        public List<Oficio> GetAll()
         {
             return dao.GetAll();
         }
 
-        public Hotel GetById(int id)
+        public Oficio GetById(int id)
         {
             return dao.GetById(id);
         }
 
-        public int Update(Hotel updating)
+        public int Update(Oficio updating)
         {
             return dao.Update(updating);
         }

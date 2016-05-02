@@ -40,7 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="EmpleadoDao.cs" />
+    <Compile Include="HotelDao.cs" />
+    <Compile Include="Interficies\IDaoReadOnly.cs" />
+    <Compile Include="Interficies\IDao.cs" />
+    <Compile Include="OficioDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

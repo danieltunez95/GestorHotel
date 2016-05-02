@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestorHotel.Dao
+namespace GestorHotel.Bus.Interficies
 {
-    public class Class1
+    interface IBusReadOnly<T>
     {
+        List<T> GetAll();
+        T GetById(int id);
     }
 }

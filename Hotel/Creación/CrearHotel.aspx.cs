@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using GestorHotel.bus;
+using GestorHotel.Bus;
 
 namespace GestorHotel
 {

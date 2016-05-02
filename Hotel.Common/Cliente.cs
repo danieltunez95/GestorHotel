@@ -1,19 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GestorHotel.Common
 {
-    public class Cliente
+    public class Cliente : Base
     {
-        private Guid id;
         private string nombre;
         private string correo;
 
-        public Guid Id { get; set; }
-        public string Nombre { get; set; }
-        public string Correo { get; set; }
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+
+        public string Correo
+        {
+            get { return correo; }
+            set { correo = value; }
+        }
     }
 }

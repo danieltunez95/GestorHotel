@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GestorHotel.Common
 {
-    public class Hotel
+    public class Hotel : Base
     {
-        private Guid guid;
-        private int id;
-
         /* Datos físicos */
         private string nombre;
         private string calle;
@@ -25,16 +19,64 @@ namespace GestorHotel.Common
         private int largo;
         private string forma;
 
-        public string Nombre { get; set; }
-        public string Calle { get; set; }
-        public string Ciudad { get; set; }
-        public string Poblacion { get; set; }
-        public string Pais { get; set; }
-        
-        public int Habitaciones { get; set; }
-        public int Plantas { get; set; }
-        
-        public int Ancho { get; set; }
-        public int Largo { get; set; }
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+
+        public string Calle
+        {
+            get { return calle; }
+            set { calle = value; }
+        }
+
+        public string Ciudad
+        {
+            get { return ciudad; }
+            set { ciudad = value; }
+        }
+
+        public string Poblacion
+        {
+            get { return poblacion; }
+            set { poblacion = value; }
+        }
+
+        public string Pais
+        {
+            get { return pais; }
+            set { pais = value; }
+        }
+
+        public List<Habitacion> Habitaciones
+        {
+            get { return habitaciones; }
+            set { habitaciones = value; }
+        }
+
+        public int Plantas
+        {
+            get { return plantas; }
+            set { plantas = value; }
+        }
+
+        public int Ancho
+        {
+            get { return ancho; }
+            set { ancho = value; }
+        }
+
+        public int Largo
+        {
+            get { return largo; }
+            set { largo = value; }
+        }
+
+        public string Forma
+        {
+            get { return forma; }
+            set { forma = value;}
+        }
     }
 }

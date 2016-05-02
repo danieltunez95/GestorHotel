@@ -1,6 +1,7 @@
 ﻿using System;
 using GestorHotel.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace GestorHotel.Testing
 {
@@ -8,9 +9,10 @@ namespace GestorHotel.Testing
     public class HotelTest
     {
         [TestMethod]
-        public void GetHotel()
+        public void GetAll()
         {
             Hotel hotel = new Hotel();
+            hotel.Habitaciones = new List<Habitacion>();
             string hotelString = "1,0,1,1/0,0,1,0/1,1,0,1";
             string[] habitaciones = hotelString.Split('/');
             for (int i = 0; i < habitaciones.Length; i++)
@@ -20,12 +22,13 @@ namespace GestorHotel.Testing
                 {
                     if (habitacion[j].Equals("1"))
                     {
-                        hotel.Habitaciones++;
+                        hotel.Habitaciones.Add(new Habitacion() { PosicionX = i, PosicionY = j, MetrosCuadrados = (i + 1) * (j + 1) });
                     }
                 }
             }
             
-            Assert.IsTrue(hotel.Habitaciones == 7);
+            Assert.IsTrue(hotel.Habitaciones.Count == 7 && hotel.Habitaciones[1].PosicionX == 0 &&
+                hotel.Habitaciones[1].PosicionY == 2 && hotel.Habitaciones[1].MetrosCuadrados == 3);
         }
     }
 }

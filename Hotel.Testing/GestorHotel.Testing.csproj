@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Hotel.Dao.Tests\EmpleadoTest.cs" />
     <Compile Include="Hotel.Dao.Tests\HotelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
