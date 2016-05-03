@@ -45,13 +45,33 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Gh.Dao.Tests\EmpleadoDaoTest.cs" />
+    <Compile Include="Gh.Dao.Tests\HotelDaoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gh.Bus.Tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gh.Bus\Gh.Bus.csproj">
+      <Project>{43c9728a-42fc-4889-84ca-fbc3faab21c3}</Project>
+      <Name>Gh.Bus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gh.Common\Gh.Common.csproj">
+      <Project>{cdf6cd22-8ca9-4b0f-9f32-4944d5bfbae4}</Project>
+      <Name>Gh.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gh.Dao\Gh.Dao.csproj">
+      <Project>{9b6c77f6-e398-4956-a970-6d9d8b2d5d72}</Project>
+      <Name>Gh.Dao</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
