@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentación", "Documenta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorHotel.Testing", "Hotel.Testing\GestorHotel.Testing.csproj", "{997533D4-698E-4CBD-AFC2-B7AA83F47FF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gh.Dao", "Gh.Dao\Gh.Dao.csproj", "{9B6C77F6-E398-4956-A970-6D9D8B2D5D72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gh.Bus", "Gh.Bus\Gh.Bus.csproj", "{43C9728A-42FC-4889-84CA-FBC3FAAB21C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{997533D4-698E-4CBD-AFC2-B7AA83F47FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{997533D4-698E-4CBD-AFC2-B7AA83F47FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{997533D4-698E-4CBD-AFC2-B7AA83F47FF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B6C77F6-E398-4956-A970-6D9D8B2D5D72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6C77F6-E398-4956-A970-6D9D8B2D5D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6C77F6-E398-4956-A970-6D9D8B2D5D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6C77F6-E398-4956-A970-6D9D8B2D5D72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C9728A-42FC-4889-84CA-FBC3FAAB21C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C9728A-42FC-4889-84CA-FBC3FAAB21C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C9728A-42FC-4889-84CA-FBC3FAAB21C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C9728A-42FC-4889-84CA-FBC3FAAB21C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
