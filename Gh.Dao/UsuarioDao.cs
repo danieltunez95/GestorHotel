@@ -42,5 +42,43 @@ namespace Gh.Dao
                 }
             }
         }
+
+        public List<UsuarioDto> GetUsers()
+        {
+            List<UsuarioDto> users = new List<UsuarioDto>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.Append("SELECT * ");
+                    query.Append("FROM ");
+                    query.Append(UsuarioDto.DBName);
+
+                    command.CommandType = System.Data.CommandType.Text;
+                    command.CommandText = query.ToString();
+                    command.Connection = connection;
+
+                    SqlDataReader reader = null;
+                    connection.Open();
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        UsuarioDto user = new UsuarioDto();
+                        user.Id = int.Parse(reader["Id"].ToString());
+                        user.Username = reader["Username"].ToString();
+                        user.Role = int.Parse(reader["Role"].ToString());
+                        user.MinHour = float.Parse(reader["MinHour"].ToString());
+                        user.MaxHour = float.Parse(reader["MaxHour"].ToString());
+
+                        users.Add(user);
+                    }
+                }
+            }
+
+                return users;
+        }
     }
 }

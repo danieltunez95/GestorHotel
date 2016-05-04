@@ -8,6 +8,7 @@ namespace Gh.Common
 {
     public class UsuarioDto
     {
+        private int id;
         private string username;
         private string password;
         private string email;
@@ -15,6 +16,7 @@ namespace Gh.Common
         private float minHour;
         private float maxHour;
 
+        public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }

@@ -19,12 +19,21 @@ namespace Gh.Bus
                 UsuarioDao usuarioDao = new UsuarioDao(GetConnectionString());
                 usuarioDao.AddUser(user);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                //Para que no haga petar al programa, devolvemos error.
                 correcto = false;
             }
 
             return correcto;
+        }
+
+        public List<UsuarioDto> GetUsers()
+        {
+            UsuarioDao usuarioDao = new UsuarioDao(GetConnectionString());
+            List<UsuarioDto> users = usuarioDao.GetUsers();
+
+            return users;
         }
     }
 }

@@ -71,6 +71,7 @@
     <Content Include="Create\scripts\CrearHotel.js" />
     <Content Include="Create\style\Style.css" />
     <Content Include="Manage\CreateUser.aspx" />
+    <Content Include="Manage\Users.aspx" />
     <Content Include="packages.config" />
     <Content Include="Manage\Main.Master" />
     <None Include="Web.Debug.config">
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="Manage\CreateUser.aspx.designer.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
