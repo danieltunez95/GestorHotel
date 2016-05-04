@@ -1,19 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gh.Common
 {
     public class BaseDto
     {
-        private Guid guid;
+        private Guid guid = Guid.Empty;
         private int id;
 
         public Guid Guid
         {
-            get { return guid; }
+            get
+            {
+                if (guid == Guid.Empty)
+                    guid = Guid.NewGuid();
+                return guid;
+            }
             set { guid = value; }
         }
 
@@ -21,6 +22,11 @@ namespace Gh.Common
         {
             get { return id; }
             set { id = value; }
+        }
+
+        public BaseDto()
+        {
+            this.Id = -1;
         }
     }
 }

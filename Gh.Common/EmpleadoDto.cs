@@ -1,38 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gh.Common
 {
     public class EmpleadoDto : BaseDto
     {
-        private string nombre;
-        private string apellido1;
-        private string apellido2;
         private string nombreCompleto;
-        private DateTime fechaNacimiento;
-        private DateTime fechaInicio;
-        private OficioDto oficio;
 
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
+        public string Nombre { get; set; }
 
-        public string Apellido1
-        {
-            get { return apellido1; }
-            set { apellido1 = value; }
-        }
+        public string Apellido1 { get; set; }
 
-        public string Apellido2
-        {
-            get { return apellido2; }
-            set { apellido2 = value; }
-        }
+        public string Apellido2 { get; set; }
 
         public string NombreCompleto
         {
@@ -41,24 +19,13 @@ namespace Gh.Common
                 nombreCompleto = String.Format("{0} {1}, {2}", Apellido1, Apellido2, Nombre);
                 return nombreCompleto;
             }
+            set { nombreCompleto = value; }
         }
 
-        public DateTime FechaNacimiento
-        {
-            get { return fechaNacimiento; }
-            set { fechaNacimiento = value; }
-        }
+        public DateTime FechaNacimiento { get; set; }
 
-        public DateTime FechaInicio
-        {
-            get { return fechaInicio; }
-            set { fechaInicio = value; }
-        }
+        public DateTime FechaInicio { get; set; }
 
-        public OficioDto Oficio
-        {
-            get { return oficio; }
-            set { oficio = value; }
-        }
+        public OficioDto Oficio { get; set; }
     }
 }

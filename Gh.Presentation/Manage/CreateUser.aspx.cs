@@ -21,7 +21,7 @@ namespace Gh.Presentation.Manage
             UsuarioDto user = new UsuarioDto();
             user.Username = this.username.Text;
             user.Password = this.password.Text;
-            user.Role = int.Parse(this.role.SelectedValue != "" ? this.role.SelectedValue : "0");
+            user.Role = (Role)Enum.Parse(typeof(Role), this.role.SelectedValue != "" ? this.role.SelectedValue : "0");
             user.MinHour = float.Parse(this.minHour.Text.Replace(":", ","));
             user.MaxHour = float.Parse(this.maxHour.Text.Replace(":", ","));
 

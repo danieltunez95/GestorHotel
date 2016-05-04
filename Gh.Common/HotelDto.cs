@@ -1,85 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Gh.Common
 {
     public class HotelDto : BaseDto
     {
         /* Datos físicos */
-        private string nombre;
-        private string calle;
-        private string ciudad;
-        private string poblacion;
-        private string pais;
+        public string Nombre { get; set; }
 
-        private List<HabitacionDto> habitaciones;
-        private int plantas;
+        public string Calle { get; set; }
 
-        private int ancho;
-        private int largo;
-        private string forma;
+        public string Ciudad { get; set; }
 
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
+        public string Poblacion { get; set; }
 
-        public string Calle
-        {
-            get { return calle; }
-            set { calle = value; }
-        }
+        public string Pais { get; set; }
 
-        public string Ciudad
-        {
-            get { return ciudad; }
-            set { ciudad = value; }
-        }
+        public List<HabitacionDto> Habitaciones { get; set; }
 
-        public string Poblacion
-        {
-            get { return poblacion; }
-            set { poblacion = value; }
-        }
+        public int Plantas { get; set; }
 
-        public string Pais
-        {
-            get { return pais; }
-            set { pais = value; }
-        }
+        public int Ancho { get; set; }
 
-        public List<HabitacionDto> Habitaciones
-        {
-            get { return habitaciones; }
-            set { habitaciones = value; }
-        }
+        public int Largo { get; set; }
 
-        public int Plantas
-        {
-            get { return plantas; }
-            set { plantas = value; }
-        }
-
-        public int Ancho
-        {
-            get { return ancho; }
-            set { ancho = value; }
-        }
-
-        public int Largo
-        {
-            get { return largo; }
-            set { largo = value; }
-        }
-
-        public string Forma
-        {
-            get { return forma; }
-            set { forma = value; }
-        }
+        public string Forma { get; set; }
     }
 }

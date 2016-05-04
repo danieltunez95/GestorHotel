@@ -69,7 +69,7 @@ namespace Gh.Dao
                         UsuarioDto user = new UsuarioDto();
                         user.Id = int.Parse(reader["Id"].ToString());
                         user.Username = reader["Username"].ToString();
-                        user.Role = int.Parse(reader["Role"].ToString());
+                        user.Role = (Role)Enum.Parse(typeof(Role), reader["Role"].ToString());
                         user.MinHour = float.Parse(reader["MinHour"].ToString());
                         user.MaxHour = float.Parse(reader["MaxHour"].ToString());
 

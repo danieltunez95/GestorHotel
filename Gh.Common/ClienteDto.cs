@@ -2,19 +2,8 @@
 {
     public class ClienteDto : BaseDto
     {
-        private string nombre;
-        private string correo;
+        public string Nombre { get; set; }
 
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        public string Correo
-        {
-            get { return correo; }
-            set { correo = value; }
-        }
+        public string Correo { get; set; }
     }
 }
