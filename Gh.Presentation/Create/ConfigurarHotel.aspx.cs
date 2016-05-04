@@ -1,12 +1,17 @@
-﻿using System;
-using GestorHotel.Common;
+﻿using Gh.Common;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace GestorHotel
+namespace Gh.Presentation.Create
 {
-    public partial class CrearHotel : System.Web.UI.Page
+    public partial class ConfigurarHotel : System.Web.UI.Page
     {
-        Hotel hotel = new Hotel();
+        HotelDto hotel = new HotelDto();
         int plantaActual;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -17,7 +22,7 @@ namespace GestorHotel
 
             if (hotel.Largo != 0 && hotel.Ancho != 0 && hotel.Plantas != 0)
             {
-                plantaActual = int.Parse(Request.Form["plantaActualTextBox"]);
+                //plantaActual = int.Parse(Request.Form["plantaActualTextBox"]);
                 this.plantaActualTextBox.Text = "Planta " + plantaActual + " de " + hotel.Plantas;
                 GenerarPlantilla(hotel);
             }
@@ -30,29 +35,27 @@ namespace GestorHotel
             hotel.Ancho = int.Parse(this.anchoTextBox.Text);
             hotel.Largo = int.Parse(this.largoTextBox.Text);
 
-            GenerarPlantilla(hotel);
+            string plantilla = GenerarPlantilla(hotel);
+            Response.Write(plantilla);
         }
 
-        private string GenerarPlantilla(Hotel hotel)
+        private string GenerarPlantilla(HotelDto hotel)
         {
             StringBuilder plantilla = new StringBuilder();
             plantilla.Append("<table>");
-            for (int planta = 0; planta < hotel.Plantas; planta++)
+            for (int x = 0; x < hotel.Largo; x++)
             {
-                for (int x = 0; x < hotel.Largo; x++)
+                plantilla.Append("<tr>");
+                for (int y = 0; y < hotel.Ancho; y++)
                 {
-                    plantilla.Append("<tr>");
-                    for (int y = 0; y < hotel.Ancho; y++)
-                    {
-                        plantilla.Append("<td>");
+                    plantilla.Append("<td>");
 
-                        plantilla.Append("<div class='celda' onclick='cellClick(this.id)' id='" + x + "_" + y + "'>");
-                        plantilla.Append("</div>");
+                    plantilla.Append("<div class='celda' onclick='cellClick(this.id)' id='" + x + "_" + y + "'>");
+                    plantilla.Append("</div>");
 
-                        plantilla.Append("</td>");
-                    }
-                    plantilla.Append("</tr>");
+                    plantilla.Append("</td>");
                 }
+                plantilla.Append("</tr>");
             }
             return plantilla.ToString();
         }

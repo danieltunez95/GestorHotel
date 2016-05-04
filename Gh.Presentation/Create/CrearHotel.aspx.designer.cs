@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GestorHotel
+namespace Gh.Presentation.Create
 {
 
 
-    public partial class Index
+    public partial class WebForm1
     {
 
         /// <summary>

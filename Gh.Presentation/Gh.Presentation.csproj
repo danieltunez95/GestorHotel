@@ -66,6 +66,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Create\ConfigurarHotel.aspx" />
+    <Content Include="Create\CrearHotel.aspx" />
+    <Content Include="Create\scripts\CrearHotel.js" />
+    <Content Include="Create\style\Style.css" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -78,7 +82,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Create\ConfigurarHotel.aspx.cs">
+      <DependentUpon>ConfigurarHotel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\ConfigurarHotel.aspx.designer.cs">
+      <DependentUpon>ConfigurarHotel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create\CrearHotel.aspx.cs">
+      <DependentUpon>CrearHotel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\CrearHotel.aspx.designer.cs">
+      <DependentUpon>CrearHotel.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gh.Bus\Gh.Bus.csproj">
+      <Project>{43c9728a-42fc-4889-84ca-fbc3faab21c3}</Project>
+      <Name>Gh.Bus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gh.Common\Gh.Common.csproj">
+      <Project>{cdf6cd22-8ca9-4b0f-9f32-4944d5bfbae4}</Project>
+      <Name>Gh.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

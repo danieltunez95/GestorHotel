@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GestorHotel {
+namespace Gh.Presentation.Create {
     
     
-    public partial class CrearHotel {
+    public partial class ConfigurarHotel {
         
         /// <summary>
         /// form1 control.

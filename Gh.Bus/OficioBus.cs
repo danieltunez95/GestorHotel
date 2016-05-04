@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Gh.Common;
+using Gh.Dao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,27 +17,27 @@ namespace Gh.Bus
             dao = new OficioDao();
         }
 
-        public Oficio Add(Oficio adding)
+        public OficioDto Add(OficioDto adding)
         {
             return dao.Add(adding);
         }
 
-        public int Delete(Oficio deleting)
+        public int Delete(OficioDto deleting)
         {
             return dao.Delete(deleting);
         }
 
-        public List<Oficio> GetAll()
+        public List<OficioDto> GetAll()
         {
             return dao.GetAll();
         }
 
-        public Oficio GetById(int id)
+        public OficioDto GetById(int id)
         {
             return dao.GetById(id);
         }
 
-        public int Update(Oficio updating)
+        public int Update(OficioDto updating)
         {
             return dao.Update(updating);
         }

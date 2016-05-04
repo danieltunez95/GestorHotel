@@ -13,27 +13,27 @@ namespace Gh.Bus
             dao = new HotelDao();
         }
 
-        public Hotel Add(Hotel adding)
+        public HotelDto Add(HotelDto adding)
         {
             return dao.Add(adding);
         }
 
-        public int Delete(Hotel deleting)
+        public int Delete(HotelDto deleting)
         {
             return dao.Delete(deleting);
         }
 
-        public List<Hotel> GetAll()
+        public List<HotelDto> GetAll()
         {
             return dao.GetAll();
         }
 
-        public Hotel GetById(int id)
+        public HotelDto GetById(int id)
         {
             return dao.GetById(id);
         }
 
-        public int Update(Hotel updating)
+        public int Update(HotelDto updating)
         {
             return dao.Update(updating);
         }
