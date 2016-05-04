@@ -71,6 +71,7 @@
     <Content Include="Create\scripts\CrearHotel.js" />
     <Content Include="Create\style\Style.css" />
     <Content Include="Manage\CreateUser.aspx" />
+    <Content Include="Manage\Style\master.css" />
     <Content Include="Manage\Users.aspx" />
     <Content Include="packages.config" />
     <Content Include="Manage\Main.Master" />

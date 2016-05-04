@@ -5,14 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Style/master.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
+            <asp:Panel ID="Panel1" runat="server" CssClass="leftMenu">
+                <asp:Button ID="UsuariosButton" runat="server" Text="Usuarios" OnClick="UsuariosButton_Click" />
+            </asp:Panel>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
         </asp:ContentPlaceHolder>
     </div>
     </form>

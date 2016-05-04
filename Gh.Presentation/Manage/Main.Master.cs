@@ -13,5 +13,10 @@ namespace Gh.Presentation.Manage
         {
 
         }
+
+        protected void UsuariosButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Manage/Users.aspx");
+        }
     }
 }
