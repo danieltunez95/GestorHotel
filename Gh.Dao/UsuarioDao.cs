@@ -23,7 +23,8 @@ namespace Gh.Dao
                 using (SqlCommand command = new SqlCommand())
                 {
                     StringBuilder query = new StringBuilder();
-                    query.Append("INSERT INTO user");
+                    query.Append("INSERT INTO ");
+                    query.Append(UsuarioDto.DBName);
                     query.Append("(username, password, role, minHour, maxHour) ");
                     query.Append("VALUES(@username, @password, @role, @minHour, @maxHour)");
 

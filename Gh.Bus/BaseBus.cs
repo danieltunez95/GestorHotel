@@ -10,7 +10,7 @@ namespace Gh.Bus
     {
         public string GetConnectionString()
         {
-            return "";
+            return "Server=tcp:gestorhotel.database.windows.net,1433;Database=GestorHotel;User ID=hoteladmin@gestorhotel;Password=Abcd1234;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         }
        
     }

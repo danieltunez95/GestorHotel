@@ -17,10 +17,9 @@ namespace Gh.Bus
             try
             {
                 UsuarioDao usuarioDao = new UsuarioDao(GetConnectionString());
-                //TODO: Check the connectionString returned in the expression above
-                //usuarioDao.AddUser(user);
+                usuarioDao.AddUser(user);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 correcto = false;
             }

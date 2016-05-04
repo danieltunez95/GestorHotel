@@ -18,8 +18,17 @@ namespace Gh.Common
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public string Role { get; set; }
-        public string MinHour { get; set; }
-        public string MaxHour { get; set; }
+        public int Role { get; set; }
+        public float MinHour { get; set; }
+        public float MaxHour { get; set; }
+
+        /* DATABASE */
+        public static string DBName
+        {
+            get
+            {
+                return "Usuario";
+            }
+        }
     }
 }

@@ -21,11 +21,11 @@ namespace Gh.Presentation.Manage
             UsuarioDto user = new UsuarioDto();
             user.Username = this.username.Text;
             user.Password = this.password.Text;
-            user.Role = this.role.SelectedValue;
-            user.MinHour = this.minHour.Text;
-            user.MaxHour = this.maxHour.Text;
+            user.Role = int.Parse(this.role.SelectedValue);
+            user.MinHour = float.Parse(this.minHour.Text.Replace(":", ","));
+            user.MaxHour = float.Parse(this.maxHour.Text.Replace(":", ","));
 
-            UsuarioBus usuarioBus = new UsuarioBus()
+            UsuarioBus usuarioBus = new UsuarioBus();
             usuarioBus.AddUser(user);
         }
     }
