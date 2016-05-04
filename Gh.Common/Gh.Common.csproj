@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDto.cs" />
+    <Compile Include="UsuarioDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteDto.cs" />
