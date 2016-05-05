@@ -40,6 +40,15 @@ namespace Gh.Presentation.Manage {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
+        /// edicionButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button edicionButton;
+        
+        /// <summary>
         /// UsuariosButton control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,33 @@ namespace Gh.Presentation.Manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button UsuariosButton;
+        
+        /// <summary>
+        /// empleadosButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button empleadosButton;
+        
+        /// <summary>
+        /// clientesButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button clientesButton;
+        
+        /// <summary>
+        /// Proveedores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Proveedores;
         
         /// <summary>
         /// ContentPlaceHolder1 control.

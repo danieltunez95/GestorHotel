@@ -18,5 +18,10 @@ namespace Gh.Presentation.Manage
         {
             Response.Redirect("~/Manage/Users.aspx");
         }
+
+        protected void edicionButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Create/Main.aspx");
+        }
     }
 }

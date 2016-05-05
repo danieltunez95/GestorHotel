@@ -6,10 +6,13 @@
     height:100%;
 }
 
-.leftMenu{
+.gestorLeftMenu{
     width:15%;
     min-width:150px;
     float:left;
     height:800px;
     min-height:800px;
+}
+.buttonGestorLeftMenu{
+    width:100%;
 }

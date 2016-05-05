@@ -13,8 +13,11 @@ namespace Gh.Presentation.Manage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.role.DataSource = Enum.GetNames(typeof(Role));
-            this.role.DataBind();
+            if (!IsPostBack)
+            {
+                this.role.DataSource = Enum.GetNames(typeof(Role));
+                this.role.DataBind();
+            }
         }
 
         protected void createButton_Click(object sender, EventArgs e)
