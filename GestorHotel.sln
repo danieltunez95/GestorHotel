@@ -1,10 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentación", "Documentación", "{5B384AC1-0E55-4543-B906-5329042D9B5B}"
 	ProjectSection(SolutionItems) = preProject
+		Documentación\HotelUML.xml = Documentación\HotelUML.xml
 		Documentación\puntos hotel.docx = Documentación\puntos hotel.docx
 		Documentación\Sistema de creación del hotel.docx = Documentación\Sistema de creación del hotel.docx
 	EndProjectSection
