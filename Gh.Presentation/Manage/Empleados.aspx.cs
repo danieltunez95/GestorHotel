@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace Gh.Presentation.Manage
 {
-    public partial class CreateEmployee : System.Web.UI.Page
+    public partial class Empleados : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void createEmployeeButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Manage/CreateEmpleado.aspx");
         }
     }
 }

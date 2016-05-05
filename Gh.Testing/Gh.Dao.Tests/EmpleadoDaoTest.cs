@@ -1,4 +1,5 @@
-﻿using Gh.Common;
+﻿using Gh.Bus;
+using Gh.Common;
 using Gh.Dao;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -7,27 +8,23 @@ using System.Collections.Generic;
 namespace Gh.Testing.Gh.Dao.Tests
 {
     [TestClass]
-    public class EmpleadoDaoTest
+    public class EmpleadoDaoTest 
     {
         EmpleadoDao dao = null;
         EmpleadoDto empleadoTest = null;
 
         public EmpleadoDaoTest()
         {
-            dao = new EmpleadoDao();
+            dao = new EmpleadoDao("");
             empleadoTest = new EmpleadoDto()
             {
                 Guid = new Guid(),
                 FechaInicio = new DateTime(2016, 1, 1),
                 FechaNacimiento = new DateTime(1995, 2, 5),
                 Nombre = "Eduardo",
-                Apellido1 = "Manos",
-                Apellido2 = "Tijeras",
-                Oficio = new OficioDto()
-                {
-                    Guid = new Guid(),
-                    Trabajo = "Botones"
-                }
+                PrimerApellido = "Manos",
+                SegundoApellido = "Tijeras",
+                Oficio = Oficio.Botones
             };
         }
 
@@ -59,10 +56,10 @@ namespace Gh.Testing.Gh.Dao.Tests
         {
             Assert.IsTrue(empleadoTest.NombreCompleto != null);
             int result;
-            empleadoTest.Oficio.Trabajo = "Camarero";
+            empleadoTest.Oficio = Oficio.Camarero;
             result = dao.Update(empleadoTest);
             empleadoTest = dao.GetById(empleadoTest.Id);
-            Assert.IsTrue(result == 1 && empleadoTest.Oficio.Trabajo.Equals("Camarero"));
+            Assert.IsTrue(result == 1 && empleadoTest.Oficio == Oficio.Camarero);
         }
 
         [TestMethod]

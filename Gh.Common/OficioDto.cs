@@ -1,7 +1,13 @@
 ﻿namespace Gh.Common
 {
-    public class OficioDto : BaseDto
+    public enum Oficio
     {
-        public string Trabajo { get; set; }
+        Director = 0,
+        RRHH = 1,
+        Recepcion = 2,
+        Botones = 3,
+        Limpieza = 4,
+        Cocinero = 5,
+        Camarero = 6
     }
 }

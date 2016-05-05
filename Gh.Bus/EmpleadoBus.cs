@@ -4,22 +4,23 @@ using Gh.Dao;
 
 namespace Gh.Bus
 {
-    public class EmpleadoBus : IBus<EmpleadoDto>
+    public class EmpleadoBus : BaseBus, IBus<EmpleadoDto>
     {
         EmpleadoDao dao = null;
 
         public EmpleadoBus()
         {
-            dao = new EmpleadoDao();
-        }
-        public EmpleadoDto Add(EmpleadoDto adding)
-        {
-            return dao.Add(adding);
+            dao = new EmpleadoDao(GetConnectionString());
         }
 
-        public int Delete(EmpleadoDto deleting)
+        public EmpleadoDto Add(EmpleadoDto empleado)
         {
-            return dao.Delete(deleting);
+            return dao.Add(empleado);
+        }
+
+        public int Delete(EmpleadoDto empleado)
+        {
+            return dao.Delete(empleado);
         }
 
         public List<EmpleadoDto> GetAll()
@@ -32,9 +33,9 @@ namespace Gh.Bus
             return dao.GetById(id);
         }
 
-        public int Update(EmpleadoDto updating)
+        public int Update(EmpleadoDto empleado)
         {
-            return dao.Update(updating);
+            return dao.Update(empleado);
         }
     }
 }

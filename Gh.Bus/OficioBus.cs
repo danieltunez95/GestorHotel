@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gh.Bus
 {
-    public class OficioBus : IBus<OficioDto>
+    public class OficioBus : IBus<Oficio>
     {
         OficioDao dao = null;
 
@@ -17,27 +17,27 @@ namespace Gh.Bus
             dao = new OficioDao();
         }
 
-        public OficioDto Add(OficioDto adding)
+        public Oficio Add(Oficio adding)
         {
             return dao.Add(adding);
         }
 
-        public int Delete(OficioDto deleting)
+        public int Delete(Oficio deleting)
         {
             return dao.Delete(deleting);
         }
 
-        public List<OficioDto> GetAll()
+        public List<Oficio> GetAll()
         {
             return dao.GetAll();
         }
 
-        public OficioDto GetById(int id)
+        public Oficio GetById(int id)
         {
             return dao.GetById(id);
         }
 
-        public int Update(OficioDto updating)
+        public int Update(Oficio updating)
         {
             return dao.Update(updating);
         }
