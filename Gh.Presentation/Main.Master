@@ -15,7 +15,7 @@
             <asp:Panel ID="Panel1" runat="server" CssClass="gestorLeftMenu">
                 <asp:Button ID="edicionButton" runat="server" CssClass="buttonGestorLeftMenu" Text="Edición" OnClick="edicionButton_Click" />
                 <asp:Button ID="UsuariosButton" runat="server" Text="Usuarios" OnClick="UsuariosButton_Click" CssClass="buttonGestorLeftMenu" />
-                <asp:Button ID="empleadosButton" runat="server" CssClass="buttonGestorLeftMenu" Text="Empleados" />
+                <asp:Button ID="empleadosButton" runat="server" CssClass="buttonGestorLeftMenu" Text="Empleados" OnClick="empleadosButton_Click" />
                 <asp:Button ID="clientesButton" runat="server" CssClass="buttonGestorLeftMenu" Text="Clientes" />
                 <asp:Button ID="Proveedores" runat="server" CssClass="buttonGestorLeftMenu" Text="Proveedores" />
             </asp:Panel>

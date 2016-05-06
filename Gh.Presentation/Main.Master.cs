@@ -23,5 +23,10 @@ namespace Gh.Presentation.Manage
         {
             Response.Redirect("~/Create/Main.aspx");
         }
+
+        protected void empleadosButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Manage/Empleados.aspx");
+        }
     }
 }

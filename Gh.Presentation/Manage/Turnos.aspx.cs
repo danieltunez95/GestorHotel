@@ -16,5 +16,10 @@ namespace Gh.Presentation.Manage
             this.turnosView.DataSource = turnoBus.GetTurnos();
             this.turnosView.DataBind();
         }
+
+        protected void crearTurnoButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Manage/CreateTurno.aspx");
+        }
     }
 }
