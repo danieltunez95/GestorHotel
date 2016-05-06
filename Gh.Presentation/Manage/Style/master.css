@@ -12,6 +12,7 @@
     float:left;
     height:800px;
     min-height:800px;
+    padding-right:15px;
 }
 .buttonGestorLeftMenu{
     width:100%;

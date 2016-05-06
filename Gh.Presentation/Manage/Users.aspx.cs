@@ -24,5 +24,12 @@ namespace Gh.Presentation.Manage
         {
             Response.Redirect("CreateUser.aspx");
         }
+
+        protected void usersView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            int userId = int.Parse(this.usersView.SelectedRow.Cells[0].Text);
+            Response.Redirect("CreateUser.aspx?userId=" + userId);
+        }
     }
 }
