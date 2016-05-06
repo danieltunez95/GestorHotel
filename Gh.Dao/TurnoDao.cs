@@ -67,6 +67,7 @@ namespace Gh.Dao
                     query.Append("VALUES(@nombre, @turnoPrimeroInicio, @turnoPrimeroFinal");
                     query.Append(", @turnoSegundoInicio, @turnoSegundoFinal, @jornada)");
 
+                    //TODO: Reparar error en consulta
                     command.CommandText = query.ToString();
                     command.Parameters.Add(new SqlParameter("@nombre", turno.Nombre));
                     command.Parameters.Add(new SqlParameter("@turnoPrimeroInicio", turno.TurnoPrimeroInicio));

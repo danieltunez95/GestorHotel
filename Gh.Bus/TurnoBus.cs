@@ -24,7 +24,7 @@ namespace Gh.Bus
                 TurnoDao turnoDao = new TurnoDao(GetConnectionString());
                 turnoDao.AddTurno(turno);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 correcto = false;
             }
