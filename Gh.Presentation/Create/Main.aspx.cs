@@ -13,5 +13,20 @@ namespace Gh.Presentation.Create
         {
 
         }
+
+        protected void estructuraButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void habitacionesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void detallesButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

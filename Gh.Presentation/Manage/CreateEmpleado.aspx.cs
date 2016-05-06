@@ -48,5 +48,10 @@ namespace Gh.Presentation.Manage
 
             Response.Redirect("~/Manage/Empleados.aspx");
         }
+
+        protected void crearTurnoButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Manage/Turnos.aspx");
+        }
     }
 }

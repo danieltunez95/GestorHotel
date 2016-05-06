@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BaseDto.cs" />
     <Compile Include="RoleEnum.cs" />
+    <Compile Include="TurnoDto.cs" />
     <Compile Include="UsuarioDto.cs" />
   </ItemGroup>
   <ItemGroup>

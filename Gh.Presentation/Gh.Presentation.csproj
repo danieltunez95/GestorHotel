@@ -68,17 +68,20 @@
   <ItemGroup>
     <Content Include="Create\ConfigurarHotel.aspx" />
     <Content Include="Create\CrearHotel.aspx" />
+    <Content Include="Create\Detalles.aspx" />
     <Content Include="Create\Main.aspx" />
     <Content Include="Create\scripts\CrearHotel.js" />
     <Content Include="Create\style\Style.css" />
     <Content Include="Manage\CreateEmpleado.aspx" />
+    <Content Include="Manage\CreateTurno.aspx" />
     <Content Include="Manage\CreateUser.aspx" />
     <Content Include="Manage\Empleados.aspx" />
     <Content Include="Manage\Main.aspx" />
-    <Content Include="Manage\Style\master.css" />
+    <Content Include="Manage\Turnos.aspx" />
+    <Content Include="Style\master.css" />
     <Content Include="Manage\Users.aspx" />
     <Content Include="packages.config" />
-    <Content Include="Manage\Main.Master" />
+    <Content Include="Main.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -104,6 +107,13 @@
     <Compile Include="Create\CrearHotel.aspx.designer.cs">
       <DependentUpon>CrearHotel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Create\Detalles.aspx.cs">
+      <DependentUpon>Detalles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\Detalles.aspx.designer.cs">
+      <DependentUpon>Detalles.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Create\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,6 +127,13 @@
     </Compile>
     <Compile Include="Manage\CreateEmpleado.aspx.designer.cs">
       <DependentUpon>CreateEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\CreateTurno.aspx.cs">
+      <DependentUpon>CreateTurno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\CreateTurno.aspx.designer.cs">
+      <DependentUpon>CreateTurno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Empleados.aspx.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>
@@ -132,11 +149,11 @@
     <Compile Include="Manage\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manage\Main.Master.cs">
+    <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\Main.Master.designer.cs">
+    <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
     <Compile Include="Manage\CreateUser.aspx.cs">
@@ -145,6 +162,13 @@
     </Compile>
     <Compile Include="Manage\CreateUser.aspx.designer.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Turnos.aspx.cs">
+      <DependentUpon>Turnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Turnos.aspx.designer.cs">
+      <DependentUpon>Turnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
@@ -165,6 +189,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Manage\Style\" />
     <Folder Include="Properties\" />
     <Folder Include="Web\" />
   </ItemGroup>

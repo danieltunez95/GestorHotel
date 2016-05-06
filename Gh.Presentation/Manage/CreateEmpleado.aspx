@@ -1,10 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Manage/Main.Master" AutoEventWireup="true" CodeBehind="CreateEmpleado.aspx.cs" Inherits="Gh.Presentation.Manage.CreateEmployee" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="CreateEmpleado.aspx.cs" Inherits="Gh.Presentation.Manage.CreateEmployee" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
+    <asp:Button ID="crearTurnoButton" runat="server" Text="Turnos de trabajo" OnClick="crearTurnoButton_Click" />
     <asp:TextBox ID="Nombre" runat="server" CssClass="formButton"></asp:TextBox>
     <asp:TextBox ID="PrimerApellido" runat="server" CssClass="formButton"></asp:TextBox>
     <asp:TextBox ID="SegundoApellido" runat="server" CssClass="formButton"></asp:TextBox>
+    <br />
     <br />
     <br />
     <asp:TextBox ID="Nif" runat="server" CssClass="formButton"></asp:TextBox>
