@@ -19,12 +19,22 @@ namespace Gh.Presentation.Create
             hotel.Largo = Request.Form["largoTextBox"] != null ? int.Parse(Request.Form["largoTextBox"]) : 0;
             hotel.Ancho = Request.Form["anchoTextBox"] != null ? int.Parse(Request.Form["anchoTextBox"]) : 0;
             hotel.Plantas = Request.Form["plantasTextBox"] != null ? int.Parse(Request.Form["plantasTextBox"]) : 0;
+            plantaActual = Request.QueryString["plantaActual"] != null ? int.Parse(Request.QueryString["plantaActual"]) : 0;
 
             if (hotel.Largo != 0 && hotel.Ancho != 0 && hotel.Plantas != 0)
             {
                 //plantaActual = int.Parse(Request.Form["plantaActualTextBox"]);
-                this.plantaActualTextBox.Text = "Planta " + plantaActual + " de " + hotel.Plantas;
-                GenerarPlantilla(hotel);
+                if (plantaActual <= int.Parse(this.plantasTextBox.Text))
+                {
+                    this.plantaActualTextBox.Text = "Planta " + plantaActual + " de " + hotel.Plantas;
+                    GenerarPlantilla(hotel);
+                }
+                else
+                {
+                    this.plantaActualTextBox.Text = "¡Enhorabuena! Ya has creado todo el hotel. Puede acceder al panel de administración.";
+                    this.crearHotelButton.Visible = true;
+                    this.ocultarPanel.Visible = false;
+                }
             }
         }
 
@@ -58,6 +68,12 @@ namespace Gh.Presentation.Create
                 plantilla.Append("</tr>");
             }
             return plantilla.ToString();
+        }
+
+        protected void crearHotelButton_Click(object sender, EventArgs e)
+        {
+            //TODO: Redirigir con parametro al encargado de finalizar la creacion y redirigir a Manage/Main.aspx
+            Response.Redirect("~/Manage/Main.aspx");
         }
     }
 }

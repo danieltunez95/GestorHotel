@@ -74,6 +74,7 @@
     <Content Include="Manage\CreateEmpleado.aspx" />
     <Content Include="Manage\CreateUser.aspx" />
     <Content Include="Manage\Empleados.aspx" />
+    <Content Include="Manage\Main.aspx" />
     <Content Include="Manage\Style\master.css" />
     <Content Include="Manage\Users.aspx" />
     <Content Include="packages.config" />
@@ -123,6 +124,13 @@
     </Compile>
     <Compile Include="Manage\Empleados.aspx.designer.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>

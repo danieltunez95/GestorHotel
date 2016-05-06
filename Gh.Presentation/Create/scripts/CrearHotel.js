@@ -32,7 +32,7 @@ function generarPlantilla() {
     }
 }
 
-function crearHotel() {
+function crearPlanta() {
     document.getElementById("hiddenHotel").innerText = MATRIZ.join("/");
 }
 

@@ -32,10 +32,17 @@
         <asp:Label ID="plantaActualTextBox" runat="server" BorderStyle="None"></asp:Label>
         <asp:Panel ID="hotelPanel" runat="server">
         </asp:Panel>
+        <asp:Panel ID="ocultarPanel" runat="server">
+            <input type="button" id="crearPlantaButton" value="Siguiente planta" onclick="crearPlanta();"/>
+            <input id="hiddenHotel" type="text" style="visibility:hidden"/>
+        </asp:Panel>
         <br />
         <br />
-        <input id="hiddenHotel" type="text" />
-        <input type="button" id="crearButton" value="Crear hotel" onclick="crearHotel();"/>
+        &nbsp;
+        <br />
+        <br />
+        <br />
+        <asp:Button ID="crearHotelButton" runat="server" Text="Finalizar" Visible="false" OnClick="crearHotelButton_Click"/>
 
     </form>
     
