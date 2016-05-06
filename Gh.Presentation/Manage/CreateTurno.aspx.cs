@@ -22,7 +22,7 @@ namespace Gh.Presentation.Manage
             TurnoDto turno = new TurnoDto();
             turno.Nombre = this.nombreBox.Text;
             turno.TurnoPrimeroInicio = this.turnoPrimeroInicioBox.Text;
-            turno.TurnoSegundoInicio = this.turnoPrimeroFinalBox.Text;
+            turno.TurnoPrimeroFinal = this.turnoPrimeroFinalBox.Text;
 
             turno.TurnoSegundoInicio = this.turnoSegundoInicioBox.Text;
             turno.TurnoSegundoFinal = this.turnoSegundoFinalBox.Text;
