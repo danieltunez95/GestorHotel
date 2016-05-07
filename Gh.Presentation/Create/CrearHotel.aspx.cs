@@ -15,9 +15,11 @@ namespace Gh.Presentation.Create
             HotelBus hotelBus = new HotelBus();
             string hotelString = Request.Form["hotel"] != null ? Request.Form["hotel"] : String.Empty;
             string[] hotel = hotelString.Split('/');
+            List<Array> planta = new List<Array>();
+
             for (int i = 0; i < hotel.Length; i++)
             {
-                string[] habitaciones = hotel[i].Split(',');
+                planta.Add(hotel[i].Split(','));
             }
         }
     }
