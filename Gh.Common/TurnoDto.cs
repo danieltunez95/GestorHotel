@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Gh.Common
 {
-    public class TurnoDto
+    public class TurnoDto : BaseDto
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
         public string TurnoPrimeroInicio { get; set; }
         public string TurnoPrimeroFinal { get; set; }
         public string TurnoSegundoInicio { get; set; }

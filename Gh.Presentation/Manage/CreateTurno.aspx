@@ -8,7 +8,7 @@
     <asp:Label ID="Label2" runat="server" Text="Primer turno (inicio): "></asp:Label>
     <asp:TextBox ID="turnoPrimeroInicioBox" runat="server"></asp:TextBox>
     <br />
-    <asp:Label ID="Label3" runat="server" Text="Segundo turno (final):"></asp:Label>
+    <asp:Label ID="Label3" runat="server" Text="Primer turno (final):"></asp:Label>
     <asp:TextBox ID="turnoPrimeroFinalBox" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="Label4" runat="server" Text="Segundo turno (inicio): "></asp:Label>

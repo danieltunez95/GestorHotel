@@ -6,6 +6,7 @@ namespace Gh.Common
     {
         private Guid guid = Guid.Empty;
         private int id;
+        private string nombre;
 
         public Guid Guid
         {
@@ -24,9 +25,13 @@ namespace Gh.Common
             set { id = value; }
         }
 
+        public string Nombre { get; set; }
+
         public BaseDto()
         {
             this.Id = -1;
         }
+
+        
     }
 }
