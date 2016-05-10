@@ -12,8 +12,8 @@ namespace Gh.Bus
     {
         public List<TurnoDto> GetTurnos()
         {
-            TurnoDao turnoDao = new TurnoDao(GetConnectionString());
-            return turnoDao.GetTurnos();
+            TurnoDao turnoDao = new TurnoDao();
+            return turnoDao.GetAll();
         }
 
         public bool AddTurno(TurnoDto turno)
@@ -21,8 +21,8 @@ namespace Gh.Bus
             bool correcto = true;
             try
             {
-                TurnoDao turnoDao = new TurnoDao(GetConnectionString());
-                turnoDao.AddTurno(turno);
+                TurnoDao turnoDao = new TurnoDao();
+                turnoDao.Add(turno);
             }
             catch (Exception ex)
             {

@@ -21,8 +21,8 @@ namespace Gh.Presentation.Create
             HotelDto hotel = new HotelDto();
             hotel.Nombre = this.nombreBox.Text;
             hotel.Direccion = this.direccionBox.Text;
-            hotel.Municipio = this.municipioBox.Text;
-            hotel.Poblacion = this.poblacionBox.Text;
+            hotel.Municipio = new MunicipioDto() { Nombre = this.municipioBox.Text };
+            hotel.Poblacion = new PoblacionDto() { Nombre = this.poblacionBox.Text };
 
             HotelBus hotelBus = new HotelBus();
             hotelBus.Update(hotel);

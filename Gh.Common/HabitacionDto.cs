@@ -6,7 +6,7 @@
 
         public int PosicionY { get; set; }
 
-        public int planta { get; set; }
+        public int Planta { get; set; }
 
         public double MetrosCuadrados { get; set; }
 

@@ -9,102 +9,56 @@ using System.Threading.Tasks;
 
 namespace Gh.Dao
 {
-    public class TurnoDao : BaseDao, IDao<TurnoDto>
+    public class TurnoDao : BaseDao<TurnoDto>, IDao<TurnoDto>
     {
-        string connectionString;
-        public TurnoDao(string ConnectionString)
-        {
-            this.connectionString = ConnectionString;
-        }
-
-        public TurnoDao()
-        {
-        }
-
-        public List<TurnoDto> GetTurnos()
-        {
-            List<TurnoDto> turnos = new List<TurnoDto>();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand())
-                {
-                    StringBuilder query = new StringBuilder();
-                    query.Append("SELECT * ");
-                    query.Append("FROM Turno ");
-
-                    command.CommandText = query.ToString();
-                    command.Connection = connection;
-
-                    SqlDataReader reader = null;
-                    connection.Open();
-                    reader = command.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        TurnoDto turno = new TurnoDto();
-
-                        turno.Id = int.Parse(reader["Id"].ToString());
-                        turno.Nombre = reader["Nombre"].ToString();
-                        turno.TurnoPrimeroInicio = reader["TurnoPrimeroInicio"].ToString();
-                        turno.TurnoPrimeroFinal = reader["TurnoPrimeroFinal"].ToString();
-                        turno.TurnoSegundoInicio = reader["TurnoSegundoInicio"].ToString();
-                        turno.TurnoSegundoFinal = reader["TurnoSegundoFinal"].ToString();
-                        turno.Jornada = int.Parse(reader["Jornada"].ToString());
-
-                        turnos.Add(turno);
-                    }
-                }
-            }
-            return turnos;
-        }
-
-        public void AddTurno(TurnoDto turno)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand())
-                {
-                    StringBuilder query = new StringBuilder();
-                    query.Append("INSERT INTO " + TurnoDto.DBName);
-                    query.Append("(Nombre, TurnoPrimeroInicio, TurnoPrimeroFinal");
-                    query.Append(", TurnoSegundoInicio, TurnoSegundoFinal, Jornada) ");
-                    query.Append("VALUES(@nombre, @turnoPrimeroInicio, @turnoPrimeroFinal");
-                    query.Append(", @turnoSegundoInicio, @turnoSegundoFinal, @jornada)");
-
-                    //TODO: Reparar error en consulta
-                    command.CommandText = query.ToString();
-                    command.Parameters.Add(new SqlParameter("@nombre", turno.Nombre));
-                    command.Parameters.Add(new SqlParameter("@turnoPrimeroInicio", turno.TurnoPrimeroInicio));
-                    command.Parameters.Add(new SqlParameter("@turnoPrimeroFinal", turno.TurnoPrimeroFinal));
-                    command.Parameters.Add(new SqlParameter("@turnoSegundoInicio", turno.TurnoSegundoInicio));
-                    command.Parameters.Add(new SqlParameter("@turnoSegundoFinal", turno.TurnoSegundoFinal));
-                    command.Parameters.Add(new SqlParameter("@jornada", turno.Jornada));
-
-                    command.Connection = connection;
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
-
         public List<TurnoDto> GetAll()
         {
-            string text = @"SELECT Id, Nombre, TurnoPrimeroInicio, TurnoPrimeroFinal, TurnoSegundoInicio,
-                            TurnoSegundoFinal, Jornada FROM Turno";
-            List<TurnoDto> turnos = new List<TurnoDto>();
+            string commandText = @"SELECT Id,
+Nombre,
+TurnoPrimeroInicio,
+TurnoPrimeroFinal,
+TurnoSegundoInicio,
+TurnoSegundoFinal,
+Jornada
+FROM Turno";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            List<TurnoDto> turnos = GetData(commandText, parameters);
             return turnos;
         }
 
         public TurnoDto GetById(int id)
         {
-            throw new NotImplementedException();
+            string commandText = @"SELECT Id,
+Nombre,
+TurnoPrimeroInicio,
+TurnoPrimeroFinal,
+TurnoSegundoInicio,
+TurnoSegundoFinal,
+Jornada
+FROM Turno
+WHERE Id = @Id";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            // ID
+            SqlParameter idParameter = new SqlParameter();
+            idParameter.DbType = DbType.Int32;
+            idParameter.Direction = ParameterDirection.Input;
+            idParameter.Value = id;
+            idParameter.ParameterName = "@Id";
+            parameters.Add(idParameter);
+
+            List<TurnoDto> turnos = GetData(commandText, parameters);
+            TurnoDto turno = null;
+            if(turnos.Count == 1)
+            {
+                turno = turnos[0];
+            }
+            return turno;
         }
 
         public TurnoDto Add(TurnoDto turno)
         {
             string storedProcedure = "Turno_Insert";
-            string commandType = "StoredProcedure";
+            CommandType commandType = CommandType.StoredProcedure;
             List<SqlParameter> parameters = new List<SqlParameter>();
                     
             // ID
@@ -162,7 +116,7 @@ namespace Gh.Dao
             jornadaParameter.ParameterName = "@Jornada";
             parameters.Add(jornadaParameter);
 
-            GetData(storedProcedure, commandType, parameters);
+            GetData(storedProcedure, parameters, commandType);
 
             turno.Id = Convert.ToInt32(idParameter.Value);
             return turno;
@@ -171,7 +125,7 @@ namespace Gh.Dao
         public int Update(TurnoDto turno)
         {
             string storedProcedure = "Turno_Update";
-            string commandType = "StoredProcedure";
+            CommandType commandType = CommandType.StoredProcedure;
 
             List<SqlParameter> parameters = new List<SqlParameter>();
 
@@ -239,7 +193,7 @@ namespace Gh.Dao
             affectedRowsParameter.ParameterName = "@AffectedRows";
             parameters.Add(affectedRowsParameter);
 
-            GetData(storedProcedure, commandType, parameters);
+            GetData(storedProcedure, parameters, commandType);
 
             return Convert.ToInt32(affectedRowsParameter.Value);
         }
@@ -247,7 +201,7 @@ namespace Gh.Dao
         public int Delete(TurnoDto turno)
         {
             string storedProcedure = "Turno_Delete";
-            string commandType = "StoredProcedure";
+            CommandType commandType = CommandType.StoredProcedure;
 
             List<SqlParameter> parameters = new List<SqlParameter>();
 
@@ -267,9 +221,24 @@ namespace Gh.Dao
             affectedRowsParameter.ParameterName = "@AffectedRows";
             parameters.Add(affectedRowsParameter);
 
-            GetData(storedProcedure, commandType, parameters);
+            GetData(storedProcedure, parameters, commandType);
 
             return Convert.ToInt32(affectedRowsParameter.Value);
+        }
+
+        protected override TurnoDto MapDataReader(SqlDataReader dr)
+        {
+            TurnoDto turno = new TurnoDto()
+            {
+                Id = Convert.ToInt32(dr["Id"]),
+                Nombre = dr["Nombre"] != null ? dr["Nombre"].ToString() : null,
+                TurnoPrimeroInicio = dr["TurnoPrimeroInicio"] != null ? dr["TurnoPrimeroInicio"].ToString() : null,
+                TurnoPrimeroFinal = dr["TurnoPrimeroFinal"] != null ? dr["TurnoPrimeroFinal"].ToString() : null,
+                TurnoSegundoInicio = dr["TurnoSegundoInicio"] != null ? dr["TurnoSegundoInicio"].ToString() : null,
+                TurnoSegundoFinal = dr["TurnoSegundoFinal"] != null ? dr["TurnoSegundoFinal"].ToString() : null,
+                Jornada = Convert.ToInt32(dr["Jornada"])
+            };
+            return turno;
         }
     }
 }

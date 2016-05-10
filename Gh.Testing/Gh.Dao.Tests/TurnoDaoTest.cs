@@ -53,6 +53,13 @@ namespace Gh.Testing.Gh.Dao.Tests
         }
 
         [TestMethod]
+        public void GetByIdTest()
+        {
+            TurnoDto turno = dao.GetById(1);
+            Assert.IsTrue(turno != null);
+        }
+
+        [TestMethod]
         public void DeleteTest()
         {
             turnoTest.Id = 6;

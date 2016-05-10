@@ -8,52 +8,76 @@ using System.Threading.Tasks;
 
 namespace Gh.Dao
 {
-    public class BaseDao
+    public abstract class BaseDao<T>
     {
-        public void GetData(string commandText, string commandType, List<SqlParameter> parameters)
+        public SqlConnection GetConnection()
         {
-            using (SqlConnection connection = new SqlConnection("Server=tcp:gestorhotel.database.windows.net,1433;Database=GestorHotel;User ID=hoteladmin@gestorhotel;Password=Abcd1234;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30"))
-            {
-                using (SqlCommand command = new SqlCommand())
-                {
-                    SqlDataReader reader;
-                    command.CommandText = commandText;
-                    command.CommandType = (CommandType)Enum.Parse(typeof(CommandType), commandType);
-                    foreach (SqlParameter param in parameters)
-                    {
-                        command.Parameters.Add(param);
-                    }
+            SqlConnection conn = new SqlConnection(AppConfigReader.GetConnectionString());
 
-                    command.Connection = connection;
-                    connection.Open();
-                    reader = command.ExecuteReader();
+            conn.Open();
+
+            return conn;
+        }
+
+        //public void GetData(string commandText, string commandType, List<SqlParameter> parameters)
+        //{
+        //    using (SqlConnection connection = new SqlConnection("Server=tcp:gestorhotel.database.windows.net,1433;Database=GestorHotel;User ID=hoteladmin@gestorhotel;Password=Abcd1234;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30"))
+        //    {
+        //        using (SqlCommand command = new SqlCommand())
+        //        {
+        //            SqlDataReader reader;
+        //            command.CommandText = commandText;
+        //            command.CommandType = (CommandType)Enum.Parse(typeof(CommandType), commandType);
+        //            foreach (SqlParameter param in parameters)
+        //            {
+        //                command.Parameters.Add(param);
+        //            }
+
+        //            command.Connection = connection;
+        //            connection.Open();
+        //            reader = command.ExecuteReader();
+        //        }
+        //    }
+        //}
+
+        protected virtual List<T> GetData(string commandText, List<SqlParameter> parameters)
+        {
+            List<T> dtos = GetData(commandText, parameters, CommandType.Text);
+            return dtos;
+        }
+
+        protected virtual List<T> GetData(string commandText, List<SqlParameter> parameters, CommandType commandType)
+        {
+            List<T> dtos = new List<T>();
+            using (SqlConnection conn = this.GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand() { CommandText = commandText, CommandType = commandType, Connection = conn })
+                {
+                    if (parameters != null)
+                    {
+                        cmd.Parameters.Clear();
+                        foreach (SqlParameter parameter in parameters)
+                        {
+                            cmd.Parameters.Add(parameter);
+                        }
+                    }
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            T dto = MapDataReader(dr);
+                            dtos.Add(dto);
+                        }
+                    }
                 }
+                return dtos;
             }
         }
-        public void GetDataReader(string commandText, string commandType, List<SqlParameter> parameters)
-        {
-            using (SqlConnection connection = new SqlConnection("Server=tcp:gestorhotel.database.windows.net,1433;Database=GestorHotel;User ID=hoteladmin@gestorhotel;Password=Abcd1234;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30"))
-            {
-                using (SqlCommand command = new SqlCommand())
-                {
-                    SqlDataReader reader;
-                    command.CommandText = commandText;
-                    command.CommandType = (CommandType)Enum.Parse(typeof(CommandType), commandType);
-                    foreach (SqlParameter param in parameters)
-                    {
-                        command.Parameters.Add(param);
-                    }
 
-                    command.Connection = connection;
-                    connection.Open();
-                    reader = command.ExecuteReader();
+        protected abstract T MapDataReader(SqlDataReader dr);
 
-                    while (reader.Read())
-                    {
-                        // Incoming
-                    }
-                }
-            }
-        }
+
+
     }
+
 }
