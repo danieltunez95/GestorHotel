@@ -7,14 +7,14 @@ namespace Gh.Dao
     {
         public Oficio Add(Oficio entity)
         {
-            string storedProcedure = "Oficio_Add";
+            string commandText = "Oficio_Add";
             return entity;
         }
 
         public int Delete(Oficio entity)
         {
             int result = 0;
-            string storedProcedure = "Oficio_Delete";
+            string commandText = "Oficio_Delete";
             return result;
         }
 
@@ -35,7 +35,7 @@ namespace Gh.Dao
         public int Update(Oficio entity)
         {
             int result = 0;
-            string storedProcedure = "Oficio_Update";
+            string commandText = "Oficio_Update";
             return result;
         }
     }

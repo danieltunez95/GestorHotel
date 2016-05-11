@@ -12,8 +12,16 @@
 
         public int Camas { get; set; }
 
+        public CamaEnum TipoCama { get; set; }
+
         public int Dormitorios { get; set; }
 
         public string Descripcion { get; set; }
+
+        public double Precio { get; set; }
+
+        public HotelDto Hotel { get; set; }
+
+        public string Imagen { get; set; }
     }
 }

@@ -57,7 +57,7 @@ WHERE Id = @Id";
 
         public TurnoDto Add(TurnoDto turno)
         {
-            string storedProcedure = "Turno_Insert";
+            string commandText = "Turno_Insert";
             CommandType commandType = CommandType.StoredProcedure;
             List<SqlParameter> parameters = new List<SqlParameter>();
                     
@@ -116,7 +116,7 @@ WHERE Id = @Id";
             jornadaParameter.ParameterName = "@Jornada";
             parameters.Add(jornadaParameter);
 
-            GetData(storedProcedure, parameters, commandType);
+            GetData(commandText, parameters, commandType);
 
             turno.Id = Convert.ToInt32(idParameter.Value);
             return turno;
@@ -124,7 +124,7 @@ WHERE Id = @Id";
 
         public int Update(TurnoDto turno)
         {
-            string storedProcedure = "Turno_Update";
+            string commandText = "Turno_Update";
             CommandType commandType = CommandType.StoredProcedure;
 
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -193,14 +193,14 @@ WHERE Id = @Id";
             affectedRowsParameter.ParameterName = "@AffectedRows";
             parameters.Add(affectedRowsParameter);
 
-            GetData(storedProcedure, parameters, commandType);
+            GetData(commandText, parameters, commandType);
 
             return Convert.ToInt32(affectedRowsParameter.Value);
         }
 
         public int Delete(TurnoDto turno)
         {
-            string storedProcedure = "Turno_Delete";
+            string commandText = "Turno_Delete";
             CommandType commandType = CommandType.StoredProcedure;
 
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -221,7 +221,7 @@ WHERE Id = @Id";
             affectedRowsParameter.ParameterName = "@AffectedRows";
             parameters.Add(affectedRowsParameter);
 
-            GetData(storedProcedure, parameters, commandType);
+            GetData(commandText, parameters, commandType);
 
             return Convert.ToInt32(affectedRowsParameter.Value);
         }

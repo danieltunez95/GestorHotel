@@ -29,7 +29,7 @@ namespace Gh.Dao
 
         public int Delete(EmpleadoDto entity)
         {
-            string storedProcedure = "Empleado_Delete";
+            string commandText = "Empleado_Delete";
             int result = 0;
             return result;
         }
@@ -63,7 +63,7 @@ namespace Gh.Dao
 
         public int Update(EmpleadoDto entity)
         {
-            string storedProcedure = "Empleado_Update";
+            string commandText = "Empleado_Update";
             int result = 0;
             return result;
         }

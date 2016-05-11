@@ -19,7 +19,7 @@ namespace Gh.Testing.Gh.Dao.Tests
         }
 
         [TestMethod]
-        public void AddTest()
+        public void AddConHabitacionesTest()
         {
             HotelDto hotel = new HotelDto()
             {
@@ -47,6 +47,7 @@ namespace Gh.Testing.Gh.Dao.Tests
                 },
                 Estrellas = 3
             };
+            int numHab = 0;
             hotel.Habitaciones = new List<HabitacionDto>();
             string hotelString = "1,0,1,1/0,0,1,0/1,1,0,1";
             string[] habitaciones = hotelString.Split('/');
@@ -57,14 +58,27 @@ namespace Gh.Testing.Gh.Dao.Tests
                 {
                     if (habitacion[j].Equals("1"))
                     {
-                        hotelTest.Habitaciones.Add(new HabitacionDto() { PosicionX = i, PosicionY = j, MetrosCuadrados = (i + 1) * (j + 1), Camas = 1, Dormitorios = 1, Descripcion = "Habitación normal", Planta = 1 });
+                        numHab++;
+                        hotel.Habitaciones.Add(new HabitacionDto()
+                        {
+                            PosicionX = i,
+                            PosicionY = j,
+                            MetrosCuadrados = (i + 1) * (j + 1),
+                            Camas = 1,
+                            TipoCama = CamaEnum.Matrimonio,
+                            Precio = 25.23d,
+                            Dormitorios = 1,
+                            Descripcion = "Habitación normal",
+                            Planta = 0,
+                            Imagen = String.Format("../imagenes/habitacion{0}.jpg", numHab)
+                        });
                     }
                 }
             }
 
             HotelDto hotelAdded = dao.Add(hotel);
 
-            Assert.IsTrue(hotelAdded != null && hotelAdded.Id != -1);
+            Assert.IsTrue(hotelAdded != null && hotelAdded.Id != -1 && hotelAdded.Habitaciones.Count > 0);
         }
 
         [TestMethod]
