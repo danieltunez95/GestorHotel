@@ -61,14 +61,6 @@ namespace Gh.Dao
             plantasParameter.ParameterName = "@Plantas";
             parameters.Add(plantasParameter);
 
-            // Propietario
-            SqlParameter propietarioParameter = new SqlParameter();
-            propietarioParameter.DbType = DbType.Int32;
-            propietarioParameter.Direction = ParameterDirection.Input;
-            propietarioParameter.Value = hotel.Propietario.Id != -1 ? hotel.Propietario.Id : Convert.DBNull;
-            propietarioParameter.ParameterName = "@IdPropietario";
-            parameters.Add(propietarioParameter);
-
             // Estrellas
             SqlParameter estrellasParameter = new SqlParameter();
             estrellasParameter.DbType = DbType.Int32;
@@ -82,15 +74,19 @@ namespace Gh.Dao
             hotel.Id = Convert.ToInt32(idParameter.Value);
 
             #region Habitaciones
-            if(hotel.Habitaciones.Count > 0)
+            if (hotel.Habitaciones != null)
             {
-
-                foreach (HabitacionDto habitacion in hotel.Habitaciones)
+                if (hotel.Habitaciones.Count > 0)
                 {
-                    habitacion.Hotel.Id = hotel.Id;
-                    HabitacionDto habitacionTemp = AddHabitacion(habitacion);
+
+                    foreach (HabitacionDto habitacion in hotel.Habitaciones)
+                    {
+                        habitacion.Hotel.Id = hotel.Id;
+                        HabitacionDto habitacionTemp = AddHabitacion(habitacion);
+                    }
                 }
             }
+
             #endregion
 
             return hotel;
