@@ -23,9 +23,6 @@ namespace Gh.Presentation.Create
         protected void plantillaButton_Click(object sender, EventArgs e)
         {
             this.plantillaButton.Text = "Rehacer plantilla";
-            hotel.Plantas = int.Parse(this.plantasTextBox.Text);
-            hotel.Ancho = int.Parse(this.anchoTextBox.Text);
-            hotel.Largo = int.Parse(this.largoTextBox.Text);
 
             string plantilla = GenerarPlantilla(hotel);
             Response.Write(plantilla);
@@ -66,14 +63,50 @@ namespace Gh.Presentation.Create
             {
                 string habitaciones = this.hiddenHotel.Value;
                 hotel = hotelBus.GenerarPlantaFromString(hotel, habitaciones, plantaActual);
+                GenerarPlantilla(hotel);
                 plantaActual++;
                 this.plantaActualTextBox.Text = plantaActual.ToString();
-                GenerarPlantilla(hotel);
+
+                if (plantaActual > hotel.Plantas)
+                    hotel = hotelBus.Add(hotel);
             }
             else
             {
                 hotel = hotelBus.Add(hotel);
             }
+        }
+
+        protected void datosButton_Click(object sender, EventArgs e)
+        {
+            hotel.Nombre = this.nombreBox.Text;
+            hotel.Direccion = this.direccionBox.Text;
+
+            //TODO: rellenar con dropdownlist
+            hotel.Municipio = new MunicipioDto(1, "Tarragona");
+            hotel.Poblacion = new PoblacionDto(1, "Tarragona");
+            hotel.Pais = new PaisDto(1, "España");
+
+
+            hotel.Plantas = int.Parse(this.plantasTextBox.Text);
+            hotel.Ancho = int.Parse(this.anchoTextBox.Text);
+            hotel.Largo = int.Parse(this.largoTextBox.Text);
+
+            UsuarioDto usuario = new UsuarioDto();
+            usuario.Username = usuarioBox.Text;
+            usuario.Password = passwordBox.Text;
+            usuario.Role = Role.Administrador;
+            usuario.MaxHour = 0;
+            usuario.MinHour = 0;
+            usuario.Email = emailBox.Text;
+
+            HotelBus hotelBus = new HotelBus();
+            hotelBus.Add(hotel);
+
+            UsuarioBus usuarioBus = new UsuarioBus();
+            usuarioBus.AddUser(usuario);
+
+            this.datosPanel.Visible = false;
+            this.fisicoPanel.Visible = true;
         }
     }
 }
