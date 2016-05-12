@@ -28,7 +28,7 @@ namespace Gh.Dao
             SqlParameter hotelParameter = new SqlParameter();
             hotelParameter.DbType = DbType.Int32;
             hotelParameter.Direction = ParameterDirection.Input;
-            hotelParameter.Value = habitacion.Hotel.Id;
+            hotelParameter.Value = habitacion.HotelId;
             hotelParameter.ParameterName = "@IdHotel";
             parameters.Add(hotelParameter);
 
@@ -222,7 +222,7 @@ namespace Gh.Dao
             SqlParameter hotelParameter = new SqlParameter();
             hotelParameter.DbType = DbType.Int32;
             hotelParameter.Direction = ParameterDirection.Input;
-            hotelParameter.Value = habitacion.Hotel.Id;
+            hotelParameter.Value = habitacion.HotelId;
             hotelParameter.ParameterName = "@IdHotel";
             parameters.Add(hotelParameter);
 
@@ -326,10 +326,7 @@ namespace Gh.Dao
             HabitacionDto habitacion = new HabitacionDto()
             {
                 Id = Convert.ToInt32(dr["Id"]),
-                Hotel = new HotelDto()
-                {
-                    Id = Convert.ToInt32(dr["IdHotel"])
-                },
+                HotelId = Convert.ToInt32(dr["IdHotel"]),
                 Planta = Convert.ToInt32(dr["Planta"]),
                 PosicionX = Convert.ToInt32(dr["PosicionX"]),
                 PosicionY = Convert.ToInt32(dr["PosicionY"]),

@@ -81,7 +81,7 @@ namespace Gh.Dao
 
                     foreach (HabitacionDto habitacion in hotel.Habitaciones)
                     {
-                        habitacion.Hotel.Id = hotel.Id;
+                        habitacion.HotelId = hotel.Id;
                         HabitacionDto habitacionTemp = AddHabitacion(habitacion);
                     }
                 }
@@ -109,7 +109,7 @@ namespace Gh.Dao
             SqlParameter hotelParameter = new SqlParameter();
             hotelParameter.DbType = DbType.Int32;
             hotelParameter.Direction = ParameterDirection.Input;
-            hotelParameter.Value = habitacion.Hotel.Id;
+            hotelParameter.Value = habitacion.HotelId;
             hotelParameter.ParameterName = "@IdHotel";
             parameters.Add(hotelParameter);
 

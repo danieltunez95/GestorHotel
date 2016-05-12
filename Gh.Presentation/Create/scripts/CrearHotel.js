@@ -21,8 +21,8 @@ function rellenarTabla(x, y) {
         MATRIZ[x][y] = 0;
 }
 function generarPlantilla() {
-    var x = document.getElementById("largoTextBox").value;
-    var y = document.getElementById("anchoTextBox").value;
+    var x = document.getElementById("largoDisabledBox").value;
+    var y = document.getElementById("anchoDisabledBox").value;
 
     for (var i = 0; i < x; i++) {
         MATRIZ[i] = new Array();
