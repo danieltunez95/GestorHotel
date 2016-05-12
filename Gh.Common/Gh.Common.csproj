@@ -43,6 +43,7 @@
     <Compile Include="BaseDto.cs" />
     <Compile Include="CamaEnum.cs" />
     <Compile Include="MunicipioDto.cs" />
+    <Compile Include="PaisDto.cs" />
     <Compile Include="PoblacionDto.cs" />
     <Compile Include="RoleEnum.cs" />
     <Compile Include="TurnoDto.cs" />
