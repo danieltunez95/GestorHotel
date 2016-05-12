@@ -57,7 +57,7 @@ namespace Gh.Dao
             SqlParameter plantasParameter = new SqlParameter();
             plantasParameter.DbType = DbType.Int32;
             plantasParameter.Direction = ParameterDirection.Input;
-            plantasParameter.Value = hotel.Plantas < 0 ? hotel.Plantas : 0;
+            plantasParameter.Value = hotel.Plantas > 0 ? hotel.Plantas : 0;
             plantasParameter.ParameterName = "@Plantas";
             parameters.Add(plantasParameter);
 
