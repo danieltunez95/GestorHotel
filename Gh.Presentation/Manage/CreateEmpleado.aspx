@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
-    <asp:Button ID="crearTurnoButton" runat="server" Text="Turnos de trabajo" OnClick="crearTurnoButton_Click" />
+    <asp:Button ID="crearTurnoButton" runat="server" Text="Turnos de trabajo" OnClick="crearTurnoButton_Click" /> <br />
+    <asp:Label ID="NombreLabel" runat="server" Text="Nombre:"></asp:Label>
     <asp:TextBox ID="Nombre" runat="server" CssClass="formButton"></asp:TextBox>
     <asp:TextBox ID="PrimerApellido" runat="server" CssClass="formButton"></asp:TextBox>
     <asp:TextBox ID="SegundoApellido" runat="server" CssClass="formButton"></asp:TextBox>

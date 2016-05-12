@@ -12,8 +12,7 @@ namespace Gh.Common
 
         public PoblacionDto Poblacion { get; set; }
 
-        //Is it really necessary?
-        //public string Pais { get; set; }
+        public string Pais { get; set; }
 
         public List<HabitacionDto> Habitaciones { get; set; }
 
