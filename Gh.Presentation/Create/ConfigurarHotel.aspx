@@ -33,8 +33,8 @@
         <asp:Panel ID="hotelPanel" runat="server">
         </asp:Panel>
         <asp:Panel ID="ocultarPanel" runat="server">
-            <input type="button" id="crearPlantaButton" value="Siguiente planta" onclick="crearPlanta();"/>
-            <input id="hiddenHotel" type="text" style="visibility:hidden"/>
+            <asp:button runat="server" type="button" id="crearPlantaButton" value="Siguiente planta" OnClientClick="crearPlanta();" OnClick="crearPlantaButton_Click"/>
+            <input runat="server" id="hiddenHotel" type="text"/>
         </asp:Panel>
         <br />
         <br />

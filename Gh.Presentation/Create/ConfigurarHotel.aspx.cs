@@ -1,4 +1,5 @@
-﻿using Gh.Common;
+﻿using Gh.Bus;
+using Gh.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,31 +12,12 @@ namespace Gh.Presentation.Create
 {
     public partial class ConfigurarHotel : System.Web.UI.Page
     {
-        HotelDto hotel = new HotelDto();
-        int plantaActual;
+        static HotelDto hotel = new HotelDto();
+        static int plantaActual = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            hotel.Largo = Request.Form["largoTextBox"] != null ? int.Parse(Request.Form["largoTextBox"]) : 0;
-            hotel.Ancho = Request.Form["anchoTextBox"] != null ? int.Parse(Request.Form["anchoTextBox"]) : 0;
-            hotel.Plantas = Request.Form["plantasTextBox"] != null ? int.Parse(Request.Form["plantasTextBox"]) : 0;
-            plantaActual = Request.QueryString["plantaActual"] != null ? int.Parse(Request.QueryString["plantaActual"]) : 0;
-
-            if (hotel.Largo != 0 && hotel.Ancho != 0 && hotel.Plantas != 0)
-            {
-                //plantaActual = int.Parse(Request.Form["plantaActualTextBox"]);
-                if (plantaActual <= int.Parse(this.plantasTextBox.Text))
-                {
-                    this.plantaActualTextBox.Text = "Planta " + plantaActual + " de " + hotel.Plantas;
-                    GenerarPlantilla(hotel);
-                }
-                else
-                {
-                    this.plantaActualTextBox.Text = "¡Enhorabuena! Ya has creado todo el hotel. Puede acceder al panel de administración.";
-                    this.crearHotelButton.Visible = true;
-                    this.ocultarPanel.Visible = false;
-                }
-            }
+            
         }
 
         protected void plantillaButton_Click(object sender, EventArgs e)
@@ -74,6 +56,24 @@ namespace Gh.Presentation.Create
         {
             //TODO: Redirigir con parametro al encargado de finalizar la creacion y redirigir a Manage/Main.aspx
             Response.Redirect("~/Manage/Main.aspx");
+        }
+
+        protected void crearPlantaButton_Click(object sender, EventArgs e)
+        {
+            HotelBus hotelBus = new HotelBus();
+            
+            if (plantaActual <= hotel.Plantas)
+            {
+                string habitaciones = this.hiddenHotel.Value;
+                hotel = hotelBus.GenerarPlantaFromString(hotel, habitaciones, plantaActual);
+                plantaActual++;
+                this.plantaActualTextBox.Text = plantaActual.ToString();
+                GenerarPlantilla(hotel);
+            }
+            else
+            {
+                hotel = hotelBus.Add(hotel);
+            }
         }
     }
 }
