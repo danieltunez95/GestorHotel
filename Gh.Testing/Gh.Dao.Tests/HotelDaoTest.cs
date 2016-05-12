@@ -45,9 +45,10 @@ namespace Gh.Testing.Gh.Dao.Tests
                     FechaInicio = new DateTime(2000, 1, 1),
                     Oficio = Oficio.Director
                 },
-                Estrellas = 3
+                Estrellas = 3,
+                Plantas = 4
             };
-            int numHab = 0;
+            /*int numHab = 0;
             hotel.Habitaciones = new List<HabitacionDto>();
             string hotelString = "1,0,1,1/0,0,1,0/1,1,0,1";
             string[] habitaciones = hotelString.Split('/');
@@ -74,7 +75,7 @@ namespace Gh.Testing.Gh.Dao.Tests
                         });
                     }
                 }
-            }
+            }*/
 
             HotelDto hotelAdded = dao.Add(hotel);
 

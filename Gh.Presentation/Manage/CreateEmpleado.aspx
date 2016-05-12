@@ -2,14 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
-    <asp:Button ID="crearTurnoButton" runat="server" Text="Turnos de trabajo" OnClick="crearTurnoButton_Click" /> <br />
-    <asp:Label ID="NombreLabel" runat="server" Text="Nombre:"></asp:Label>
-    <asp:TextBox ID="Nombre" runat="server" CssClass="formButton"></asp:TextBox>
-    <asp:TextBox ID="PrimerApellido" runat="server" CssClass="formButton"></asp:TextBox>
-    <asp:TextBox ID="SegundoApellido" runat="server" CssClass="formButton"></asp:TextBox>
+    <asp:Button ID="crearTurnoButton" runat="server" Text="Turnos de trabajo" OnClick="crearTurnoButton_Click" /> <br /><br />
+    <asp:Label ID="NombreLabel" runat="server" Text="Nombre: " CssClass="formLabel"></asp:Label>
+    <asp:TextBox ID="Nombre" runat="server" CssClass="formButton" placeholder="Nombre"></asp:TextBox>
+    <asp:TextBox ID="PrimerApellido" runat="server" CssClass="formButton" placeholder="Primer apellido"></asp:TextBox>
+    <asp:TextBox ID="SegundoApellido" runat="server" CssClass="formButton" placeholder="Segundo apellido"></asp:TextBox>
     <br />
-    <br />
-    <br />
+    <asp:Label ID="NifLabel" runat="server" Text="Nombre: " CssClass="formLabel"></asp:Label>
     <asp:TextBox ID="Nif" runat="server" CssClass="formButton"></asp:TextBox>
 
     <br />
