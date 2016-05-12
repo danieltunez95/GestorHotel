@@ -40,8 +40,8 @@ namespace Gh.Bus
 
         public HotelDto GenerarPlantaFromString(HotelDto hotel, string planta, int plantaActual)
         {
-            string hotelString = "1,0,1,1/0,0,1,0/1,1,0,1";
-            string[] habitaciones = hotelString.Split('/');
+            string[] habitaciones = planta.Split('/');
+            hotel.Habitaciones = new List<HabitacionDto>();
             for (int i = 0; i < habitaciones.Length; i++)
             {
                 string[] habitacion = habitaciones[i].Split(',');
