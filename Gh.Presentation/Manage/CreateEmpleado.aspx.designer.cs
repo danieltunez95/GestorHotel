@@ -76,6 +76,15 @@ namespace Gh.Presentation.Manage {
         protected global::System.Web.UI.WebControls.TextBox Nif;
         
         /// <summary>
+        /// FechaNacimientoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FechaNacimientoLabel;
+        
+        /// <summary>
         /// FechaNacimiento control.
         /// </summary>
         /// <remarks>
@@ -83,15 +92,6 @@ namespace Gh.Presentation.Manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FechaNacimiento;
-        
-        /// <summary>
-        /// FechaNacimientoCalendar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar FechaNacimientoCalendar;
         
         /// <summary>
         /// pais control.

@@ -9,17 +9,17 @@ using System.Web.UI.WebControls;
 
 namespace Gh.Presentation.Manage
 {
-    public partial class CreateEmployee : System.Web.UI.Page
+    public partial class CreateEmployee : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void FechaNacimientoCalendar_SelectionChanged(object sender, EventArgs e)
-        {
-            FechaNacimiento.Text = this.FechaNacimientoCalendar.SelectedDate.ToShortDateString();
-        }
+        //protected void FechaNacimientoCalendar_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    FechaNacimiento.Text = this.FechaNacimientoCalendar.SelectedDate.ToShortDateString();
+        //}
 
         protected void FechaContratoCalendar_SelectionChanged(object sender, EventArgs e)
         {
