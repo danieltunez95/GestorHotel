@@ -20,7 +20,7 @@
 
         public double Precio { get; set; }
 
-        public HotelDto Hotel { get; set; }
+        public int HotelId { get; set; }
 
         public string Imagen { get; set; }
     }

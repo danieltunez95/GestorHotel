@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
     <link href="style/Style.css" rel="stylesheet" type="text/css" />
-    <script src="scripts/CrearHotel.js"></script>
+    <script src="scripts/CrearHotel.js?v=1"></script>
     <style type="text/css">
         #Text1 {
             margin-bottom: 0px;
@@ -59,14 +59,23 @@
         </asp:Panel>
 
         <asp:Panel ID="fisicoPanel" runat="server" Visible="false">
-            <asp:Button ID="plantillaButton" runat="server" OnClick="plantillaButton_Click" Text="plantillaButton plantilla" />
+            <asp:Label ID="Label13" runat="server" Text="Ancho: "></asp:Label>
+            <asp:TextBox ID="anchoDisabledBox" runat="server" Enabled="False"></asp:TextBox>
             <br />
-            <asp:Label ID="plantaActualTextBox" runat="server" BorderStyle="None"></asp:Label>
+            <asp:Label ID="Label14" runat="server" Text="Largo: "></asp:Label>
+            <asp:TextBox ID="largoDisabledBox" runat="server" Enabled="False"></asp:TextBox>
+            <br />
+            <asp:Label ID="Label15" runat="server" Text="Plantas: "></asp:Label>
+            <asp:TextBox ID="plantasDisabledBox" runat="server" Enabled="False"></asp:TextBox>
+            <br />
+            <asp:Button ID="plantillaButton" runat="server" OnClick="plantillaButton_Click" Text="Generar plantilla" />
+            <br />
+            <span> Planta <asp:Label ID="plantaActualTextBox" runat="server" BorderStyle="None"></asp:Label> de  <asp:Label ID="plantasMaximas" runat="server" BorderStyle="None"/></span>
             <asp:Panel ID="hotelPanel" runat="server">
             </asp:Panel>
             <asp:Panel ID="ocultarPanel" runat="server">
-                <asp:Button runat="server" type="button" ID="crearPlantaButton" value="Siguiente planta" OnClientClick="crearPlanta();" OnClick="crearPlantaButton_Click" />
-                <input runat="server" id="hiddenHotel" type="text" />
+                <asp:Button runat="server" type="button" ID="crearPlantaButton" value="Siguiente planta" OnClientClick="crearPlanta();" OnClick="crearPlantaButton_Click" Text="Siguiente planta" />
+                <asp:TextBox ID="hiddenHotel" runat="server" CssClass="hiddenLabel"></asp:TextBox>
             </asp:Panel>
             <br />
             <br />

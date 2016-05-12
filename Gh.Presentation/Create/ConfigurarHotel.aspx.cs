@@ -61,7 +61,7 @@ namespace Gh.Presentation.Create
             
             if (plantaActual <= hotel.Plantas)
             {
-                string habitaciones = this.hiddenHotel.Value;
+                string habitaciones = this.hiddenHotel.Text;
                 hotel = hotelBus.GenerarPlantaFromString(hotel, habitaciones, plantaActual);
                 GenerarPlantilla(hotel);
                 plantaActual++;
@@ -80,6 +80,7 @@ namespace Gh.Presentation.Create
         {
             hotel.Nombre = this.nombreBox.Text;
             hotel.Direccion = this.direccionBox.Text;
+            hotel.Estrellas = int.Parse(this.estrellasBox.Text);
 
             //TODO: rellenar con dropdownlist
             hotel.Municipio = new MunicipioDto(1, "Tarragona");
@@ -107,6 +108,11 @@ namespace Gh.Presentation.Create
 
             this.datosPanel.Visible = false;
             this.fisicoPanel.Visible = true;
+            this.anchoDisabledBox.Text = hotel.Ancho.ToString();
+            this.largoDisabledBox.Text = hotel.Largo.ToString();
+            this.plantasDisabledBox.Text = hotel.Plantas.ToString();
+
+            GenerarPlantilla(hotel);
         }
     }
 }

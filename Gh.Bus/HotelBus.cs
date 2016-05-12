@@ -55,7 +55,14 @@ namespace Gh.Bus
                         {
                             PosicionX = i,
                             PosicionY = j,
-                            Planta = plantaActual
+                            MetrosCuadrados = 0,
+                            Camas = 0,
+                            TipoCama = CamaEnum.Matrimonio,
+                            Precio = 0d,
+                            Dormitorios = 0,
+                            Descripcion = "PENDIENTE DE EDICIÓN",
+                            Planta = 0,
+                            Imagen = ""
                         });
                     }
                 }
