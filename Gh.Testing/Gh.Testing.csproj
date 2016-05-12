@@ -54,14 +54,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Gh.Bus.Tests\HotelBusTest.cs" />
     <Compile Include="Gh.Dao.Tests\EmpleadoDaoTest.cs" />
     <Compile Include="Gh.Dao.Tests\HotelDaoTest.cs" />
     <Compile Include="Gh.Dao.Tests\TurnoDaoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Gh.Bus.Tests\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Gh.Bus\Gh.Bus.csproj">
       <Project>{43c9728a-42fc-4889-84ca-fbc3faab21c3}</Project>
