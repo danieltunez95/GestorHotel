@@ -18,12 +18,13 @@ namespace Gh.Testing.Gh.Bus.Tests
         [TestMethod]
         public void GenerarPlantaFromStringTest()
         {
-            string planta = "0,1,0,1/,1,1,1,1/0,0,1,1";
+            string planta = "0,1,0,1/1,1,1,1/0,0,1,1";
             HotelDto hotel = new HotelDto()
             {
                 Plantas = 1
             };
             hotel = hotelBus.GenerarPlantaFromString(hotel, planta, 0);
+            Assert.IsTrue(hotel.Habitaciones.Count == 8);
         }
     }
 }
