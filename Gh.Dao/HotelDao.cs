@@ -405,6 +405,16 @@ namespace Gh.Dao
             return Convert.ToInt32(affectedRowsParameter.Value);
         }
 
+        public bool HasAnyHotel()
+        {
+            bool hasHotel = false;
+            string commandText = @"SELECT TOP 1 * FROM Hotel";
+            List<HotelDto> hoteles = GetData(commandText, null);
+            if (hoteles.Count > 0)
+                hasHotel = true;
+            return hasHotel;
+        }
+
         protected override HotelDto MapDataReader(SqlDataReader dr)
         {
             HotelDto hotel = new HotelDto()
@@ -421,13 +431,10 @@ namespace Gh.Dao
                 },
                 Direccion = dr["Direccion"] != null ? (string)dr["Direccion"] : null,
                 Plantas = Convert.ToInt32(dr["Plantas"]),
-                Propietario = new EmpleadoDto()
-                {
-                    Id = Convert.ToInt32(dr["IdPropietario"])
-                },
                 Estrellas = dr["Estrellas"] != null ?  Convert.ToInt32(dr["Estrellas"]) : (int?)null // Probar esto
             };
-
+            if(dr["IdPropietario"] != DBNull.Value)
+                hotel.Propietario = new EmpleadoDto(){Id = Convert.ToInt32(dr["IdPropietario"])};
             return hotel;
         }
     }

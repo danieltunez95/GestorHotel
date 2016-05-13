@@ -70,5 +70,10 @@ namespace Gh.Bus
 
             return hotel;
         }
+
+        public bool HasAnyHotel()
+        {
+            return dao.HasAnyHotel();
+        }
     }
 }
