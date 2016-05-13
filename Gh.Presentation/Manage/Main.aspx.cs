@@ -22,18 +22,22 @@ namespace Gh.Presentation.Manage
             {
                 if (!IsPostBack)
                 {
-                    List<HotelDto> hoteles = new List<HotelDto>();
-                    foreach (HotelDto hotel in hoteles)
-                    {
-                        //Do everything
-                        //Habitaciones disponibles
+                    HotelDto hotel = hotelBus.GetById(29);
+                    //Do everything
+                    //Habitaciones disponibles
+                    int habitaciones = 0;
+                    if (hotel.Habitaciones != null)
+                        habitaciones = hotel.Habitaciones.Count;
 
-                        int habitaciones = hotel.Habitaciones.Count;
-                        int reservas = hotelBus.GetReservasByIdHotel(hotel.Id);
+                    int reservas = hotelBus.GetReservasByIdHotel(hotel);
+                    int entradas = hotelBus.GetEntradasByIdHotel(hotel);
+                    int salidas = hotelBus.GetSalidasByIdHotel(hotel);
 
-                        this.habitacionesInfosLabel.Text = String.Format(this.habitacionesInfosLabel.Text, reservas, habitaciones);
-                       
-                    }
+                    this.habitacionesLibresLabel.Text = (habitaciones - reservas).ToString();
+                    this.habitacionesTotalLabel.Text = habitaciones.ToString();
+                    this.entradasLabel.Text = entradas.ToString();
+                    this.salidasLabel.Text = salidas.ToString();
+
                 }
             }
         }

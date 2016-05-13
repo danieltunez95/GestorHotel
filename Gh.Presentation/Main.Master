@@ -5,23 +5,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <!-- BOOTSTRAP -->
+    <link href="Style/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+
     <link href="Style/master.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-            <asp:Panel ID="Panel1" runat="server" CssClass="gestorLeftMenu">
-                <asp:Button ID="edicionButton" runat="server" CssClass="buttonGestorLeftMenu" Text="Edición" OnClick="edicionButton_Click" />
-                <asp:Button ID="UsuariosButton" runat="server" Text="Usuarios" OnClick="UsuariosButton_Click" CssClass="buttonGestorLeftMenu" />
-                <asp:Button ID="empleadosButton" runat="server" CssClass="buttonGestorLeftMenu" Text="Empleados" OnClick="empleadosButton_Click" />
-                <asp:Button ID="clientesButton" runat="server" CssClass="buttonGestorLeftMenu" Text="Clientes" />
-                <asp:Button ID="Proveedores" runat="server" CssClass="buttonGestorLeftMenu" Text="Proveedores" />
-            </asp:Panel>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Menú</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Hovida</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Inicio</a></li>
+                        <li><a href="#about">Sobre nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 sidebar">
+                    <asp:dropdownlist runat="server" CssClass="form-control" id="hotelList"></asp:dropdownlist>
+                    <asp:Button ID="edicionButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Edición" OnClick="edicionButton_Click" />
+                    <asp:Button ID="UsuariosButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Usuarios" OnClick="UsuariosButton_Click" />
+                    <asp:Button ID="empleadosButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Empleados" OnClick="empleadosButton_Click" />
+                    <asp:Button ID="clientesButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Clientes" />
+                    <asp:Button ID="Proveedores" runat="server" CssClass="btn btn-primary sidebarButton" Text="Proveedores" />
+                </div>
+                <div class="col-sm-9 main">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>

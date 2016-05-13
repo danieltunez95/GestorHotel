@@ -111,10 +111,14 @@
     <Content Include="Manage\Main.aspx" />
     <Content Include="Manage\Turnos.aspx" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Style\bootstrap.min.css" />
     <Content Include="Style\master.css" />
     <Content Include="Manage\Users.aspx" />
     <Content Include="packages.config" />

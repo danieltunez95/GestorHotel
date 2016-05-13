@@ -18,7 +18,6 @@ namespace Gh.Testing.Gh.Dao.Tests
             dao = new EmpleadoDao("");
             empleadoTest = new EmpleadoDto()
             {
-                Guid = new Guid(),
                 FechaInicio = new DateTime(2016, 1, 1),
                 FechaNacimiento = new DateTime(1995, 2, 5),
                 Nombre = "Eduardo",
