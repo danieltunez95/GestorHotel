@@ -45,6 +45,7 @@
     <Compile Include="MunicipioDto.cs" />
     <Compile Include="PaisDto.cs" />
     <Compile Include="PoblacionDto.cs" />
+    <Compile Include="ProvinciaDto.cs" />
     <Compile Include="RoleEnum.cs" />
     <Compile Include="TurnoDto.cs" />
     <Compile Include="UsuarioDto.cs" />

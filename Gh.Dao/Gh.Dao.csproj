@@ -45,6 +45,10 @@
     <Compile Include="BaseDao.cs" />
     <Compile Include="EmpleadoDao.cs" />
     <Compile Include="HabitacionDao.cs" />
+    <Compile Include="MunicipioDao.cs" />
+    <Compile Include="PaisDao.cs" />
+    <Compile Include="PoblacionDao.cs" />
+    <Compile Include="ProvinciaDao.cs" />
     <Compile Include="TurnoDao.cs" />
     <Compile Include="UsuarioDao.cs" />
   </ItemGroup>
