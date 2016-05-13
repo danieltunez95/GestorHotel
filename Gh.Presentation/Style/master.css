@@ -29,3 +29,18 @@
     float: left;
     height: 25px;
 }
+
+.margin-bottom{
+    margin-bottom:15px;
+}
+.center{
+    text-align:center;
+}
+/* OWN BOOTSTRAP */
+.sidebarButton{
+    width:100%;
+}
+
+.sidebar{
+    width:12%;
+}

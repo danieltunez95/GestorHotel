@@ -26,86 +26,51 @@
         });
     </script>
     <asp:Button ID="crearTurnoButton" runat="server" Text="Turnos de trabajo" OnClick="crearTurnoButton_Click" /> <br /><br />
-    <asp:Label ID="NombreLabel" runat="server" Text="Nombre: " CssClass="formLabel"></asp:Label>
-    <asp:TextBox ID="Nombre" runat="server" CssClass="formButton" placeholder="Nombre"></asp:TextBox>
-    <asp:TextBox ID="PrimerApellido" runat="server" CssClass="formButton" placeholder="Primer apellido"></asp:TextBox>
-    <asp:TextBox ID="SegundoApellido" runat="server" CssClass="formButton" placeholder="Segundo apellido"></asp:TextBox>
+    <asp:TextBox ID="Nombre" runat="server" CssClass="form-control" placeholder="Nombre"></asp:TextBox>
+    <asp:TextBox ID="PrimerApellido" runat="server" CssClass="form-control" placeholder="Primer apellido"></asp:TextBox>
+    <asp:TextBox ID="SegundoApellido" runat="server" CssClass="form-control" placeholder="Segundo apellido"></asp:TextBox>
     <div style="clear:right"></div>
     <br />
-    <br />
-    <asp:Label ID="NifLabel" runat="server" Text="NIF: " CssClass="formLabel"></asp:Label>
-    <asp:TextBox ID="Nif" runat="server" CssClass="formButton" placeholder="NIF"></asp:TextBox>
+    <asp:TextBox ID="Nif" runat="server" CssClass="form-control" placeholder="NIF"></asp:TextBox>
     <div style="clear:right"></div>
     <br />
-    <br />
-    <asp:Label ID="FechaNacimientoLabel" runat="server" Text="Fecha nacimiento: " CssClass="formLabel"></asp:Label>
-    <asp:TextBox ID="FechaNacimiento" runat="server" CssClass="formButton"></asp:TextBox>
-    <br />
+    <asp:TextBox ID="FechaNacimiento" runat="server" CssClass="form-control" placeholder="Fecha nacimiento"></asp:TextBox>
     <br />
     
     <%--<asp:Calendar ID="FechaNacimientoCalendar" runat="server" CssClass="formButton" OnSelectionChanged="FechaNacimientoCalendar_SelectionChanged"></asp:Calendar>--%>
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     
-    <asp:DropDownList ID="pais" runat="server" CssClass="formButton"></asp:DropDownList>
+    <asp:DropDownList ID="pais" runat="server" CssClass="form-control"></asp:DropDownList>
     <br />
     <br />
-    <asp:DropDownList ID="poblacion" runat="server" CssClass="formButton"></asp:DropDownList>
+    <asp:DropDownList ID="poblacion" runat="server" CssClass="form-control"></asp:DropDownList>
     <br />
     <br />
-    <asp:DropDownList ID="municipio" runat="server" CssClass="formButton"></asp:DropDownList>
+    <asp:DropDownList ID="municipio" runat="server" CssClass="form-control"></asp:DropDownList>
     
     <br />
     <br />
     
-    <asp:DropDownList ID="oficio" runat="server" CssClass="formButton"></asp:DropDownList>
+    <asp:DropDownList ID="oficio" runat="server" CssClass="form-control"></asp:DropDownList>
     <br />
     <br />
-    <asp:DropDownList ID="turno" runat="server" CssClass="formButton"></asp:DropDownList>
+    <asp:DropDownList ID="turno" runat="server" CssClass="form-control"></asp:DropDownList>
     
     <br />
     <br />
     
-    <asp:TextBox ID="SalarioBruto" runat="server" CssClass="formButton"></asp:TextBox>
-    <asp:TextBox ID="CuentaBancaria" runat="server" CssClass="formButton"></asp:TextBox>
+    <asp:TextBox ID="SalarioBruto" runat="server" CssClass="form-control" placeholder="Salario bruto"></asp:TextBox>
+    <asp:TextBox ID="CuentaBancaria" runat="server" CssClass="form-control" placeholder="Cuenta bancaria"></asp:TextBox>
 
     <br />
     <br />
 
-    <asp:TextBox ID="FechaContrato" runat="server" CssClass="formButton"></asp:TextBox>
-    <asp:Calendar ID="FechaContratoCalendar" runat="server" CssClass="formButton" OnSelectionChanged="FechaContratoCalendar_SelectionChanged"></asp:Calendar>
+    <asp:TextBox ID="FechaContrato" runat="server" CssClass="form-control"></asp:TextBox>
+    <asp:Calendar ID="FechaContratoCalendar" runat="server" OnSelectionChanged="FechaContratoCalendar_SelectionChanged"></asp:Calendar>
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <asp:TextBox ID="FechaExpiracion" runat="server" CssClass="formButton"></asp:TextBox>
-    <asp:Calendar ID="FechaExpiracionCalendar" runat="server" CssClass="formButton" OnSelectionChanged="FechaExpiracionCalendar_SelectionChanged"></asp:Calendar>
+    <asp:TextBox ID="FechaExpiracion" runat="server" CssClass="form-control"></asp:TextBox>
+    <asp:Calendar ID="FechaExpiracionCalendar" runat="server" OnSelectionChanged="FechaExpiracionCalendar_SelectionChanged"></asp:Calendar>
     <br />
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <asp:Button ID="crearButton" runat="server" CssClass="formButton" Text="Crear" OnClick="crearButton_Click" />
+    <asp:Button ID="crearButton" runat="server" CssClass="btn btn-success" Text="Crear" OnClick="crearButton_Click" />
 </asp:Content>

@@ -13,15 +13,6 @@ namespace Gh.Presentation.Manage {
     public partial class CreateTurno {
         
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
         /// nombreBox control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace Gh.Presentation.Manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nombreBox;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
         /// turnoPrimeroInicioBox control.
@@ -49,15 +31,6 @@ namespace Gh.Presentation.Manage {
         protected global::System.Web.UI.WebControls.TextBox turnoPrimeroInicioBox;
         
         /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
         /// turnoPrimeroFinalBox control.
         /// </summary>
         /// <remarks>
@@ -65,15 +38,6 @@ namespace Gh.Presentation.Manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox turnoPrimeroFinalBox;
-        
-        /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
         /// turnoSegundoInicioBox control.
@@ -85,15 +49,6 @@ namespace Gh.Presentation.Manage {
         protected global::System.Web.UI.WebControls.TextBox turnoSegundoInicioBox;
         
         /// <summary>
-        /// Label5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-        
-        /// <summary>
         /// turnoSegundoFinalBox control.
         /// </summary>
         /// <remarks>
@@ -101,15 +56,6 @@ namespace Gh.Presentation.Manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox turnoSegundoFinalBox;
-        
-        /// <summary>
-        /// Label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
         /// jornadaBox control.

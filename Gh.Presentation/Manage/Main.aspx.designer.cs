@@ -13,21 +13,39 @@ namespace Gh.Presentation.Manage {
     public partial class Main1 {
         
         /// <summary>
-        /// habitacionesInfosLabel control.
+        /// habitacionesLibresLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label habitacionesInfosLabel;
+        protected global::System.Web.UI.WebControls.Label habitacionesLibresLabel;
         
         /// <summary>
-        /// Label2 control.
+        /// habitacionesTotalLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label habitacionesTotalLabel;
+        
+        /// <summary>
+        /// entradasLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label entradasLabel;
+        
+        /// <summary>
+        /// salidasLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label salidasLabel;
     }
 }
