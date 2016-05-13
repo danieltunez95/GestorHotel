@@ -103,5 +103,12 @@ namespace Gh.Testing.Gh.Dao.Tests
             Assert.IsTrue(hotelTest.Habitaciones.Count == 7 && hotelTest.Habitaciones[1].PosicionX == 0 &&
                 hotelTest.Habitaciones[1].PosicionY == 2 && hotelTest.Habitaciones[1].MetrosCuadrados == 3);
         }
+
+        [TestMethod]
+        public void HasAnyHotelTest()
+        {
+            bool hasHotel = dao.HasAnyHotel();
+            Assert.IsTrue(hasHotel == true);
+        }
     }
 }
