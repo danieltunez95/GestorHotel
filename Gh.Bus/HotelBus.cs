@@ -7,10 +7,12 @@ namespace Gh.Bus
     public class HotelBus : IBus<HotelDto>
     {
         HotelDao dao = null;
+        HabitacionDao habitacionDao = null;
 
         public HotelBus()
         {
             dao = new HotelDao();
+            habitacionDao = new HabitacionDao();
         }
 
         public HotelDto Add(HotelDto hotel)
@@ -23,14 +25,25 @@ namespace Gh.Bus
             return dao.Delete(hotel);
         }
 
+        /// <summary>
+        /// Devuelve una lista de todos los hoteles sin habitaciones.
+        /// </summary>
+        /// <returns>Hoteles sin habitaciones</returns>
         public List<HotelDto> GetAll()
         {
             return dao.GetAll();
         }
 
+        /// <summary>
+        /// Devuelve el hotel seleccionado por ID y sus habitaciones.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Hotel seleccionado por ID y sus habitaciones.</returns>
         public HotelDto GetById(int id)
         {
-            return dao.GetById(id);
+            HotelDto hotel = dao.GetById(id);
+            hotel.Habitaciones = habitacionDao.GetAllByIdHotel(hotel);
+            return hotel;
         }
 
         public int Update(HotelDto hotel)

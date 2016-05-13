@@ -37,6 +37,14 @@ namespace Gh.Testing.Gh.Bus.Tests
         }
 
         [TestMethod]
+        public void GetByIdTest()
+        {
+            HotelDto hotel = hotelBus.GetById(29);
+
+            Assert.IsTrue(hotel != null && hotel.Habitaciones.Count > 0);
+        }
+
+        [TestMethod]
         public void HasAnyHotelTest()
         {
             bool hasHotel = hotelBus.HasAnyHotel();

@@ -80,7 +80,7 @@ namespace Gh.Dao
             camasParameter.ParameterName = "@Camas";
             parameters.Add(camasParameter);
 
-            // TipoCama
+            // IdCama
             SqlParameter idCamaParameter = new SqlParameter();
             idCamaParameter.DbType = DbType.Int32;
             idCamaParameter.Direction = ParameterDirection.Input;
@@ -148,21 +148,35 @@ namespace Gh.Dao
 
         public List<HabitacionDto> GetAll()
         {
+            throw new Exception("Utilizar GetAllByIdHotel.");
+        }
+
+        public List<HabitacionDto> GetAllByIdHotel(HotelDto hotel)
+        {
             string commandText = @"SELECT
-                                    Id,
-                                    IdHotel,
-                                    Planta,
-                                    PosicionX,
-                                    PosicionY,
-                                    Precio,
-                                    MetrosCuadrados,
-                                    Camas,
-                                    TipoCama,
-                                    Dormitorios,
-                                    Descripcion,
-                                    Imagen
-                                   FROM Habitacion";
+Id,
+IdHotel,
+Planta,
+PosicionX,
+PosicionY,
+Precio,
+MetrosCuadrados,
+Camas,
+IdCama,
+Dormitorios,
+Descripcion,
+Imagen
+FROM Habitacion
+WHERE IdHotel = @Idhotel";
             List<SqlParameter> parameters = new List<SqlParameter>();
+
+            //Id
+            SqlParameter idParameter = new SqlParameter();
+            idParameter.DbType = DbType.Int32;
+            idParameter.Direction = ParameterDirection.Input;
+            idParameter.ParameterName = "@IdHotel";
+            idParameter.Value = hotel.Id;
+            parameters.Add(idParameter);
 
             List<HabitacionDto> habitaciones = GetData(commandText, parameters);
 
@@ -172,20 +186,20 @@ namespace Gh.Dao
         public HabitacionDto GetById(int id)
         {
             string commandText = @"SELECT
-                                    Id,
-                                    IdHotel,
-                                    Planta,
-                                    PosicionX,
-                                    PosicionY,
-                                    Precio,
-                                    MetrosCuadrados,
-                                    Camas,
-                                    TipoCama,
-                                    Dormitorios,
-                                    Descripcion,
-                                    Imagen
-                                   FROM Habitacion
-                                   WHERE Id = @Id";
+Id,
+IdHotel,
+Planta,
+PosicionX,
+PosicionY,
+Precio,
+MetrosCuadrados,
+Camas,
+IdCama,
+Dormitorios,
+Descripcion,
+Imagen
+FROM Habitacion
+WHERE Id = @Id";
             List<SqlParameter> parameters = new List<SqlParameter>();
 
             // Id
@@ -274,7 +288,7 @@ namespace Gh.Dao
             camasParameter.ParameterName = "@Camas";
             parameters.Add(camasParameter);
 
-            // TipoCama
+            // IdCama
             SqlParameter idCamaParameter = new SqlParameter();
             idCamaParameter.DbType = DbType.Int32;
             idCamaParameter.Direction = ParameterDirection.Input;
@@ -322,7 +336,7 @@ namespace Gh.Dao
         protected override HabitacionDto MapDataReader(SqlDataReader dr)
         {
             // Habrá algo que no sea NULL, hablarlo con Dani.
-            CamaEnum tipoCama = (CamaEnum)Enum.Parse(typeof(CamaEnum), dr["TipoCama"].ToString());
+            CamaEnum IdCama = (CamaEnum)Enum.Parse(typeof(CamaEnum), dr["IdCama"].ToString());
             HabitacionDto habitacion = new HabitacionDto()
             {
                 Id = Convert.ToInt32(dr["Id"]),
@@ -333,7 +347,7 @@ namespace Gh.Dao
                 Precio = Convert.ToDouble(dr["Precio"]),
                 MetrosCuadrados = Convert.ToInt32(dr["MetrosCuadrados"]),
                 Camas = Convert.ToInt32(dr["Camas"]),
-                TipoCama = tipoCama,
+                TipoCama = IdCama,
                 Dormitorios = Convert.ToInt32(dr["Dormitorios"]),
                 Descripcion = dr["Descripcion"] != null ? (string)dr["Descripcion"] : null,
                 Imagen = dr["Imagen"] != null ? (string)dr["Imagen"] : null
