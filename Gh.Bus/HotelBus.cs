@@ -75,5 +75,20 @@ namespace Gh.Bus
         {
             return dao.HasAnyHotel();
         }
+
+        public int GetReservasByIdHotel(HotelDto hotel)
+        {
+            return dao.GetReservasByIdHotel(hotel);
+        }
+
+        public int GetEntradasByIdHotel(HotelDto hotel)
+        {
+            return dao.GetEntradasByIdHotel(hotel);
+        }
+
+        public int GetSalidasByIdHotel(HotelDto hotel)
+        {
+            return dao.GetSalidasByIdHotel(hotel);
+        }
     }
 }
