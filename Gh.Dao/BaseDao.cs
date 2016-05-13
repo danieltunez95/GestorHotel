@@ -74,6 +74,27 @@ namespace Gh.Dao
             }
         }
 
+        protected virtual string GetDataScalar(string commandText, List<SqlParameter> parameters, CommandType commandType)
+        {
+            string result;
+            using (SqlConnection conn = this.GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand() { CommandText = commandText, CommandType = commandType, Connection = conn })
+                {
+                    if (parameters != null)
+                    {
+                        cmd.Parameters.Clear();
+                        foreach (SqlParameter parameter in parameters)
+                        {
+                            cmd.Parameters.Add(parameter);
+                        }
+                    }
+                    result = cmd.ExecuteScalar().ToString();
+                }
+                return result;
+            }
+        }
+
         protected abstract T MapDataReader(SqlDataReader dr);
 
 

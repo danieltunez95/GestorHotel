@@ -85,23 +85,9 @@ namespace Gh.Testing.Gh.Dao.Tests
         [TestMethod]
         public void GetAllTest()
         {
-            hotelTest.Habitaciones = new List<HabitacionDto>();
-            string hotelString = "1,0,1,1/0,0,1,0/1,1,0,1";
-            string[] habitaciones = hotelString.Split('/');
-            for (int i = 0; i < habitaciones.Length; i++)
-            {
-                string[] habitacion = habitaciones[i].Split(',');
-                for (int j = 0; j < habitacion.Length; j++)
-                {
-                    if (habitacion[j].Equals("1"))
-                    {
-                        hotelTest.Habitaciones.Add(new HabitacionDto() { PosicionX = i, PosicionY = j, MetrosCuadrados = (i + 1) * (j + 1) });
-                    }
-                }
-            }
+            List<HotelDto> hoteles = dao.GetAll();
 
-            Assert.IsTrue(hotelTest.Habitaciones.Count == 7 && hotelTest.Habitaciones[1].PosicionX == 0 &&
-                hotelTest.Habitaciones[1].PosicionY == 2 && hotelTest.Habitaciones[1].MetrosCuadrados == 3);
+            Assert.IsTrue(hoteles != null);
         }
 
         [TestMethod]
@@ -109,6 +95,27 @@ namespace Gh.Testing.Gh.Dao.Tests
         {
             bool hasHotel = dao.HasAnyHotel();
             Assert.IsTrue(hasHotel == true);
+        }
+
+        [TestMethod]
+        public void GetReservasByIdHotelTest()
+        {
+            int result = dao.GetReservasByIdHotel(new HotelDto() { Id = 29 });
+            Assert.IsTrue(result > 0);
+        }
+
+        [TestMethod]
+        public void GetEntradasByIdHotelTest()
+        {
+            int result = dao.GetEntradasByIdHotel(new HotelDto() { Id = 29 });
+            Assert.IsTrue(result > 0);
+        }
+
+        [TestMethod]
+        public void GetSalidasByIdHotelTest()
+        {
+            int result = dao.GetSalidasByIdHotel(new HotelDto() { Id = 29 });
+            Assert.IsTrue(result > 0);
         }
     }
 }

@@ -274,15 +274,15 @@ namespace Gh.Dao
         public List<HotelDto> GetAll()
         {
             string commandText = @"SELECT
-                                    Id,
-                                    Nombre,
-                                    IdPoblacion,
-                                    IdMunicipio,
-                                    Direccion,
-                                    Plantas,
-                                    IdPropietario,
-                                    Estrellas
-                                   FROM Hotel";
+Id,
+Nombre,
+IdPoblacion,
+IdMunicipio,
+Direccion,
+Plantas,
+IdPropietario,
+Estrellas
+FROM Hotel";
             List<SqlParameter> parameters = new List<SqlParameter>();
 
             List<HotelDto> hoteles = GetData(commandText, parameters);
@@ -293,16 +293,16 @@ namespace Gh.Dao
         public HotelDto GetById(int id)
         {
             string commandText = @"SELECT
-                                    Id,
-                                    Nombre,
-                                    IdPoblacion,
-                                    IdMunicipio,
-                                    Direccion,
-                                    Plantas,
-                                    IdPropietario,
-                                    Estrellas
-                                   FROM Hotel
-                                   WHERE Id = @Id";
+Id,
+Nombre,
+IdPoblacion,
+IdMunicipio,
+Direccion,
+Plantas,
+IdPropietario,
+Estrellas
+FROM Hotel
+WHERE Id = @Id";
             List<SqlParameter> parameters = new List<SqlParameter>();
 
             // Id
@@ -413,6 +413,74 @@ namespace Gh.Dao
             if (hoteles.Count > 0)
                 hasHotel = true;
             return hasHotel;
+        }
+
+        public int GetReservasByIdHotel(HotelDto hotel)
+        {
+           string commandText = @"SELECT count(*) 
+FROM reserva 
+WHERE IdHotel = @IdHotel
+AND FechaInicio >= GetDate() 
+AND FechaFinal >= GetDate()";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            CommandType commandType = CommandType.Text;
+
+            // Id
+            SqlParameter idParameter = new SqlParameter();
+            idParameter.DbType = DbType.Int32;
+            idParameter.Direction = ParameterDirection.Input;
+            idParameter.ParameterName = "@IdHotel";
+            idParameter.Value = hotel.Id;
+            parameters.Add(idParameter);
+
+            string result = GetDataScalar(commandText, parameters, commandType);
+
+            return Convert.ToInt32(result);
+        }
+
+        public int GetEntradasByIdHotel(HotelDto hotel)
+        {
+            string commandText = @"SELECT count(*) 
+FROM reserva 
+WHERE IdHotel = @IdHotel
+AND CONVERT(VARCHAR(10), FechaInicio, 103) = CONVERT(VARCHAR(10), GetDate(), 103)";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            CommandType commandType = CommandType.Text;
+
+            // Id
+            SqlParameter idParameter = new SqlParameter();
+            idParameter.DbType = DbType.Int32;
+            idParameter.Direction = ParameterDirection.Input;
+            idParameter.ParameterName = "@IdHotel";
+            idParameter.Value = hotel.Id;
+            parameters.Add(idParameter);
+
+            string result = GetDataScalar(commandText, parameters, commandType);
+
+            return Convert.ToInt32(result);
+        }
+
+        public int GetSalidasByIdHotel(HotelDto hotel)
+        {
+            string commandText = @"SELECT count(*) 
+FROM reserva 
+WHERE IdHotel = @IdHotel 
+AND CONVERT(VARCHAR(10), FechaFinal, 103) = CONVERT(VARCHAR(10), GetDate(), 103)
+";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            CommandType commandType = CommandType.Text;
+
+            // Id
+            SqlParameter idParameter = new SqlParameter();
+            idParameter.DbType = DbType.Int32;
+            idParameter.Direction = ParameterDirection.Input;
+            idParameter.ParameterName = "@IdHotel";
+            idParameter.Value = hotel.Id;
+            parameters.Add(idParameter);
+
+            string result = GetDataScalar(commandText, parameters, commandType);
+
+            return Convert.ToInt32(result);
         }
 
         protected override HotelDto MapDataReader(SqlDataReader dr)
