@@ -21,6 +21,11 @@ namespace Gh.Bus
         public PaisDto GetById(int id)
         {
             return dao.GetById(id);
+
+        }
+            public PaisDto GetByPais(string pais)
+        {
+            return dao.GetByPais(pais);
         }
     }
 }

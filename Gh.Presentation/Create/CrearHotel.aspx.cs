@@ -78,6 +78,7 @@ namespace Gh.Presentation.Create
 
         protected void datosButton_Click(object sender, EventArgs e)
         {
+            PaisBus paisBus = new PaisBus();
             hotel.Nombre = this.nombreBox.Text;
             hotel.Direccion = this.direccionBox.Text;
             hotel.Estrellas = int.Parse(this.estrellasBox.Text);
@@ -85,7 +86,11 @@ namespace Gh.Presentation.Create
             //TODO: rellenar con dropdownlist
             hotel.Municipio = new MunicipioDto(1, "Tarragona");
             hotel.Poblacion = new PoblacionDto(1, "Tarragona");
-            hotel.Pais = new PaisDto(1, "España");
+            hotel.Pais = new PaisDto()
+            {
+                Id = 1,
+                Nombre = "España"
+            };
 
 
             hotel.Plantas = int.Parse(this.plantasTextBox.Text);

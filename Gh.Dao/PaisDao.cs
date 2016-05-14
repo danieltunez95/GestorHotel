@@ -48,6 +48,30 @@ WHERE Id = @Id";
             return pais;
         }
 
+        public PaisDto GetByPais(string pais)
+        {
+            string commandText = @"SELECT
+Id,
+Abreviacion,
+Nombre
+FROM Pais
+WHERE Nombre = @Nombre";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // Nombre
+            SqlParameter nombreParameter = new SqlParameter();
+            nombreParameter.DbType = DbType.String;
+            nombreParameter.Direction = ParameterDirection.Input;
+            nombreParameter.ParameterName = "@Nombre";
+            nombreParameter.Value = pais;
+            parameters.Add(nombreParameter);
+
+            List<PaisDto> paises = GetData(commandText, parameters);
+            PaisDto paisDto = null;
+            if (paises.Count == 1)
+                paisDto = paises[0];
+            return paisDto;
+        }
         protected override PaisDto MapDataReader(SqlDataReader dr)
         {
             PaisDto pais = new PaisDto()
