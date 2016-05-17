@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="TurnoDaoOrderedTest" storage="d:\projects\hotel\gh.testing\gh.dao.tests\turnodaoorderedtest.orderedtest" id="6c2b3386-8dfc-4077-9322-ccdcf5ff4e0a" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="4c88c678-14e2-3d38-9f2c-e75eaaa84303" name="AddTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="6baf8054-968c-03ad-9707-abf5a6d668e1" name="GetAllTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="c0f1352e-485c-91ee-cc1c-1a9ca7786e8c" name="GetByIdTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="7abc37c0-f7ef-9c77-6f24-9718261872eb" name="UpdateTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="51921bce-b042-1724-ed55-b1fd3a2c602d" name="DeleteTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

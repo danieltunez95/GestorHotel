@@ -1,34 +1,41 @@
 ﻿using Gh.Common;
 using Gh.Dao;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gh.Bus
 {
-    public class TurnoBus : BaseBus
+    public class TurnoBus : BaseBus, IBus<TurnoDto>
     {
-        public List<TurnoDto> GetTurnos()
+        TurnoDao dao = null;
+
+        public TurnoBus()
         {
-            TurnoDao turnoDao = new TurnoDao();
-            return turnoDao.GetAll();
+            dao = new TurnoDao();
         }
 
-        public bool AddTurno(TurnoDto turno)
+        public TurnoDto Add(TurnoDto turno)
         {
-            bool correcto = true;
-            try
-            {
-                TurnoDao turnoDao = new TurnoDao();
-                turnoDao.Add(turno);
-            }
-            catch (Exception ex)
-            {
-                correcto = false;
-            }
-            return correcto;
+            return dao.Add(turno);
+        }
+
+        public int Delete(TurnoDto turno)
+        {
+            return dao.Delete(turno);
+        }
+
+        public List<TurnoDto> GetAll()
+        {
+            return dao.GetAll();
+        }
+
+        public TurnoDto GetById(int id)
+        {
+            return dao.GetById(id);
+        }
+
+        public int Update(TurnoDto turno)
+        {
+            return dao.Update(turno);
         }
     }
 }

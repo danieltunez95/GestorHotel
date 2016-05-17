@@ -13,7 +13,7 @@ namespace Gh.Presentation.Manage
         protected void Page_Load(object sender, EventArgs e)
         {
             TurnoBus turnoBus = new TurnoBus();
-            this.turnosView.DataSource = turnoBus.GetTurnos();
+            this.turnosView.DataSource = turnoBus.GetAll();
             this.turnosView.DataBind();
         }
 

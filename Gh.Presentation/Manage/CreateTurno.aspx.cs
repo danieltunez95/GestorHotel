@@ -30,7 +30,7 @@ namespace Gh.Presentation.Manage
             turno.Jornada = int.Parse(this.jornadaBox.Text);
 
             TurnoBus turnoBus = new TurnoBus();
-            turnoBus.AddTurno(turno);
+            turnoBus.Add(turno);
 
             Response.Redirect("~/Manage/Turnos.aspx");
         }

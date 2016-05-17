@@ -14,7 +14,7 @@ namespace Gh.Presentation.Manage
         protected void Page_Load(object sender, EventArgs e)
         {
             UsuarioBus usuarioBus = new UsuarioBus();
-            List<UsuarioDto> usuarios = usuarioBus.GetUsers();
+            List<UsuarioDto> usuarios = usuarioBus.GetAll();
 
             this.usersView.DataSource = usuarios;
             this.usersView.DataBind();

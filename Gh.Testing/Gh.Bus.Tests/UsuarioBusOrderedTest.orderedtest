@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="UsuarioBusOrderedTest" storage="d:\projects\hotel\gh.testing\gh.bus.tests\usuariobusorderedtest.orderedtest" id="adfb79b6-0496-411a-ac28-6f61fa571514" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="66033da9-ba8b-b08a-39f1-53d3333c9792" name="AddTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="b43606e8-9f8c-5595-5248-78d5e413bad6" name="GetAllTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="de146766-c987-02e4-8757-798ef146b95c" name="GetByIdTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="5ee37910-639a-1f0e-eabf-fa0884d680e9" name="GetByUsernameTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="49e221db-1afc-512b-cc6a-9e7324074522" name="UpdateTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="08830e34-7be1-0a2a-54a7-9ac29dc6e234" name="DeleteTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

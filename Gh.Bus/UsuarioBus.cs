@@ -1,79 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Gh.Common;
+﻿using Gh.Common;
 using Gh.Dao;
+using System.Collections.Generic;
 
 namespace Gh.Bus
 {
-    public class UsuarioBus : BaseBus
+    public class UsuarioBus : IBus<UsuarioDto>
     {
-        public bool AddUser(UsuarioDto user)
+        UsuarioDao dao = null;
+
+        public UsuarioBus()
         {
-            bool correcto = true;
-
-            try
-            {
-                UsuarioDao usuarioDao = new UsuarioDao(GetConnectionString());
-                usuarioDao.AddUser(user);
-            }
-            catch (Exception)
-            {
-                //Para que no haga petar al programa, devolvemos error.
-                correcto = false;
-            }
-
-            return correcto;
+            dao = new UsuarioDao();
         }
 
-        public bool UpdateUser(UsuarioDto user)
+        public List<UsuarioDto> GetAll()
         {
-            bool correcto = true;
-            try
-            {
-                UsuarioDao usuarioDao = new UsuarioDao(GetConnectionString());
-                usuarioDao.UpdateUser(user);
-            }
-            catch (Exception)
-            {
-                correcto = false;
-            }
-
-            return correcto;
+            return dao.GetAll();
         }
 
-        public bool DeleteUser(UsuarioDto user)
+        public UsuarioDto GetById(int id)
         {
-            bool correcto = true;
-            try
-            {
-                UsuarioDao usuarioDao = new UsuarioDao(GetConnectionString());
-                usuarioDao.DeleteUser(user);
-            }
-            catch (Exception)
-            {
-                correcto = false;
-            }
-
-            return correcto;
+            return dao.GetById(id);
+        }
+        
+        public UsuarioDto GetByUsername(string username)
+        {
+            return dao.GetByUsername(username);
         }
 
-        public List<UsuarioDto> GetUsers()
+        public UsuarioDto Add(UsuarioDto usuario)
         {
-            UsuarioDao usuarioDao = new UsuarioDao(GetConnectionString());
-            List<UsuarioDto> users = usuarioDao.GetUsers();
-
-            return users;
+            return dao.Add(usuario);
         }
 
-        public UsuarioDto GetUser(int userId)
+        public int Update(UsuarioDto usuario)
         {
-            UsuarioDao usuarioDao = new UsuarioDao(GetConnectionString());
-            UsuarioDto usuario = usuarioDao.GetUser(userId);
+            return dao.Update(usuario);
+        }
 
-            return usuario;
+        public int Delete(UsuarioDto usuario)
+        {
+            return dao.Delete(usuario);
         }
     }
 }

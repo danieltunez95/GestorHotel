@@ -21,7 +21,7 @@ namespace Gh.Presentation.Manage
                 if (Request.QueryString["userId"] != null)
                 {
                     UsuarioBus usuarioBus = new UsuarioBus();
-                    UsuarioDto usuario = usuarioBus.GetUser(int.Parse(Request.QueryString["userId"]));
+                    UsuarioDto usuario = usuarioBus.GetById(int.Parse(Request.QueryString["userId"]));
 
                     this.username.Text = usuario.Username;
                     this.username.Enabled = false; //Dont want it to be editable
@@ -59,7 +59,7 @@ namespace Gh.Presentation.Manage
         protected void createButton_Click(object sender, EventArgs e)
         {
             UsuarioBus usuarioBus = new UsuarioBus();
-            usuarioBus.AddUser(GetActualUser());
+            usuarioBus.Add(GetActualUser());
 
             Response.Redirect("Users.aspx");
         }
@@ -67,7 +67,7 @@ namespace Gh.Presentation.Manage
         protected void updateButton_Click(object sender, EventArgs e)
         {
             UsuarioBus usuarioBus = new UsuarioBus();
-            usuarioBus.UpdateUser(GetActualUser());
+            usuarioBus.Update(GetActualUser());
 
             Response.Redirect("Users.aspx");
         }
@@ -75,7 +75,7 @@ namespace Gh.Presentation.Manage
         protected void eliminarButton_Click(object sender, EventArgs e)
         {
             UsuarioBus usuarioBus = new UsuarioBus();
-            usuarioBus.DeleteUser(GetActualUser());
+            usuarioBus.Delete(GetActualUser());
 
             Response.Redirect("Users.aspx");
         }

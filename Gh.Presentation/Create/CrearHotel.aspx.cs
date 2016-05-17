@@ -109,7 +109,7 @@ namespace Gh.Presentation.Create
             hotelBus.Add(hotel);
 
             UsuarioBus usuarioBus = new UsuarioBus();
-            usuarioBus.AddUser(usuario);
+            usuarioBus.Add(usuario);
 
             this.datosPanel.Visible = false;
             this.fisicoPanel.Visible = true;

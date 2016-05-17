@@ -207,17 +207,20 @@ namespace Gh.Dao
             List<SqlParameter> parameters = new List<SqlParameter>();
 
             #region Habitaciones
-            if (hotel.Habitaciones.Count > 0)
+            if (hotel.Habitaciones != null)
             {
-                int habitacionesAEliminar = hotel.Habitaciones.Count;
-                int habitacionesEliminadas = 0;
-                foreach (HabitacionDto habitacion in hotel.Habitaciones)
+                if (hotel.Habitaciones.Count > 0)
                 {
-                    habitacionesEliminadas += DeleteHabitacion(habitacion);
-                }
-                if(habitacionesEliminadas != habitacionesAEliminar)
-                {
-                    throw new Exception("No se han podido eliminar todas las habitaciones.");
+                    int habitacionesAEliminar = hotel.Habitaciones.Count;
+                    int habitacionesEliminadas = 0;
+                    foreach (HabitacionDto habitacion in hotel.Habitaciones)
+                    {
+                        habitacionesEliminadas += DeleteHabitacion(habitacion);
+                    }
+                    if (habitacionesEliminadas != habitacionesAEliminar)
+                    {
+                        throw new Exception("No se han podido eliminar todas las habitaciones.");
+                    }
                 }
             }
 
@@ -283,9 +286,8 @@ Plantas,
 IdPropietario,
 Estrellas
 FROM Hotel";
-            List<SqlParameter> parameters = new List<SqlParameter>();
 
-            List<HotelDto> hoteles = GetData(commandText, parameters);
+            List<HotelDto> hoteles = GetData(commandText, null);
 
             return hoteles;
         }
@@ -372,7 +374,7 @@ WHERE Id = @Id";
             SqlParameter plantasParameter = new SqlParameter();
             plantasParameter.DbType = DbType.Int32;
             plantasParameter.Direction = ParameterDirection.Input;
-            plantasParameter.Value = hotel.Plantas < 0 ? hotel.Plantas : 0;
+            plantasParameter.Value = hotel.Plantas > 0 ? hotel.Plantas : 0;
             plantasParameter.ParameterName = "@Plantas";
             parameters.Add(plantasParameter);
 
