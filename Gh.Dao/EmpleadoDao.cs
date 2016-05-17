@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
+using System;
 
 namespace Gh.Dao
 {
-    public class EmpleadoDao : IDao<EmpleadoDto>
+    public class EmpleadoDao : BaseDao<EmpleadoDto>, IDao<EmpleadoDto>
     {
         string connectionString;
-
-        public EmpleadoDao(string connectionString)
-        {
-            this.connectionString = connectionString;
-        }
 
         public EmpleadoDto Add(EmpleadoDto entity)
         {
@@ -66,6 +62,11 @@ namespace Gh.Dao
             string commandText = "Empleado_Update";
             int result = 0;
             return result;
+        }
+
+        protected override EmpleadoDto MapDataReader(SqlDataReader dr)
+        {
+            throw new NotImplementedException();
         }
     }
 }

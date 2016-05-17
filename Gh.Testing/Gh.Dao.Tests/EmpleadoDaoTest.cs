@@ -15,7 +15,7 @@ namespace Gh.Testing.Gh.Dao.Tests
 
         public EmpleadoDaoTest()
         {
-            dao = new EmpleadoDao("");
+            dao = new EmpleadoDao();
             empleadoTest = new EmpleadoDto()
             {
                 FechaInicio = new DateTime(2016, 1, 1),

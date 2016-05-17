@@ -4,13 +4,13 @@ using Gh.Dao;
 
 namespace Gh.Bus
 {
-    public class EmpleadoBus : BaseBus, IBus<EmpleadoDto>
+    public class EmpleadoBus : IBus<EmpleadoDto>
     {
         EmpleadoDao dao = null;
-
+        
         public EmpleadoBus()
         {
-            dao = new EmpleadoDao(GetConnectionString());
+            dao = new EmpleadoDao();
         }
 
         public EmpleadoDto Add(EmpleadoDto empleado)

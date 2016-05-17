@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Gh.Bus
 {
-    public class TurnoBus : BaseBus, IBus<TurnoDto>
+    public class TurnoBus : IBus<TurnoDto>
     {
         TurnoDao dao = null;
 
