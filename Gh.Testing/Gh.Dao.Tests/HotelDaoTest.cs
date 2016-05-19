@@ -39,10 +39,13 @@ namespace Gh.Testing.Gh.Dao.Tests
                 Propietario = new EmpleadoDto()
                 {
                     Id = 1,
-                    Nombre = "Daniel",
-                    PrimerApellido = "Tuna",
-                    SegundoApellido = "Eclesiastica",
-                    FechaNacimiento = new DateTime(1990, 1, 1),
+                    Persona = new PersonaDto()
+                    {
+                        Nombre = "Daniel",
+                        PrimerApellido = "Tuna",
+                        SegundoApellido = "Eclesiastica",
+                        FechaNacimiento = new DateTime(1990, 1, 1)
+                    },
                     FechaInicio = new DateTime(2000, 1, 1),
                     Oficio = Oficio.Director
                 },

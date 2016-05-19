@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Gh.Bus.Tests\HotelBusTest.cs" />
     <Compile Include="Gh.Bus.Tests\TurnoBusTest.cs" />
+    <Compile Include="Gh.Bus.Tests\EmpleadoBusTest.cs" />
     <Compile Include="Gh.Bus.Tests\UsuarioBusTest.cs" />
     <Compile Include="Gh.Dao.Tests\EmpleadoDaoTest.cs" />
     <Compile Include="Gh.Dao.Tests\HotelDaoTest.cs" />
@@ -82,6 +83,9 @@
     <None Include="Gh.Bus.Tests\HotelBusOrderedTest.orderedtest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Gh.Bus.Tests\EmpleadoBusOrderedTest.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Gh.Bus.Tests\UsuarioBusOrderedTest.orderedtest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -90,6 +94,9 @@
     </None>
     <None Include="Gh.Dao.Tests\App.config" />
     <None Include="Gh.Dao.Tests\HotelDaoOrderedTest.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Gh.Dao.Tests\EmpleadoDaoOrderedTest.orderedtest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Gh.Dao.Tests\UsuarioDaoOrderedTest.orderedtest">

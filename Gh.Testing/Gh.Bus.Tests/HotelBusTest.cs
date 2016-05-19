@@ -46,12 +46,15 @@ namespace Gh.Testing.Gh.Bus.Tests
                 Propietario = new EmpleadoDto()
                 {
                     Id = 1,
-                    Nombre = "ChocoBoy",
-                    PrimerApellido = "ChocoTun",
-                    SegundoApellido = "ChocoBer",
-                    FechaNacimiento = new DateTime(1990, 1, 1),
-                    FechaInicio = new DateTime(2000, 1, 1),
-                    Oficio = Oficio.Director
+                    Persona = new PersonaDto()
+                    {
+                        Nombre = "ChocoBoy",
+                        PrimerApellido = "ChocoTun",
+                        SegundoApellido = "ChocoBer",
+                        FechaNacimiento = new DateTime(1990, 1, 1)
+                    },
+                    Oficio = Oficio.Director,
+                    FechaInicio = new DateTime(2000, 1, 1)
                 },
             };
 

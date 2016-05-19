@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="EmpleadoBusOrderedTest" storage="d:\projects\hotel\gh.testing\gh.bus.tests\empleadobusorderedtest.orderedtest" id="22ffa34c-2c90-451c-8140-884d42dfc4b9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="8131c7b9-4ebf-2238-61d1-588a4b4af005" name="AddTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="c307b224-da4c-cd87-12a9-68100293f368" name="GetAllTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="41fcf7d5-0b46-2b85-bb8f-ea19379ae1a1" name="GetByIdTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="cc5df530-33f3-4cb3-3fb9-a8cb8adec5be" name="UpdateTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="e99786de-4ec1-c339-41b1-1dd237655a87" name="DeleteTest" storage="..\bin\debug\gh.testing.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

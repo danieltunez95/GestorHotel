@@ -34,10 +34,10 @@ namespace Gh.Presentation.Manage
         protected void crearButton_Click(object sender, EventArgs e)
         {
             EmpleadoDto empleado = new EmpleadoDto();
-            empleado.Nombre = this.Nombre.Text;
-            empleado.PrimerApellido = this.PrimerApellido.Text;
-            empleado.SegundoApellido = this.SegundoApellido.Text;
-            empleado.FechaNacimiento = DateTime.Parse(this.FechaNacimiento.Text);
+            empleado.Persona.Nombre = this.Nombre.Text;
+            empleado.Persona.PrimerApellido = this.PrimerApellido.Text;
+            empleado.Persona.SegundoApellido = this.SegundoApellido.Text;
+            empleado.Persona.FechaNacimiento = DateTime.Parse(this.FechaNacimiento.Text);
             /* TODO: rellenar objeto persona */
 
             empleado.Oficio = (Oficio)Enum.Parse(typeof(Role), this.oficio.SelectedValue != "" ? this.oficio.SelectedValue : "0");

@@ -44,6 +44,7 @@
     <Compile Include="CamaEnum.cs" />
     <Compile Include="MunicipioDto.cs" />
     <Compile Include="PaisDto.cs" />
+    <Compile Include="PersonaDto.cs" />
     <Compile Include="PoblacionDto.cs" />
     <Compile Include="ProvinciaDto.cs" />
     <Compile Include="RoleEnum.cs" />

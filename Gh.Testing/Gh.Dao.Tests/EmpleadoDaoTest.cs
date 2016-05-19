@@ -11,25 +11,26 @@ namespace Gh.Testing.Gh.Dao.Tests
     public class EmpleadoDaoTest 
     {
         EmpleadoDao dao = null;
-        EmpleadoDto empleadoTest = null;
+        static EmpleadoDto empleadoTest = null;
 
         public EmpleadoDaoTest()
         {
             dao = new EmpleadoDao();
-            empleadoTest = new EmpleadoDto()
-            {
-                FechaInicio = new DateTime(2016, 1, 1),
-                FechaNacimiento = new DateTime(1995, 2, 5),
-                Nombre = "Eduardo",
-                PrimerApellido = "Manos",
-                SegundoApellido = "Tijeras",
-                Oficio = Oficio.Botones
-            };
         }
 
         [TestMethod]
         public void AddTest()
         {
+            empleadoTest = new EmpleadoDto()
+            {
+                FechaInicio = new DateTime(2016, 1, 1),
+                Oficio = Oficio.Botones,
+                CuentaBancaria = "2313EWFWSFSD",
+                Persona = new PersonaDto() { Id = 1 },
+                FechaFin = new DateTime(2016, 12, 31),
+                SalarioBruto = 980,
+                Turno = new TurnoDto() { Id = 1 }
+            };
             EmpleadoDto empleadoAdded = dao.Add(empleadoTest);
             Assert.IsTrue(empleadoAdded != null && empleadoAdded.Id != -1);
             empleadoTest.Id = empleadoAdded.Id;
@@ -53,7 +54,6 @@ namespace Gh.Testing.Gh.Dao.Tests
         [TestMethod]
         public void UpdateTest()
         {
-            Assert.IsTrue(empleadoTest.NombreCompleto != null);
             int result;
             empleadoTest.Oficio = Oficio.Camarero;
             result = dao.Update(empleadoTest);
