@@ -42,6 +42,11 @@ namespace Gh.Presentation.Manage
 
         }
 
+        protected void IndexButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Manage/Main.aspx");
+        }
+
         protected void UsuariosButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Manage/Users.aspx");

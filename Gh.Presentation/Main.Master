@@ -39,6 +39,7 @@
             <div class="row">
                 <div class="col-sm-3 sidebar">
                     <asp:dropdownlist runat="server" CssClass="form-control" id="hotelList" OnSelectedIndexChanged="hotelList_SelectedIndexChanged"></asp:dropdownlist>
+                    <asp:Button ID="indexButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Inicio" OnClick="IndexButton_Click" />
                     <asp:Button ID="edicionButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Edición" OnClick="edicionButton_Click" />
                     <asp:Button ID="UsuariosButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Usuarios" OnClick="UsuariosButton_Click" />
                     <asp:Button ID="empleadosButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Empleados" OnClick="empleadosButton_Click" />
