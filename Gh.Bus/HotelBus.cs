@@ -109,7 +109,11 @@ namespace Gh.Bus
 
         public HotelDto GetByNombre(string nombre)
         {
-            return dao.GetByNombre(nombre);
+            HotelDto hotel = dao.GetByNombre(nombre);
+            hotel.Habitaciones = habitacionDao.GetAllByIdHotel(hotel);
+            hotel.Ancho = hotel.Habitaciones.OrderBy(x => x.PosicionY).ToList()[hotel.Habitaciones.Count - 1].PosicionY;
+            hotel.Largo = hotel.Habitaciones.OrderBy(x => x.PosicionX).ToList()[hotel.Habitaciones.Count - 1].PosicionX;
+            return hotel;
         }
     }
 }

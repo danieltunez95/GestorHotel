@@ -130,5 +130,13 @@ namespace Gh.Testing.Gh.Bus.Tests
             int result = hotelBus.GetSalidasByIdHotel(new HotelDto() { Id = 29 });
             Assert.IsTrue(result >= 0);
         }
+        [TestMethod]
+        public void GetByNombreTest()
+        {
+            string nombre = "ViniDate Hotel";
+            HotelDto hotel = hotelBus.GetByNombre(nombre);
+
+            Assert.IsTrue(hotel != null && hotel.Habitaciones.Count > 0);
+        }
     }
 }
