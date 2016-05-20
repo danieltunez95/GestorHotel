@@ -19,27 +19,6 @@ namespace Gh.Dao
             return conn;
         }
 
-        //public void GetData(string commandText, string commandType, List<SqlParameter> parameters)
-        //{
-        //    using (SqlConnection connection = new SqlConnection("Server=tcp:gestorhotel.database.windows.net,1433;Database=GestorHotel;User ID=hoteladmin@gestorhotel;Password=Abcd1234;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30"))
-        //    {
-        //        using (SqlCommand command = new SqlCommand())
-        //        {
-        //            SqlDataReader reader;
-        //            command.CommandText = commandText;
-        //            command.CommandType = (CommandType)Enum.Parse(typeof(CommandType), commandType);
-        //            foreach (SqlParameter param in parameters)
-        //            {
-        //                command.Parameters.Add(param);
-        //            }
-
-        //            command.Connection = connection;
-        //            connection.Open();
-        //            reader = command.ExecuteReader();
-        //        }
-        //    }
-        //}
-
         protected virtual List<T> GetData(string commandText, List<SqlParameter> parameters)
         {
             List<T> dtos = GetData(commandText, parameters, CommandType.Text);
@@ -89,7 +68,8 @@ namespace Gh.Dao
                             cmd.Parameters.Add(parameter);
                         }
                     }
-                    result = cmd.ExecuteScalar().ToString();
+                    dynamic test = cmd.ExecuteScalar();
+                    result = cmd.ExecuteScalar() != null ? cmd.ExecuteScalar().ToString() : null;
                 }
                 return result;
             }

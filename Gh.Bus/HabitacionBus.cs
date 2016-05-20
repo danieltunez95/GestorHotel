@@ -1,46 +1,52 @@
 ﻿using Gh.Common;
+using Gh.Dao;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gh.Bus
 {
     public class HabitacionBus : IBus<HabitacionDto>
     {
-        public HabitacionDto Add(HabitacionDto entity)
+        HabitacionDao dao = null;
+
+        public HabitacionBus()
         {
-            throw new NotImplementedException();
+            dao = new HabitacionDao();
         }
 
-        public int Delete(HabitacionDto entity)
+        public HabitacionDto Add(HabitacionDto habitacion)
         {
-            throw new NotImplementedException();
+            return dao.Add(habitacion);
+        }
+
+        public int Delete(HabitacionDto habitacion)
+        {
+            return dao.Delete(habitacion);
         }
 
         public List<HabitacionDto> GetAll()
         {
-            throw new NotImplementedException();
+            return dao.GetAll();
+        }
+
+        public List<HabitacionDto> GetAllByIdHotel(HotelDto hotel)
+        {
+            return dao.GetAllByIdHotel(hotel);
         }
 
         public HabitacionDto GetById(int id)
         {
-            throw new NotImplementedException();
+            return dao.GetById(id);
         }
 
-        public int Update(HabitacionDto entity)
+        public int Update(HabitacionDto habitacion)
         {
-            throw new NotImplementedException();
+            return dao.Update(habitacion);
         }
 
-        public bool Ocupada(int hotelId, int posicionX, int posicionY, DateTime fechaInicio, DateTime fechaFinal)
+        public bool isBusy(int hotelId, int posicionX, int posicionY, int planta, DateTime fechaInicio, DateTime fechaFinal)
         {
-            bool ocupada = false;
-
-            throw new NotImplementedException();
-
-            return ocupada;
+            return dao.isBusy(hotelId, posicionX, posicionY, planta, fechaInicio, fechaFinal);
         }
     }
 }
