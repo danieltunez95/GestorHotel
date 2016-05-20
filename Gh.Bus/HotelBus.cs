@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Gh.Common;
 using Gh.Dao;
+using System.Linq;
 
 namespace Gh.Bus
 {
@@ -43,6 +44,8 @@ namespace Gh.Bus
         {
             HotelDto hotel = dao.GetById(id);
             hotel.Habitaciones = habitacionDao.GetAllByIdHotel(hotel);
+            hotel.Ancho = hotel.Habitaciones.OrderBy(x => x.PosicionY).ToList()[hotel.Habitaciones.Count].PosicionY;
+            hotel.Largo = hotel.Habitaciones.OrderBy(x => x.PosicionX).ToList()[hotel.Habitaciones.Count].PosicionX;
             return hotel;
         }
 
