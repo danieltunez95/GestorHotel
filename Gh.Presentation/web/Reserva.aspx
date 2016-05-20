@@ -14,8 +14,8 @@
     <h1 id="plantaActual" runat="server"></h1>
     <div class="row">
         <div class="col-lg-1">
-            <asp:ImageButton ID="arrowUp" runat="server"  src="Sources/arrowUp.png" OnClick="arrowUp_Click"  /> <br />
-            <asp:ImageButton ID="arrowDown" runat="server"  src="Sources/arrowDown.png" OnClick="arrowDown_Click" /> <br />
+            <asp:ImageButton ID="arrowUp" runat="server"  src="Sources/arrowUp.png" OnClick="arrowUp_Click" Visible="False"  /> <br />
+            <asp:ImageButton ID="arrowDown" runat="server"  src="Sources/arrowDown.png" OnClick="arrowDown_Click" Visible="False" /> <br />
         </div>
         <div class="col-lg-11">
             <asp:Panel ID="hotelTable" runat="server"></asp:Panel>

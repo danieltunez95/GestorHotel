@@ -15,6 +15,7 @@ namespace Gh.Presentation.web
         static HotelBus hotelBus = new HotelBus();
         static HabitacionBus habitacionBus = new HabitacionBus();
         static int hotelId;
+        static HotelDto hotel;
         static int planta = 0;
         static DateTime fechaInicio;
         static DateTime fechaFinal;
@@ -27,7 +28,7 @@ namespace Gh.Presentation.web
                 //TODO: Implementar función
                 //hotelId = hotelBus.GetIdByName(nombre);
 
-                hotelId = 48;
+                hotelId = 49;
             }
         }
 
@@ -37,7 +38,7 @@ namespace Gh.Presentation.web
             StringBuilder table = new StringBuilder();
 
             HotelDto hotelDto = hotelBus.GetById(hotelId);
-
+            
             table.Append("<table>");
             for (int x = 0; x < hotelDto.Ancho; x++)
             {
@@ -45,13 +46,13 @@ namespace Gh.Presentation.web
                 for (int y = 0; y < hotelDto.Largo; y++)
                 {
                     table.Append("<td>");
-                    //if (habitacionBus.existHabitacion(x, y, planta, hotelId))
-                   // {
+                   if (habitacionBus.existHabitacion(x, y, planta, hotelId))
+                   {
                         if (habitacionBus.isBusy(hotelId, x, y, planta, fechaInicio, fechaFinal))
                             table.Append("<div class='celda ocupada' onclick = 'cellClick(this.id)' id = '" + x + "_" + y + "'></div>");
                         else
                             table.Append("<div class='celda libre'></div>");
-                   // }
+                   }
 
                     table.Append("</td>");
                 }
@@ -93,13 +94,23 @@ namespace Gh.Presentation.web
         protected void arrowUp_Click(object sender, ImageClickEventArgs e)
         {
             planta++;
-            PrintData();
+            if (planta > 0)
+                arrowDown.Visible = true;
             
+            if (planta == hotel.Plantas - 1)
+                arrowDown.Visible = false;
+
+            PrintData();
         }
 
         protected void arrowDown_Click(object sender, ImageClickEventArgs e)
         {
-            planta++;
+            planta--;
+            if (planta < hotel.Plantas)
+                arrowDown.Visible = true;
+            
+            if (planta == 0)
+                arrowDown.Visible = false;
             PrintData();
         }
     }

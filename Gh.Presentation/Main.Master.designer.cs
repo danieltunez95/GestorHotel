@@ -40,6 +40,15 @@ namespace Gh.Presentation.Manage {
         protected global::System.Web.UI.WebControls.DropDownList hotelList;
         
         /// <summary>
+        /// indexButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button indexButton;
+        
+        /// <summary>
         /// edicionButton control.
         /// </summary>
         /// <remarks>

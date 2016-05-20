@@ -22,7 +22,7 @@ namespace Gh.Presentation.Manage
             {
                 if (!IsPostBack && Session["hotel"] != null)
                 {
-                    HotelDto hotel = hotelBus.GetById(29);
+                    HotelDto hotel = hotelBus.GetById(49);
                     //Do everything
                     //Habitaciones disponibles
                     int habitaciones = 0;
