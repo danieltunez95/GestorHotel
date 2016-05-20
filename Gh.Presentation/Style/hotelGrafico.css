@@ -9,3 +9,11 @@
     float:left;
     background-color:dodgerblue;
 }
+
+.ocupado{
+    background-color:red;
+}
+
+.libre{
+    background-color:lawngreen;
+}

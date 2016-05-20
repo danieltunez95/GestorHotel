@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="Gh.Presentation.Web.Web" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link href="/Style/master.css" rel="stylesheet" />
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><asp:Label runat="server" ID="nombreHotel">Hotel Ejemplo</asp:Label> </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/Web/Main.aspx#">Inicio</a></li>
+                        <li><a href="/Web/Main.aspx#acercade">Acerca de</a></li>
+                        <li><a href="/Web/Main.aspx#contacto">Contacto</a></li>
+                        <li><a href="/Web/reserva.aspx">Reserva</a></li>
+                        <li><a href="/Manage/Main.aspx">Gestion</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="col-sm-12 main">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <!-- Site footer -->
+            <footer class="footer">
+                <div class="container">
+                    <p class="text-muted" style="font-size:x-large">© 2016 Hotel Ejemplo de ViniDate, SL. Cualquier parecido con la realidad es pura coincidencia.</p>
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

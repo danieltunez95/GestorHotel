@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmpleadoBus.cs" />
+    <Compile Include="HabitacionBus.cs" />
     <Compile Include="MunicipioBus.cs" />
     <Compile Include="PaisBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

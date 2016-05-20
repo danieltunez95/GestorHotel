@@ -103,7 +103,7 @@
     <Content Include="Create\Detalles.aspx" />
     <Content Include="Create\Main.aspx" />
     <Content Include="Create\scripts\CrearHotel.js" />
-    <Content Include="Create\style\Style.css" />
+    <Content Include="Style\hotelGrafico.css" />
     <Content Include="Manage\CreateEmpleado.aspx" />
     <Content Include="Manage\CreateTurno.aspx" />
     <Content Include="Manage\CreateUser.aspx" />
@@ -129,6 +129,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="web\Main.aspx" />
+    <Content Include="web\Reserva.aspx" />
+    <Content Include="web\Sources\hotel-demo-1.jpg" />
+    <Content Include="web\Sources\hotel-demo-2.jpg" />
+    <Content Include="web\Sources\hotel-demo-3.jpg" />
+    <Content Include="web\Web.master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
@@ -211,6 +217,27 @@
     <Compile Include="Manage\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
+    <Compile Include="web\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Reserva.aspx.cs">
+      <DependentUpon>Reserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Reserva.aspx.designer.cs">
+      <DependentUpon>Reserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Web.master.cs">
+      <DependentUpon>Web.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Web.master.designer.cs">
+      <DependentUpon>Web.master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gh.Bus\Gh.Bus.csproj">
@@ -223,9 +250,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Corporative\" />
+    <Folder Include="Create\style\" />
     <Folder Include="Manage\Style\" />
     <Folder Include="Properties\" />
-    <Folder Include="Web\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

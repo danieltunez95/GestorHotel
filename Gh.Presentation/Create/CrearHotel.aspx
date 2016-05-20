@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="style/Style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Style/hotelGrafico.css" rel="stylesheet" />
     <script src="scripts/CrearHotel.js?v=1"></script>
     <style type="text/css">
         #Text1 {
