@@ -61,6 +61,8 @@
     <Compile Include="Gh.Dao.Tests\EmpleadoDaoTest.cs" />
     <Compile Include="Gh.Dao.Tests\HotelDaoTest.cs" />
     <Compile Include="Gh.Dao.Tests\TurnoDaoTest.cs" />
+    <Compile Include="Gh.Dao.Tests\ReservaDaoTest.cs" />
+    <Compile Include="Gh.Dao.Tests\HabitacionDaoTest.cs" />
     <Compile Include="Gh.Dao.Tests\UsuarioDaoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

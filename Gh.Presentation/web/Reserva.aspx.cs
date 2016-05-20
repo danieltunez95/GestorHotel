@@ -42,7 +42,7 @@ namespace Gh.Presentation.web
                 for (int t = 0; t < hotelDto.Largo; t++)
                 {
                     table.Append("<td>");
-                    if (habitacionBus.Ocupada(hotelId, i, t, fechaInicio, fechaFinal))
+                    if (habitacionBus.isBusy(hotelId, i, t, 0, fechaInicio, fechaFinal))
                         table.Append("<div class='celda ocupada'></div>");
                     else
                         table.Append("<div class='celda libre'></div>");

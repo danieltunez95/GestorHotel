@@ -215,6 +215,77 @@ WHERE Id = @Id";
             return habitacion;
         }
 
+        public bool isBusy(int hotelId, int posicionX, int posicionY, int planta, DateTime fechaInicio, DateTime fechaFinal)
+        {
+            string commandText = @"SELECT
+DISTINCT 1 
+FROM Habitacion h
+INNER JOIN Reserva r ON (h.Id = r.IdHabitacion)
+WHERE h.IdHotel = @IdHotel 
+AND h.PosicionX = @PosicionX
+AND h.PosicionY = @PosicionY
+AND h.Planta    = @Planta
+AND r.FechaInicio >= @FechaInicio
+AND r.FechaFinal <= @FechaFinal";
+
+            //string sqlFormattedDate = fechaInicio.ToString("yyyy-MM-dd HH:mm:ss");
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // HotelId
+            SqlParameter hotelIdParameter = new SqlParameter();
+            hotelIdParameter.DbType = DbType.Int32;
+            hotelIdParameter.Direction = ParameterDirection.Input;
+            hotelIdParameter.ParameterName = "@Idhotel";
+            hotelIdParameter.Value = hotelId;
+            parameters.Add(hotelIdParameter);
+
+            // PosicionX
+            SqlParameter posicionXParameter = new SqlParameter();
+            posicionXParameter.DbType = DbType.Int32;
+            posicionXParameter.Direction = ParameterDirection.Input;
+            posicionXParameter.ParameterName = "@PosicionX";
+            posicionXParameter.Value = posicionX;
+            parameters.Add(posicionXParameter);
+
+            // PosicionY
+            SqlParameter posicionYParameter = new SqlParameter();
+            posicionYParameter.DbType = DbType.Int32;
+            posicionYParameter.Direction = ParameterDirection.Input;
+            posicionYParameter.ParameterName = "@PosicionY";
+            posicionYParameter.Value = posicionY;
+            parameters.Add(posicionYParameter);
+
+            // Planta
+            SqlParameter plantaParameter = new SqlParameter();
+            plantaParameter.DbType = DbType.Int32;
+            plantaParameter.Direction = ParameterDirection.Input;
+            plantaParameter.ParameterName = "@Planta";
+            plantaParameter.Value = planta;
+            parameters.Add(plantaParameter);
+
+            // FechaInicio
+            fechaInicio = fechaInicio.AddHours(16);
+            SqlParameter fechaInicioParameter = new SqlParameter();
+            fechaInicioParameter.DbType = DbType.String;
+            fechaInicioParameter.Direction = ParameterDirection.Input;
+            fechaInicioParameter.ParameterName = "@FechaInicio";
+            fechaInicioParameter.Value = fechaInicio.ToString("yyyy-MM-dd HH:mm:ss");
+            parameters.Add(fechaInicioParameter);
+
+            // FechaFinal
+            fechaFinal = fechaFinal.AddHours(16);
+            SqlParameter fechaFinalParameter = new SqlParameter();
+            fechaFinalParameter.DbType = DbType.String;
+            fechaFinalParameter.Direction = ParameterDirection.Input;
+            fechaFinalParameter.ParameterName = "@FechaFinal";
+            fechaFinalParameter.Value = fechaFinal.ToString("yyyy-MM-dd HH:mm:ss");
+            parameters.Add(fechaFinalParameter);
+
+            string result = GetDataScalar(commandText, parameters, CommandType.Text);
+            
+            return Convert.ToBoolean(Convert.ToInt32(result));
+        }
+
         public int Update(HabitacionDto habitacion)
         {
             string commandText = "Habitacion_Update";
