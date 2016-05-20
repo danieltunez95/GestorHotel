@@ -45,7 +45,7 @@ namespace Gh.Dao
             posicionXParameter.ParameterName = "@PosicionX";
             parameters.Add(posicionXParameter);
 
-            // PosicionX
+            // PosicionY
             SqlParameter posicionYParameter = new SqlParameter();
             posicionYParameter.DbType = DbType.Int32;
             posicionYParameter.Direction = ParameterDirection.Input;
