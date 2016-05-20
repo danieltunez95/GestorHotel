@@ -153,5 +153,13 @@ namespace Gh.Testing.Gh.Dao.Tests
             int result = dao.GetSalidasByIdHotel(new HotelDto() { Id = 29 });
             Assert.IsTrue(result >= 0);
         }
+
+        [TestMethod]
+        public void GetByNombre()
+        {
+            string nombre = "ViniDate Hotel";
+            HotelDto hotel = dao.GetByNombre(nombre);
+            Assert.IsTrue(hotel != null);
+        }
     }
 }

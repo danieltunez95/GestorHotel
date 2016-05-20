@@ -485,6 +485,37 @@ AND CONVERT(VARCHAR(10), FechaFinal, 103) = CONVERT(VARCHAR(10), GetDate(), 103)
             return Convert.ToInt32(result);
         }
 
+        public HotelDto GetByNombre(string nombre)
+        {
+            string commandText = @"SELECT 
+Id,
+Nombre,
+IdPoblacion,
+IdMunicipio,
+Direccion,
+Plantas,
+IdPropietario,
+Estrellas
+ FROM Hotel WHERE Nombre = @Nombre";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // Nombre
+            SqlParameter nombreParameter = new SqlParameter();
+            nombreParameter.DbType = DbType.String;
+            nombreParameter.Direction = ParameterDirection.Input;
+            nombreParameter.ParameterName = "@Nombre";
+            nombreParameter.Value = nombre;
+            parameters.Add(nombreParameter);
+
+            List<HotelDto> hoteles = GetData(commandText, parameters);
+            HotelDto hotel = null;
+
+            if (hoteles.Count == 1)
+                hotel = hoteles[0];
+
+            return hotel;
+        }
+
         protected override HotelDto MapDataReader(SqlDataReader dr)
         {
             HotelDto hotel = new HotelDto()

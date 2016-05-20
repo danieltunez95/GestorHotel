@@ -106,5 +106,10 @@ namespace Gh.Bus
         {
             return dao.GetSalidasByIdHotel(hotel);
         }
+
+        public HotelDto GetByNombre(string nombre)
+        {
+            return dao.GetByNombre(nombre);
+        }
     }
 }
