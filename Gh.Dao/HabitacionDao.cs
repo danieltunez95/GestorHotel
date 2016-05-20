@@ -215,7 +215,7 @@ WHERE Id = @Id";
             return habitacion;
         }
 
-        public bool isBusy(int hotelId, int posicionX, int posicionY, int planta, DateTime fechaInicio, DateTime fechaFinal)
+        public bool isBusy(int idHotel, int posicionX, int posicionY, int planta, DateTime fechaInicio, DateTime fechaFinal)
         {
             string commandText = @"SELECT
 DISTINCT 1 
@@ -236,7 +236,7 @@ AND r.FechaFinal <= @FechaFinal";
             hotelIdParameter.DbType = DbType.Int32;
             hotelIdParameter.Direction = ParameterDirection.Input;
             hotelIdParameter.ParameterName = "@Idhotel";
-            hotelIdParameter.Value = hotelId;
+            hotelIdParameter.Value = idHotel;
             parameters.Add(hotelIdParameter);
 
             // PosicionX
@@ -283,6 +283,54 @@ AND r.FechaFinal <= @FechaFinal";
 
             string result = GetDataScalar(commandText, parameters, CommandType.Text);
             
+            return Convert.ToBoolean(Convert.ToInt32(result));
+        }
+
+        public bool existHabitacion(int idHotel, int posicionX, int posicionY, int planta)
+        {
+            string commandText = @"SELECT
+DISTINCT 1
+FROM Habitacion
+WHERE IdHotel = @IdHotel
+AND PosicionX = @PosicionX
+AND PosicionY = @PosicionY
+AND Planta = @Planta";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // IdHotel
+            SqlParameter idHotelParameter = new SqlParameter();
+            idHotelParameter.DbType = DbType.Int32;
+            idHotelParameter.Direction = ParameterDirection.Input;
+            idHotelParameter.ParameterName = "@IdHotel";
+            idHotelParameter.Value = idHotel;
+            parameters.Add(idHotelParameter);
+
+            // PosicionX
+            SqlParameter posicionXParameter = new SqlParameter();
+            posicionXParameter.DbType = DbType.Int32;
+            posicionXParameter.Direction = ParameterDirection.Input;
+            posicionXParameter.ParameterName = "@PosicionX";
+            posicionXParameter.Value = posicionX;
+            parameters.Add(posicionXParameter);
+
+            // PosicionY
+            SqlParameter posicionYParameter = new SqlParameter();
+            posicionYParameter.DbType = DbType.Int32;
+            posicionYParameter.Direction = ParameterDirection.Input;
+            posicionYParameter.ParameterName = "@PosicionY";
+            posicionYParameter.Value = posicionY;
+            parameters.Add(posicionYParameter);
+
+            // Planta
+            SqlParameter plantaParameter = new SqlParameter();
+            plantaParameter.DbType = DbType.Int32;
+            plantaParameter.Direction = ParameterDirection.Input;
+            plantaParameter.ParameterName = "@Planta";
+            plantaParameter.Value = planta;
+            parameters.Add(plantaParameter);
+
+            string result = GetDataScalar(commandText, parameters, CommandType.Text);
+
             return Convert.ToBoolean(Convert.ToInt32(result));
         }
 

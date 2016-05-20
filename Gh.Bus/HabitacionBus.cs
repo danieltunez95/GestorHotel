@@ -44,9 +44,14 @@ namespace Gh.Bus
             return dao.Update(habitacion);
         }
 
-        public bool isBusy(int hotelId, int posicionX, int posicionY, int planta, DateTime fechaInicio, DateTime fechaFinal)
+        public bool isBusy(int idHotel, int posicionX, int posicionY, int planta, DateTime fechaInicio, DateTime fechaFinal)
         {
-            return dao.isBusy(hotelId, posicionX, posicionY, planta, fechaInicio, fechaFinal);
+            return dao.isBusy(idHotel, posicionX, posicionY, planta, fechaInicio, fechaFinal);
+        }
+
+        public bool existHabitacion(int idHotel, int posicionX, int posicionY, int planta)
+        {
+            return dao.existHabitacion(idHotel, posicionX, posicionY, planta);
         }
     }
 }
