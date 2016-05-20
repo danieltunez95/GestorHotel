@@ -15,6 +15,9 @@ namespace Gh.Presentation.web
         static HotelBus hotelBus = new HotelBus();
         static HabitacionBus habitacionBus = new HabitacionBus();
         static int hotelId;
+        static int planta = 0;
+        static DateTime fechaInicio;
+        static DateTime fechaFinal;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,28 +27,31 @@ namespace Gh.Presentation.web
                 //TODO: Implementar función
                 //hotelId = hotelBus.GetIdByName(nombre);
 
-                hotelId = 29;
+                hotelId = 48;
             }
         }
 
 
-        private string GetHotelTable(int hotelId, DateTime fechaInicio, DateTime fechaFinal)
+        private string GetHotelTable(int hotelId, int planta, DateTime fechaInicio, DateTime fechaFinal)
         {
             StringBuilder table = new StringBuilder();
 
             HotelDto hotelDto = hotelBus.GetById(hotelId);
 
             table.Append("<table>");
-            for (int i = 0; i < hotelDto.Ancho; i++)
+            for (int x = 0; x < hotelDto.Ancho; x++)
             {
                 table.Append("<tr>");
-                for (int t = 0; t < hotelDto.Largo; t++)
+                for (int y = 0; y < hotelDto.Largo; y++)
                 {
                     table.Append("<td>");
-                    if (habitacionBus.isBusy(hotelId, i, t, 0, fechaInicio, fechaFinal))
-                        table.Append("<div class='celda ocupada'></div>");
-                    else
-                        table.Append("<div class='celda libre'></div>");
+                    //if (habitacionBus.existHabitacion(x, y, planta, hotelId))
+                   // {
+                        if (habitacionBus.isBusy(hotelId, x, y, planta, fechaInicio, fechaFinal))
+                            table.Append("<div class='celda ocupada' onclick = 'cellClick(this.id)' id = '" + x + "_" + y + "'></div>");
+                        else
+                            table.Append("<div class='celda libre'></div>");
+                   // }
 
                     table.Append("</td>");
                 }
@@ -60,17 +66,41 @@ namespace Gh.Presentation.web
         {
             try
             {
-                DateTime fechaInicio = DateTime.Parse(this.fechaInicioBox.Text);
-                DateTime fechaFinal = DateTime.Parse(this.fechaFinalBox.Text);
+                fechaInicio = DateTime.Parse(this.fechaInicioBox.Text);
+                fechaFinal = DateTime.Parse(this.fechaFinalBox.Text);
 
-                String representacion = GetHotelTable(hotelId, fechaInicio, fechaFinal);
-
-                Response.Write(representacion);
+                this.arrowUp.Visible = true;
+                this.arrowDown.Visible = false;
+                PrintData();
             }
             catch
             {
                 Response.Write("Ha ocurrido un error en el formato de las fechas. Compruebe los datos");
             }
+        }
+
+        private void PrintData()
+        {
+
+            String representacion = GetHotelTable(hotelId, planta, fechaInicio, fechaFinal);
+
+            Panel hotelTable = this.hotelTable;
+            hotelTable.Controls.Add(new LiteralControl(representacion));
+
+            this.plantaActual.InnerText = "Planta " + planta;
+        }
+
+        protected void arrowUp_Click(object sender, ImageClickEventArgs e)
+        {
+            planta++;
+            PrintData();
+            
+        }
+
+        protected void arrowDown_Click(object sender, ImageClickEventArgs e)
+        {
+            planta++;
+            PrintData();
         }
     }
 }

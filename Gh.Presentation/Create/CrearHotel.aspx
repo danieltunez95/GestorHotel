@@ -83,7 +83,7 @@
         <br />
             <br />
             <br />
-            <asp:Button ID="crearHotelButton" runat="server" Text="Finalizar" Visible="false" OnClick="crearHotelButton_Click" />
+            <asp:Button ID="crearHotelButton" runat="server" Text="Finalizar" Visible="false" OnClientClick="generarPlantilla();" OnClick="crearHotelButton_Click" />
 
         </asp:Panel>
     </form>

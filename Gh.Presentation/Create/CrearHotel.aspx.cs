@@ -105,8 +105,8 @@ namespace Gh.Presentation.Create
             usuario.MinHour = 0;
             usuario.Email = emailBox.Text;
 
-            HotelBus hotelBus = new HotelBus();
-            hotelBus.Add(hotel);
+            //HotelBus hotelBus = new HotelBus();
+            //hotelBus.Add(hotel);
 
             UsuarioBus usuarioBus = new UsuarioBus();
             usuarioBus.Add(usuario);
