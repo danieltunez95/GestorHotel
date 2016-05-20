@@ -44,8 +44,8 @@ namespace Gh.Bus
         {
             HotelDto hotel = dao.GetById(id);
             hotel.Habitaciones = habitacionDao.GetAllByIdHotel(hotel);
-            hotel.Ancho = hotel.Habitaciones.OrderBy(x => x.PosicionY).ToList()[hotel.Habitaciones.Count].PosicionY;
-            hotel.Largo = hotel.Habitaciones.OrderBy(x => x.PosicionX).ToList()[hotel.Habitaciones.Count].PosicionX;
+            hotel.Ancho = hotel.Habitaciones.OrderBy(x => x.PosicionY).ToList()[hotel.Habitaciones.Count - 1].PosicionY;
+            hotel.Largo = hotel.Habitaciones.OrderBy(x => x.PosicionX).ToList()[hotel.Habitaciones.Count - 1].PosicionX;
             return hotel;
         }
 
@@ -77,7 +77,7 @@ namespace Gh.Bus
                             Precio = 0d,
                             Dormitorios = 0,
                             Descripcion = "PENDIENTE DE EDICIÓN",
-                            Planta = 0,
+                            Planta = plantaActual,
                             Imagen = ""
                         });
                     }

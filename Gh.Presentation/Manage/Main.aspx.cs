@@ -20,7 +20,7 @@ namespace Gh.Presentation.Manage
                 Response.Redirect("~/Create/CrearHotel.aspx");
             else
             {
-                if (!IsPostBack)
+                if (!IsPostBack && Session["hotel"] != null)
                 {
                     HotelDto hotel = hotelBus.GetById(29);
                     //Do everything

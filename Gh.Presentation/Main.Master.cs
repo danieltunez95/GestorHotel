@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Gh.Bus;
+using Gh.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,8 +11,34 @@ namespace Gh.Presentation.Manage
 {
     public partial class Main : System.Web.UI.MasterPage
     {
+        static HotelDto hotelActual;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                List<HotelDto> hoteles = new List<HotelDto>();
+                if (Session["hotel"] != null)
+                {
+                    hotelActual = (HotelDto)Session["hotel"];
+                }
+                else
+                {
+                    //añado espacio vacío
+                    hoteles.Add(new HotelDto());
+                }
+
+                HotelBus hotelBus = new HotelBus();
+                hoteles.AddRange(hotelBus.GetAll());
+
+                this.hotelList.DataSource = hoteles;
+                this.hotelList.DataTextField = "Nombre";
+                this.hotelList.DataValueField = "Id";
+                this.hotelList.DataBind();
+
+                if (hotelActual != null)
+                    this.hotelList.SelectedValue = hotelActual.Id.ToString();
+            }
 
         }
 
@@ -27,6 +55,13 @@ namespace Gh.Presentation.Manage
         protected void empleadosButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Manage/Empleados.aspx");
+        }
+
+        protected void hotelList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HotelBus hotelBus = new HotelBus();
+            hotelActual = hotelBus.GetById(int.Parse(hotelList.SelectedValue));
+            Session.Add("hotel", hotelActual);
         }
     }
 }
