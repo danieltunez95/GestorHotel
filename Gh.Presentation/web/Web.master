@@ -21,7 +21,7 @@
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><asp:Label runat="server" ID="nombreHotel">Hotel Ejemplo</asp:Label> </a>
+                    <a class="navbar-brand" href="#"><asp:Label runat="server" ID="nombreHotel">ViniDate Hotel</asp:Label> </a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">

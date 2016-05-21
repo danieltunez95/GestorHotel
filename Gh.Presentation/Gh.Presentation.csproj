@@ -131,6 +131,7 @@
     </None>
     <Content Include="web\Main.aspx" />
     <Content Include="web\Reserva.aspx" />
+    <Content Include="web\Scripts\Reserva.js" />
     <Content Include="web\Sources\arrowDown.png" />
     <Content Include="web\Sources\arrowUp.png" />
     <Content Include="web\Sources\hotel-demo-1.jpg" />

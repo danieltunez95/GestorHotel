@@ -3,6 +3,7 @@
 <%@ MasterType VirtualPath="~/Web/Web.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="/Style/hotelGrafico.css" rel="stylesheet" />
+    <script src="Scripts/Reserva.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:TextBox ID="fechaInicioBox" runat="server" placeholder="Fecha final: 23/12/2016"></asp:TextBox>
@@ -14,8 +15,8 @@
     <h1 id="plantaActual" runat="server"></h1>
     <div class="row">
         <div class="col-lg-1">
-            <asp:ImageButton ID="arrowUp" runat="server"  src="Sources/arrowUp.png" OnClick="arrowUp_Click" Visible="False"  /> <br />
-            <asp:ImageButton ID="arrowDown" runat="server"  src="Sources/arrowDown.png" OnClick="arrowDown_Click" Visible="False" /> <br />
+            <asp:ImageButton ID="arrowUp" runat="server"  src="Sources/arrowUp.png" OnClientClick="arrowUp_Click" Visible="False"  /> <br />
+            <asp:ImageButton ID="arrowDown" runat="server"  src="Sources/arrowDown.png" OnClientClick="arrowDown_Click" Visible="False" /> <br />
         </div>
         <div class="col-lg-11">
             <asp:Panel ID="hotelTable" runat="server"></asp:Panel>

@@ -23,5 +23,7 @@
         public int HotelId { get; set; }
 
         public string Imagen { get; set; }
+
+        public bool Ocupada { get; set; }
     }
 }

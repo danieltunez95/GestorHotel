@@ -26,41 +26,58 @@ namespace Gh.Presentation.web
             {
                 String nombre = ((Label)this.Master.FindControl("nombreHotel")).Text;
                 //TODO: Implementar función
-                //hotelId = hotelBus.GetIdByName(nombre);
+                hotel = hotelBus.GetByNombre(nombre);
 
-                hotelId = 49;
             }
         }
 
 
         private string GetHotelTable(int hotelId, int planta, DateTime fechaInicio, DateTime fechaFinal)
         {
-            StringBuilder table = new StringBuilder();
+            StringBuilder habitaciones = new StringBuilder();
 
-            HotelDto hotelDto = hotelBus.GetById(hotelId);
-            
-            table.Append("<table>");
-            for (int x = 0; x < hotelDto.Ancho; x++)
+            int contador = 0;
+            foreach (HabitacionDto habitacion in hotel.Habitaciones)
             {
-                table.Append("<tr>");
-                for (int y = 0; y < hotelDto.Largo; y++)
-                {
-                    table.Append("<td>");
-                   if (habitacionBus.existHabitacion(x, y, planta, hotelId))
-                   {
-                        if (habitacionBus.isBusy(hotelId, x, y, planta, fechaInicio, fechaFinal))
-                            table.Append("<div class='celda ocupada' onclick = 'cellClick(this.id)' id = '" + x + "_" + y + "'></div>");
-                        else
-                            table.Append("<div class='celda libre'></div>");
-                   }
+                contador++;
 
-                    table.Append("</td>");
-                }
-                table.Append("</tr>");
+                habitaciones.Append("[");
+                habitaciones.Append(habitacion.PosicionX);
+                habitaciones.Append(",");
+                habitaciones.Append(habitacion.PosicionY);
+                habitaciones.Append(",");
+                habitaciones.Append(habitacion.Planta);
+                habitaciones.Append(",");
+                habitaciones.Append(habitacion.Ocupada ? 1 : 0);
+                habitaciones.Append("]");
+
+                if (contador < hotel.Habitaciones.Count)
+                    habitaciones.Append("|");
             }
-            table.Append("</table>");
+            //table.Append("<table>");
+            //for (int x = 0; x <= hotel.Ancho; x++)
+            //{
+            //    table.Append("<tr>");
+            //    for (int y = 0; y <= hotel.Largo; y++)
+            //    {
+            //        table.Append("<td>");
+            //       if (habitacionBus.existHabitacion(hotelId, x, y, planta))
+            //       {
+            //            if (habitacionBus.isBusy(hotelId, x, y, planta, fechaInicio, fechaFinal))
+            //                table.Append("<div class='celda libre'></div>");
+            //            else
+            //                table.Append("<div class='celda ocupada' onclick = 'cellClick(this.id)' id = '" + x + "_" + y + "'></div>");
+            //        }
+            //        else
+            //            table.Append("<div class='celda invisible'></div>");
 
-            return table.ToString();
+            //        table.Append("</td>");
+            //    }
+            //    table.Append("</tr>");
+            //}
+            //table.Append("</table>");
+
+            return habitaciones.ToString();
         }
 
         protected void verButton_Click(object sender, EventArgs e)
@@ -72,46 +89,14 @@ namespace Gh.Presentation.web
 
                 this.arrowUp.Visible = true;
                 this.arrowDown.Visible = false;
-                PrintData();
+
+                String representacion = GetHotelTable(hotelId, planta, fechaInicio, fechaFinal);
+                Response.Write("<script> var stringHotel = ('" + representacion + "'); HOTEL = stringHotel.split('|'); printHotel(0); </script>");
             }
             catch
             {
                 Response.Write("Ha ocurrido un error en el formato de las fechas. Compruebe los datos");
             }
-        }
-
-        private void PrintData()
-        {
-
-            String representacion = GetHotelTable(hotelId, planta, fechaInicio, fechaFinal);
-
-            Panel hotelTable = this.hotelTable;
-            hotelTable.Controls.Add(new LiteralControl(representacion));
-
-            this.plantaActual.InnerText = "Planta " + planta;
-        }
-
-        protected void arrowUp_Click(object sender, ImageClickEventArgs e)
-        {
-            planta++;
-            if (planta > 0)
-                arrowDown.Visible = true;
-            
-            if (planta == hotel.Plantas - 1)
-                arrowDown.Visible = false;
-
-            PrintData();
-        }
-
-        protected void arrowDown_Click(object sender, ImageClickEventArgs e)
-        {
-            planta--;
-            if (planta < hotel.Plantas)
-                arrowDown.Visible = true;
-            
-            if (planta == 0)
-                arrowDown.Visible = false;
-            PrintData();
         }
     }
 }
