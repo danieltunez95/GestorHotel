@@ -53,61 +53,13 @@ namespace Gh.Dao
             posicionYParameter.ParameterName = "@PosicionY";
             parameters.Add(posicionYParameter);
 
-            // Precio
-            SqlParameter precioParameter = new SqlParameter();
-            precioParameter.DbType = DbType.Double;
-            precioParameter.Direction = ParameterDirection.Input;
-            precioParameter.Value = habitacion.Precio;
-            precioParameter.ParameterName = "@Precio";
-            parameters.Add(precioParameter);
-
-            // MetrosCuadrados
-            SqlParameter metrosCuadradosParameter = new SqlParameter();
-            metrosCuadradosParameter.DbType = DbType.Int32;
-            metrosCuadradosParameter.Direction = ParameterDirection.Input;
-            metrosCuadradosParameter.Value = habitacion.MetrosCuadrados;
-            metrosCuadradosParameter.ParameterName = "@MetrosCuadrados";
-            parameters.Add(metrosCuadradosParameter);
-
-            // Camas
-            SqlParameter camasParameter = new SqlParameter();
-            camasParameter.DbType = DbType.Int32;
-            camasParameter.Direction = ParameterDirection.Input;
-            camasParameter.Value = habitacion.Camas;
-            camasParameter.ParameterName = "@Camas";
-            parameters.Add(camasParameter);
-
-            // IdCama
-            SqlParameter idCamaParameter = new SqlParameter();
-            idCamaParameter.DbType = DbType.Int32;
-            idCamaParameter.Direction = ParameterDirection.Input;
-            idCamaParameter.Value = habitacion.TipoCama;
-            idCamaParameter.ParameterName = "@IdCama";
-            parameters.Add(idCamaParameter);
-
-            // Dormitorios
-            SqlParameter dormitoriosParameter = new SqlParameter();
-            dormitoriosParameter.DbType = DbType.Int32;
-            dormitoriosParameter.Direction = ParameterDirection.Input;
-            dormitoriosParameter.Value = habitacion.Dormitorios;
-            dormitoriosParameter.ParameterName = "@Dormitorios";
-            parameters.Add(dormitoriosParameter);
-
-            // Descripcion
-            SqlParameter descripcionParameter = new SqlParameter();
-            descripcionParameter.DbType = DbType.String;
-            descripcionParameter.Direction = ParameterDirection.Input;
-            descripcionParameter.Value = habitacion.Descripcion;
-            descripcionParameter.ParameterName = "@Descripcion";
-            parameters.Add(descripcionParameter);
-
-            // Imagen
-            SqlParameter imagenParameter = new SqlParameter();
-            imagenParameter.DbType = DbType.String;
-            imagenParameter.Direction = ParameterDirection.Input;
-            imagenParameter.Value = habitacion.Imagen != null ? habitacion.Imagen : null;
-            imagenParameter.ParameterName = "@Imagen";
-            parameters.Add(imagenParameter);
+            // TipoHabitacion
+            SqlParameter tipoHabitacionParameter = new SqlParameter();
+            tipoHabitacionParameter.DbType = DbType.Int32;
+            tipoHabitacionParameter.Direction = ParameterDirection.Input;
+            tipoHabitacionParameter.Value = habitacion.TipoHabitacion.Id;
+            tipoHabitacionParameter.ParameterName = "@TipoHabitacion";
+            parameters.Add(tipoHabitacionParameter);
 
             GetData(commandText, parameters, commandType);
 
@@ -156,13 +108,7 @@ IdHotel,
 Planta,
 PosicionX,
 PosicionY,
-Precio,
-MetrosCuadrados,
-Camas,
-IdCama,
-Dormitorios,
-Descripcion,
-Imagen
+TipoHabitacion
 FROM Habitacion
 WHERE IdHotel = @Idhotel";
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -188,13 +134,7 @@ IdHotel,
 Planta,
 PosicionX,
 PosicionY,
-Precio,
-MetrosCuadrados,
-Camas,
-IdCama,
-Dormitorios,
-Descripcion,
-Imagen
+TipoHabitacion
 FROM Habitacion
 WHERE Id = @Id";
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -213,6 +153,32 @@ WHERE Id = @Id";
                 habitacion = habitaciones[0];
 
             return habitacion;
+        }
+
+        public List<HabitacionDto> GetByTipoHabitacion(TipoHabitacionDto tipoHabitacion)
+        {
+            string commandText = @"SELECT
+Id,
+IdHotel,
+Planta,
+PosicionX,
+PosicionY,
+TipoHabitacion
+FROM Habitacion
+WHERE TipoHabitacion = @TipoHabitacion";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // TipoHabitacion
+            SqlParameter tipoHabitacionParameter = new SqlParameter();
+            tipoHabitacionParameter.DbType = DbType.Int32;
+            tipoHabitacionParameter.Direction = ParameterDirection.Input;
+            tipoHabitacionParameter.Value = tipoHabitacion.Id;
+            tipoHabitacionParameter.ParameterName = "@TipoHabitacion";
+            parameters.Add(tipoHabitacionParameter);
+
+            List<HabitacionDto> habitaciones = GetData(commandText, parameters);
+            
+            return habitaciones;
         }
 
         public bool isBusy(int idHotel, int posicionX, int posicionY, int planta, DateTime fechaInicio, DateTime fechaFinal)
@@ -380,61 +346,13 @@ AND Planta = @Planta";
             posicionYParameter.ParameterName = "@PosicionY";
             parameters.Add(posicionYParameter);
 
-            // Precio
-            SqlParameter precioParameter = new SqlParameter();
-            precioParameter.DbType = DbType.Double;
-            precioParameter.Direction = ParameterDirection.Input;
-            precioParameter.Value = habitacion.Precio;
-            precioParameter.ParameterName = "@Precio";
-            parameters.Add(precioParameter);
-
-            // MetrosCuadrados
-            SqlParameter metrosCuadradosParameter = new SqlParameter();
-            metrosCuadradosParameter.DbType = DbType.Int32;
-            metrosCuadradosParameter.Direction = ParameterDirection.Input;
-            metrosCuadradosParameter.Value = habitacion.MetrosCuadrados;
-            metrosCuadradosParameter.ParameterName = "@MetrosCuadrados";
-            parameters.Add(metrosCuadradosParameter);
-
-            // Camas
-            SqlParameter camasParameter = new SqlParameter();
-            camasParameter.DbType = DbType.Int32;
-            camasParameter.Direction = ParameterDirection.Input;
-            camasParameter.Value = habitacion.Camas;
-            camasParameter.ParameterName = "@Camas";
-            parameters.Add(camasParameter);
-
-            // IdCama
-            SqlParameter idCamaParameter = new SqlParameter();
-            idCamaParameter.DbType = DbType.Int32;
-            idCamaParameter.Direction = ParameterDirection.Input;
-            idCamaParameter.Value = habitacion.TipoCama;
-            idCamaParameter.ParameterName = "@IdCama";
-            parameters.Add(idCamaParameter);
-
-            // Dormitorios
-            SqlParameter dormitoriosParameter = new SqlParameter();
-            dormitoriosParameter.DbType = DbType.Int32;
-            dormitoriosParameter.Direction = ParameterDirection.Input;
-            dormitoriosParameter.Value = habitacion.Dormitorios;
-            dormitoriosParameter.ParameterName = "@Dormitorios";
-            parameters.Add(dormitoriosParameter);
-
-            // Descripcion
-            SqlParameter descripcionParameter = new SqlParameter();
-            descripcionParameter.DbType = DbType.String;
-            descripcionParameter.Direction = ParameterDirection.Input;
-            descripcionParameter.Value = habitacion.Descripcion;
-            descripcionParameter.ParameterName = "@Descripcion";
-            parameters.Add(descripcionParameter);
-
-            // Imagen
-            SqlParameter imagenParameter = new SqlParameter();
-            imagenParameter.DbType = DbType.String;
-            imagenParameter.Direction = ParameterDirection.Input;
-            imagenParameter.Value = habitacion.Imagen != null ? habitacion.Imagen : null;
-            imagenParameter.ParameterName = "@Imagen";
-            parameters.Add(imagenParameter);
+            // TipoHabitacion
+            SqlParameter tipoHabitacionParameter = new SqlParameter();
+            tipoHabitacionParameter.DbType = DbType.Int32;
+            tipoHabitacionParameter.Direction = ParameterDirection.Input;
+            tipoHabitacionParameter.Value = habitacion.TipoHabitacion.Id;
+            tipoHabitacionParameter.ParameterName = "@TipoHabitacion";
+            parameters.Add(tipoHabitacionParameter);
 
             // AffectedRows
             SqlParameter affectedRowsParameter = new SqlParameter();
@@ -459,15 +377,11 @@ AND Planta = @Planta";
                 HotelId = Convert.ToInt32(dr["IdHotel"]),
                 Planta = Convert.ToInt32(dr["Planta"]),
                 PosicionX = Convert.ToInt32(dr["PosicionX"]),
-                PosicionY = Convert.ToInt32(dr["PosicionY"]),
-                Precio = Convert.ToDouble(dr["Precio"]),
-                MetrosCuadrados = Convert.ToInt32(dr["MetrosCuadrados"]),
-                Camas = Convert.ToInt32(dr["Camas"]),
-                TipoCama = IdCama,
-                Dormitorios = Convert.ToInt32(dr["Dormitorios"]),
-                Descripcion = dr["Descripcion"] != null ? (string)dr["Descripcion"] : null,
-                Imagen = dr["Imagen"] != null ? (string)dr["Imagen"] : null
+                PosicionY = Convert.ToInt32(dr["PosicionY"])
             };
+            if (dr["TipoHabitacion"] != null)
+                habitacion.TipoHabitacion = new TipoHabitacionDto() { Id = Convert.ToInt32(dr["TipoHabitacion"]) };
+
             return habitacion;
         }
     }

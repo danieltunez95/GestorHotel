@@ -50,6 +50,7 @@
     <Compile Include="PoblacionDao.cs" />
     <Compile Include="ProvinciaDao.cs" />
     <Compile Include="ReservaDao.cs" />
+    <Compile Include="TipoHabitacionDao.cs" />
     <Compile Include="TurnoDao.cs" />
     <Compile Include="UsuarioDao.cs" />
   </ItemGroup>
@@ -66,6 +67,10 @@
     <Compile Include="OficioDao.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gh.Common\Gh.Common.csproj">
+      <Project>{cdf6cd22-8ca9-4b0f-9f32-4944d5bfbae4}</Project>
+      <Name>Gh.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gh.Common\Gh.Common.csproj">
       <Project>{cdf6cd22-8ca9-4b0f-9f32-4944d5bfbae4}</Project>
       <Name>Gh.Common</Name>

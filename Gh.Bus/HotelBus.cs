@@ -71,14 +71,8 @@ namespace Gh.Bus
                         {
                             PosicionX = i,
                             PosicionY = j,
-                            MetrosCuadrados = 0,
-                            Camas = 0,
-                            TipoCama = CamaEnum.Matrimonio,
-                            Precio = 0d,
-                            Dormitorios = 0,
-                            Descripcion = "PENDIENTE DE EDICIÓN",
                             Planta = plantaActual,
-                            Imagen = ""
+                            HotelId = hotel.Id
                         });
                     }
                 }

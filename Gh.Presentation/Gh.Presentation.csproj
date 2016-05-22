@@ -101,6 +101,7 @@
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Create\CrearHotel.aspx" />
     <Content Include="Create\Detalles.aspx" />
+    <Content Include="Create\EditarHabitacion.aspx" />
     <Content Include="Create\Main.aspx" />
     <Content Include="Create\scripts\CrearHotel.js" />
     <Content Include="Create\Setup.aspx" />
@@ -158,6 +159,13 @@
     </Compile>
     <Compile Include="Create\Detalles.aspx.designer.cs">
       <DependentUpon>Detalles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create\EditarHabitacion.aspx.cs">
+      <DependentUpon>EditarHabitacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\EditarHabitacion.aspx.designer.cs">
+      <DependentUpon>EditarHabitacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Create\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
