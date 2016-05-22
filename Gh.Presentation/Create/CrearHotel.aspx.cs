@@ -17,18 +17,17 @@ namespace Gh.Presentation.Create
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void plantillaButton_Click(object sender, EventArgs e)
         {
             this.plantillaButton.Text = "Rehacer plantilla";
 
-            string plantilla = GenerarPlantilla(hotel);
-            Response.Write(plantilla);
+            GenerarPlantilla(hotel);
         }
 
-        private string GenerarPlantilla(HotelDto hotel)
+        private void GenerarPlantilla(HotelDto hotel)
         {
             StringBuilder plantilla = new StringBuilder();
             plantilla.Append("<table>");
@@ -39,14 +38,16 @@ namespace Gh.Presentation.Create
                 {
                     plantilla.Append("<td>");
 
-                    plantilla.Append("<div class='celda' onclick='cellClick(this.id)' id='" + x + "_" + y + "'>");
+                    plantilla.Append("<div class='celda' id='" + x + "_" + y + "' onclick='cellClick(this.id)'>");
                     plantilla.Append("</div>");
 
                     plantilla.Append("</td>");
                 }
                 plantilla.Append("</tr>");
             }
-            return plantilla.ToString();
+
+            Panel graficoPanel = this.graficoPanel;
+            graficoPanel.Controls.Add(new LiteralControl(plantilla.ToString()));
         }
 
         protected void crearHotelButton_Click(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace Gh.Presentation.Create
         protected void crearPlantaButton_Click(object sender, EventArgs e)
         {
             HotelBus hotelBus = new HotelBus();
-            
+
             if (plantaActual <= hotel.Plantas)
             {
                 string habitaciones = this.hiddenHotel.Text;
@@ -68,7 +69,10 @@ namespace Gh.Presentation.Create
                 this.plantaActualTextBox.Text = plantaActual.ToString();
 
                 if (plantaActual > hotel.Plantas)
+                {
                     hotel = hotelBus.Add(hotel);
+                    Response.Redirect("/Manage/Main.aspx");
+                }
             }
             else
             {
@@ -118,6 +122,7 @@ namespace Gh.Presentation.Create
             this.plantasDisabledBox.Text = hotel.Plantas.ToString();
 
             GenerarPlantilla(hotel);
+            this.plantasMaximas.Text = hotel.Plantas.ToString();
         }
     }
 }

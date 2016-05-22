@@ -71,8 +71,7 @@ namespace Gh.Bus
                         {
                             PosicionX = i,
                             PosicionY = j,
-                            Planta = plantaActual,
-                            HotelId = hotel.Id
+                            Planta = plantaActual
                         });
                     }
                 }

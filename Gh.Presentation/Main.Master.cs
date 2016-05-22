@@ -41,7 +41,7 @@ namespace Gh.Presentation.Manage
             }
 
             if (!hotelBus.HasAnyHotel() && Page.ToString().ToLower().IndexOf("setup") == -1)
-                Response.Redirect("/Create/Setup.aspx");
+                Response.Redirect("/Create/CrearHotel.aspx");
         }
 
         protected void IndexButton_Click(object sender, EventArgs e)

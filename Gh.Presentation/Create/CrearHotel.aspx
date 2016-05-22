@@ -5,8 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="~/Style/hotelGrafico.css" rel="stylesheet" />
-    <script src="scripts/CrearHotel.js?v=1"></script>
+    <link href="/Style/hotelGrafico.css" rel="stylesheet" />
+    <link href="/Style/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Create/scripts/CrearHotel.js?v=1"></script>
     <style type="text/css">
         #Text1 {
             margin-bottom: 0px;
@@ -15,7 +16,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Panel ID="datosPanel" runat="server">
+<asp:Panel ID="datosPanel" runat="server">
             <div class="form-inline">
                 <div class="form-group">
                     <h1>Datos</h1>
@@ -25,6 +26,10 @@
                     <asp:TextBox ID="poblacionBox" class="form-control" placeholder="Población" runat="server"></asp:TextBox>
                     <asp:TextBox ID="paisBox" class="form-control" placeholder="País" runat="server"></asp:TextBox>
                     <asp:TextBox ID="estrellasBox" class="form-control" placeholder="Estrellas" runat="server"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <h1> Datos de inicio de sesión</h1>
+                    <p> Necesarios para la primera configuración</p>
                     <asp:TextBox ID="usuarioBox" class="form-control" placeholder="Usuario" runat="server"></asp:TextBox>
                     <asp:TextBox ID="passwordBox" class="form-control" placeholder="Contraseña" runat="server"></asp:TextBox>
                     <asp:TextBox ID="emailBox" class="form-control" placeholder="Email" runat="server"></asp:TextBox>
@@ -64,12 +69,8 @@
                 <asp:Button runat="server" type="button" ID="crearPlantaButton" value="Siguiente planta" OnClientClick="crearPlanta();" OnClick="crearPlantaButton_Click" Text="Siguiente planta" />
                 <asp:TextBox ID="hiddenHotel" runat="server" CssClass="hiddenLabel"></asp:TextBox>
             </asp:Panel>
-            <br />
-            <br />
-            &nbsp;
         <br />
-            <br />
-            <br />
+            <asp:Panel runat="server" ID="graficoPanel"></asp:Panel>
             <asp:Button ID="crearHotelButton" runat="server" Text="Finalizar" Visible="false" OnClientClick="generarPlantilla();" OnClick="crearHotelButton_Click" />
 
         </asp:Panel>

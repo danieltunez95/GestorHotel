@@ -33,7 +33,7 @@ function generarPlantilla() {
 }
 
 function crearPlanta() {
-    document.getElementById("hiddenHotel").innerText = MATRIZ.join("/");
+    document.getElementById("hiddenHotel").innerHTML = MATRIZ.join("/");
 }
 
 var MATRIZ = new Array();
