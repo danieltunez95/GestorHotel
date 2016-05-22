@@ -31,6 +31,15 @@ namespace Gh.Presentation.web {
         protected global::System.Web.UI.WebControls.TextBox fechaFinalBox;
         
         /// <summary>
+        /// numeroPersonas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox numeroPersonas;
+        
+        /// <summary>
         /// verButton control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace Gh.Presentation.web {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl plantaActual;
         
         /// <summary>
+        /// nueroHabitacionesLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nueroHabitacionesLabel;
+        
+        /// <summary>
         /// hotelTable control.
         /// </summary>
         /// <remarks>
@@ -56,6 +74,15 @@ namespace Gh.Presentation.web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel hotelTable;
+        
+        /// <summary>
+        /// finalizarButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button finalizarButton;
         
         /// <summary>
         /// Master property.

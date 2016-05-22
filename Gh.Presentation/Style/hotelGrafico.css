@@ -22,3 +22,7 @@
 .invisible{
     background-color: white;
 }
+
+.seleccionada{
+    background-color:dodgerblue;
+}

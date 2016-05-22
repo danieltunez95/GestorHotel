@@ -54,8 +54,13 @@ function Restart() {
     }
 }
 
-function Reenviar(id) {
-    window.location.replace("habitacion.aspx?id=" + id);
+function Reenviar(idPosicion) {
+    //window.location.replace("habitacion.aspx?id=" + id);
+    RESERVA.push(idPosicion);
+    document.getElementById(idPosicion).setAttribute("class", "celda seleccionada");
+    if (document.getElementById("nueroHabitacionesLabel").innerHTML.indexOf(HABITACIONES) != -1) {
+        document.getElementById("finalizarButton").style.visibility = "visible";
+    }
 }
 
 var HOTEL;
@@ -63,3 +68,5 @@ var PLANTA = 0;
 var ULTIMA_PLANTA;
 var LARGO;
 var ANCHO;
+var HABITACIONES;
+var RESERVA = new Array();
