@@ -247,6 +247,15 @@ namespace Gh.Presentation.Create {
         protected global::System.Web.UI.WebControls.TextBox hiddenHotel;
         
         /// <summary>
+        /// graficoPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel graficoPanel;
+        
+        /// <summary>
         /// crearHotelButton control.
         /// </summary>
         /// <remarks>

@@ -24,11 +24,10 @@ namespace Gh.Presentation.Create
         {
             this.plantillaButton.Text = "Rehacer plantilla";
 
-            string plantilla = GenerarPlantilla(hotel);
-            Response.Write(plantilla);
+            GenerarPlantilla(hotel);
         }
 
-        private string GenerarPlantilla(HotelDto hotel)
+        private void GenerarPlantilla(HotelDto hotel)
         {
             StringBuilder plantilla = new StringBuilder();
             plantilla.Append("<table>");
@@ -39,14 +38,16 @@ namespace Gh.Presentation.Create
                 {
                     plantilla.Append("<td>");
 
-                    plantilla.Append("<div class='celda' onclick='cellClick(this.id)' id='" + x + "_" + y + "'>");
+                    plantilla.Append("<div class='celda' id='" + x + "_" + y + "' onclick='cellClick(this.id)'>");
                     plantilla.Append("</div>");
 
                     plantilla.Append("</td>");
                 }
                 plantilla.Append("</tr>");
             }
-            return plantilla.ToString();
+
+            Panel graficoPanel = this.graficoPanel;
+            graficoPanel.Controls.Add(new LiteralControl(plantilla.ToString()));
         }
 
         protected void crearHotelButton_Click(object sender, EventArgs e)
@@ -68,7 +69,10 @@ namespace Gh.Presentation.Create
                 this.plantaActualTextBox.Text = plantaActual.ToString();
 
                 if (plantaActual > hotel.Plantas)
+                {
                     hotel = hotelBus.Add(hotel);
+                    Response.Redirect("/Manage/Main.aspx");
+                }
             }
             else
             {

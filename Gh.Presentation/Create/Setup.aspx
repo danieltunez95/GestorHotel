@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Setup.aspx.cs" Inherits="Gh.Presentation.Create.Setup" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
-    <link href="~/Style/hotelGrafico.css" rel="stylesheet" />
-    <script src="scripts/CrearHotel.js?v=1"></script>
+    <link href="/Style/hotelGrafico.css" rel="stylesheet" />
+    <script src="/Create/scripts/CrearHotel.js?v=3"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
             <asp:Panel ID="datosPanel" runat="server">
@@ -59,6 +59,7 @@
                 <asp:TextBox ID="hiddenHotel" runat="server" CssClass="hiddenLabel"></asp:TextBox>
             </asp:Panel>
         <br />
+            <asp:Panel runat="server" ID="graficoPanel"></asp:Panel>
             <asp:Button ID="crearHotelButton" runat="server" Text="Finalizar" Visible="false" OnClientClick="generarPlantilla();" OnClick="crearHotelButton_Click" />
 
         </asp:Panel>
