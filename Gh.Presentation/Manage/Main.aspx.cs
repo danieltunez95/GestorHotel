@@ -15,30 +15,24 @@ namespace Gh.Presentation.Manage
         {
             HotelBus hotelBus = new HotelBus();
 
-            //If there are no hotels, go to the setup mode
-            if (!hotelBus.HasAnyHotel())
-                Response.Redirect("~/Create/CrearHotel.aspx");
-            else
+            if (!IsPostBack && Session["hotel"] != null)
             {
-                if (!IsPostBack && Session["hotel"] != null)
-                {
-                    HotelDto hotel = hotelBus.GetById(49);
-                    //Do everything
-                    //Habitaciones disponibles
-                    int habitaciones = 0;
-                    if (hotel.Habitaciones != null)
-                        habitaciones = hotel.Habitaciones.Count;
+                HotelDto hotel = hotelBus.GetById(49);
+                //Do everything
+                //Habitaciones disponibles
+                int habitaciones = 0;
+                if (hotel.Habitaciones != null)
+                    habitaciones = hotel.Habitaciones.Count;
 
-                    int reservas = hotelBus.GetReservasByIdHotel(hotel);
-                    int entradas = hotelBus.GetEntradasByIdHotel(hotel);
-                    int salidas = hotelBus.GetSalidasByIdHotel(hotel);
+                int reservas = hotelBus.GetReservasByIdHotel(hotel);
+                int entradas = hotelBus.GetEntradasByIdHotel(hotel);
+                int salidas = hotelBus.GetSalidasByIdHotel(hotel);
 
-                    this.habitacionesLibresLabel.Text = (habitaciones - reservas).ToString();
-                    this.habitacionesTotalLabel.Text = habitaciones.ToString();
-                    this.entradasLabel.Text = entradas.ToString();
-                    this.salidasLabel.Text = salidas.ToString();
+                this.habitacionesLibresLabel.Text = (habitaciones - reservas).ToString();
+                this.habitacionesTotalLabel.Text = habitaciones.ToString();
+                this.entradasLabel.Text = entradas.ToString();
+                this.salidasLabel.Text = salidas.ToString();
 
-                }
             }
         }
     }

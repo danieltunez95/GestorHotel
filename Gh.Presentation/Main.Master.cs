@@ -15,6 +15,7 @@ namespace Gh.Presentation.Manage
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            HotelBus hotelBus = new HotelBus();
             if (!IsPostBack)
             {
                 List<HotelDto> hoteles = new List<HotelDto>();
@@ -28,7 +29,6 @@ namespace Gh.Presentation.Manage
                     hoteles.Add(new HotelDto());
                 }
 
-                HotelBus hotelBus = new HotelBus();
                 hoteles.AddRange(hotelBus.GetAll());
 
                 this.hotelList.DataSource = hoteles;
@@ -40,6 +40,8 @@ namespace Gh.Presentation.Manage
                     this.hotelList.SelectedValue = hotelActual.Id.ToString();
             }
 
+            if (!hotelBus.HasAnyHotel() && Page.ToString().ToLower().IndexOf("setup") == -1)
+                Response.Redirect("/Create/Setup.aspx");
         }
 
         protected void IndexButton_Click(object sender, EventArgs e)

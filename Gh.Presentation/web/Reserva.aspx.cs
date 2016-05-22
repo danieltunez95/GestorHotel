@@ -14,20 +14,18 @@ namespace Gh.Presentation.web
     {
         static HotelBus hotelBus = new HotelBus();
         static HabitacionBus habitacionBus = new HabitacionBus();
-        static int hotelId;
         static HotelDto hotel;
         static int planta = 0;
         static DateTime fechaInicio;
         static DateTime fechaFinal;
+        static int personas;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 String nombre = ((Label)this.Master.FindControl("nombreHotel")).Text;
-                //TODO: Implementar función
-                hotel = hotelBus.GetByNombre(nombre);
-
+                //hotel = hotelBus.GetByNombre(nombre);
             }
         }
 
@@ -81,9 +79,12 @@ namespace Gh.Presentation.web
             {
                 fechaInicio = DateTime.Parse(this.fechaInicioBox.Text);
                 fechaFinal = DateTime.Parse(this.fechaFinalBox.Text);
+                personas = int.Parse(numeroPersonas.Text);
+                // this.arrowUp.Visible = true;
+                // this.arrowDown.Visible = false;
+                double habitaciones = Math.Ceiling(personas / 2d);
+                nueroHabitacionesLabel.InnerHtml = "Seleccione " + habitaciones.ToString() + (habitaciones > 1 ? " habitaciones" : "habitacion");
 
-               // this.arrowUp.Visible = true;
-               // this.arrowDown.Visible = false;
 
                 //imprimo la tabla invisible
                 string tabla = GetTable(hotel.Largo, hotel.Ancho);
@@ -91,13 +92,27 @@ namespace Gh.Presentation.web
                 tablaPanel.Controls.Add(new LiteralControl(tabla));
 
                 //paso el hotel al javascript
-                string representacion = GetHotelTable(hotelId, planta, fechaInicio, fechaFinal);
-                Response.Write("<script onLoad='PrintHotel(0);'> var stringHotel = ('" + representacion + "'); HOTEL = stringHotel.split('|'); ULTIMA_PLANTA = " + hotel.Plantas + "; LARGO=" + hotel.Largo + "; ANCHO=" + hotel.Ancho + ";</script>");
+                string representacion = GetHotelTable(hotel.Id, planta, fechaInicio, fechaFinal);
+
+                StringBuilder script = new StringBuilder();
+                script.Append("<script onLoad='PrintHotel(0);'>");
+                script.Append("var stringHotel = ('" + representacion + "');");
+                script.Append("HOTEL = stringHotel.split('|');");
+                script.Append("ULTIMA_PLANTA = " + hotel.Plantas + ";");
+                script.Append("LARGO=" + hotel.Largo + ";");
+                script.Append("ANCHO=" + hotel.Ancho + ";");
+                script.Append("HABITACIONES=" + habitaciones + ";");
+                script.Append("</script>");
             }
             catch
             {
                 Response.Write("Ha ocurrido un error en el formato de las fechas. Compruebe los datos");
             }
+        }
+
+        protected void finalizarButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
