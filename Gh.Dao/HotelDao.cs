@@ -137,14 +137,6 @@ namespace Gh.Dao
             posicionYParameter.ParameterName = "@PosicionY";
             parameters.Add(posicionYParameter);
 
-            // TipoHabitacion
-            SqlParameter tipoHabitacionParameter = new SqlParameter();
-            tipoHabitacionParameter.DbType = DbType.Int32;
-            tipoHabitacionParameter.Direction = ParameterDirection.Input;
-            tipoHabitacionParameter.Value = habitacion.TipoHabitacion.Id;
-            tipoHabitacionParameter.ParameterName = "@TipoHabitacion";
-            parameters.Add(tipoHabitacionParameter);
-
             GetData(commandText, parameters, commandType);
 
             habitacion.Id = Convert.ToInt32(idParameter.Value);

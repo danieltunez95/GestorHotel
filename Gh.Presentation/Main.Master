@@ -15,43 +15,58 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">ViniDate</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/Corporative/index.aspx#">Inicio</a></li>
-                        <li><a href="/Corporative/index.aspx#sobrenosotros">Sobre nosotros</a></li>
-                        <li><a href="/Corporative/index.aspx#contacto">Contacto</a></li>
-                        <li><a href="/Corporative/reserva.aspx">Reserva</a></li>
-                        <li><a href="/Web/main.aspx">DEMO</a></li>
-                    </ul>
-                </div>
-                <!--/.nav-collapse -->
-            </div>
-        </nav>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-3 sidebar">
-                    <asp:dropdownlist runat="server" CssClass="form-control" id="hotelList" OnSelectedIndexChanged="hotelList_SelectedIndexChanged"></asp:dropdownlist>
-                    <asp:Button ID="indexButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Inicio" OnClick="IndexButton_Click" />
-                    <asp:Button ID="edicionButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Edición" OnClick="edicionButton_Click" />
-                    <asp:Button ID="UsuariosButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Usuarios" OnClick="UsuariosButton_Click" />
-                    <asp:Button ID="empleadosButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Empleados" OnClick="empleadosButton_Click" />
-                    <asp:Button ID="clientesButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Clientes" />
-                    <asp:Button ID="Proveedores" runat="server" CssClass="btn btn-primary sidebarButton" Text="Proveedores" />
+    <asp:Panel runat="server" ID="Menu">
+        <form id="form1" runat="server">
+
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">ViniDate</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/Corporative/index.aspx#">Inicio</a></li>
+                            <li><a href="/Corporative/index.aspx#sobrenosotros">Sobre nosotros</a></li>
+                            <li><a href="/Corporative/index.aspx#contacto">Contacto</a></li>
+                            <li><a href="/Corporative/reserva.aspx">Reserva</a></li>
+                            <li><a href="/Web/main.aspx">DEMO</a></li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
                 </div>
-                <div class="col-sm-9 main">
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
+            </nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-3 sidebar">
+                        <asp:DropDownList runat="server" CssClass="form-control" ID="hotelList" OnSelectedIndexChanged="hotelList_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:Button ID="indexButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Inicio" OnClick="IndexButton_Click" />
+                        <asp:Button ID="edicionButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Edición" OnClick="edicionButton_Click" />
+                        <asp:Button ID="UsuariosButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Usuarios" OnClick="UsuariosButton_Click" />
+                        <asp:Button ID="empleadosButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Empleados" OnClick="empleadosButton_Click" />
+                        <asp:Button ID="clientesButton" runat="server" CssClass="btn btn-primary sidebarButton" Text="Clientes" />
+                        <asp:Button ID="Proveedores" runat="server" CssClass="btn btn-primary sidebarButton" Text="Proveedores" />
+                    </div>
+                    <div class="col-sm-9 main">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
                 </div>
             </div>
+        </form>
+    </asp:Panel>
+    <asp:Panel runat="server" ID="Login">
+        <div class="container center">
+            <form id="FormLogin" runat="server" class="form-signin">
+                <asp:Label runat="server" Text="Login" CssClass="loginTitle"></asp:Label>
+                <br />
+                <asp:TextBox runat="server" ID="Username" placeholder="Usuario" CssClass="form-control"></asp:TextBox>
+                <br />
+                <asp:TextBox runat="server" ID="Password" placeholder="Contraseña" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                <br />
+                <asp:Button ID="loginButton" runat="server" CssClass="btn btn-success loginButton" Text="Log in" OnClick="loginButton_Click" />
+            </form>
         </div>
-    </form>
+    </asp:Panel>
 </body>
 </html>

@@ -80,6 +80,44 @@ WHERE Username = @Username";
             return usuario;
         }
 
+        public UsuarioDto Login(string username, string password)
+        {
+            string commandText = @"SELECT 
+Id,
+Username,
+Password,
+Role,
+MinHour,
+MaxHour
+FROM Usuario 
+WHERE Username = @Username 
+AND Password = @Password";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // Username
+            SqlParameter usernameParameter = new SqlParameter();
+            usernameParameter.DbType = DbType.String;
+            usernameParameter.Direction = ParameterDirection.Input;
+            usernameParameter.ParameterName = "@Username";
+            usernameParameter.Value = username;
+            parameters.Add(usernameParameter);
+
+            // Password
+            SqlParameter passwordParameter = new SqlParameter();
+            passwordParameter.DbType = DbType.String;
+            passwordParameter.Direction = ParameterDirection.Input;
+            passwordParameter.ParameterName = "@Password";
+            passwordParameter.Value = password;
+            parameters.Add(passwordParameter);
+
+            List<UsuarioDto> usuarios = GetData(commandText, parameters);
+
+            UsuarioDto usuario = usuarios.Count == 1 ? usuarios[0] : null;
+
+            return usuario;
+        }
+
         public UsuarioDto Add(UsuarioDto usuario)
         {
             string commandText = "Usuario_Add";

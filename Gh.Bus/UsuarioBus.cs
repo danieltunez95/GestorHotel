@@ -42,5 +42,10 @@ namespace Gh.Bus
         {
             return dao.Delete(usuario);
         }
+
+        public UsuarioDto Login(string username, string password)
+        {
+            return dao.Login(username, password);
+        }
     }
 }

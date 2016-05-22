@@ -73,5 +73,12 @@ namespace Gh.Testing.Gh.Dao.Tests
             usuarioTest = dao.GetById(usuarioTest.Id);
             Assert.IsTrue(result == 1 && usuarioTest == null);
         }
+
+        [TestMethod]
+        public void LoginTest()
+        {
+            UsuarioDto usuario = dao.Login("viniadmin", "admin1234");
+            Assert.IsTrue(usuario != null);
+        }
     }
 }
