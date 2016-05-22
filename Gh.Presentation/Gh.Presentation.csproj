@@ -130,6 +130,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="web\Habitacion.aspx" />
     <Content Include="web\Main.aspx" />
     <Content Include="web\Reserva.aspx" />
     <Content Include="web\Scripts\Reserva.js" />
@@ -227,6 +228,13 @@
     </Compile>
     <Compile Include="Manage\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Habitacion.aspx.cs">
+      <DependentUpon>Habitacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Habitacion.aspx.designer.cs">
+      <DependentUpon>Habitacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>

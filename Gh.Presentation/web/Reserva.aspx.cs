@@ -42,11 +42,11 @@ namespace Gh.Presentation.web
                 contador++;
 
                 habitaciones.Append("[");
+                habitaciones.Append(habitacion.Planta);
+                habitaciones.Append(",");
                 habitaciones.Append(habitacion.PosicionX);
                 habitaciones.Append(",");
                 habitaciones.Append(habitacion.PosicionY);
-                habitaciones.Append(",");
-                habitaciones.Append(habitacion.Planta);
                 habitaciones.Append(",");
                 habitaciones.Append(habitacion.Ocupada ? 1 : 0);
                 habitaciones.Append("]");
@@ -54,32 +54,27 @@ namespace Gh.Presentation.web
                 if (contador < hotel.Habitaciones.Count)
                     habitaciones.Append("|");
             }
-            //table.Append("<table>");
-            //for (int x = 0; x <= hotel.Ancho; x++)
-            //{
-            //    table.Append("<tr>");
-            //    for (int y = 0; y <= hotel.Largo; y++)
-            //    {
-            //        table.Append("<td>");
-            //       if (habitacionBus.existHabitacion(hotelId, x, y, planta))
-            //       {
-            //            if (habitacionBus.isBusy(hotelId, x, y, planta, fechaInicio, fechaFinal))
-            //                table.Append("<div class='celda libre'></div>");
-            //            else
-            //                table.Append("<div class='celda ocupada' onclick = 'cellClick(this.id)' id = '" + x + "_" + y + "'></div>");
-            //        }
-            //        else
-            //            table.Append("<div class='celda invisible'></div>");
-
-            //        table.Append("</td>");
-            //    }
-            //    table.Append("</tr>");
-            //}
-            //table.Append("</table>");
 
             return habitaciones.ToString();
         }
 
+        private string GetTable(int ancho, int largo)
+        {
+            StringBuilder table = new StringBuilder();
+            table.Append("<table>");
+            for (int x = 0; x <= hotel.Largo; x++)
+            {
+                table.Append("<tr>");
+                for (int y = 0; y <= hotel.Ancho; y++)
+                {
+                    table.Append("<td> <div class='celda invisible' id='" + y + "_" + x + "'></div></td>");
+                }
+                table.Append("</tr>");
+            }
+            table.Append("</table>");
+
+            return table.ToString();
+        }
         protected void verButton_Click(object sender, EventArgs e)
         {
             try
@@ -87,11 +82,17 @@ namespace Gh.Presentation.web
                 fechaInicio = DateTime.Parse(this.fechaInicioBox.Text);
                 fechaFinal = DateTime.Parse(this.fechaFinalBox.Text);
 
-                this.arrowUp.Visible = true;
-                this.arrowDown.Visible = false;
+               // this.arrowUp.Visible = true;
+               // this.arrowDown.Visible = false;
 
-                String representacion = GetHotelTable(hotelId, planta, fechaInicio, fechaFinal);
-                Response.Write("<script> var stringHotel = ('" + representacion + "'); HOTEL = stringHotel.split('|'); printHotel(0); </script>");
+                //imprimo la tabla invisible
+                string tabla = GetTable(hotel.Largo, hotel.Ancho);
+                Panel tablaPanel = this.hotelTable;
+                tablaPanel.Controls.Add(new LiteralControl(tabla));
+
+                //paso el hotel al javascript
+                string representacion = GetHotelTable(hotelId, planta, fechaInicio, fechaFinal);
+                Response.Write("<script onLoad='PrintHotel(0);'> var stringHotel = ('" + representacion + "'); HOTEL = stringHotel.split('|'); ULTIMA_PLANTA = " + hotel.Plantas + "; LARGO=" + hotel.Largo + "; ANCHO=" + hotel.Ancho + ";</script>");
             }
             catch
             {
