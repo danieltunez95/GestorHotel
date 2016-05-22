@@ -8,22 +8,10 @@
 
         public int Planta { get; set; }
 
-        public double MetrosCuadrados { get; set; }
-
-        public int Camas { get; set; }
-
-        public CamaEnum TipoCama { get; set; }
-
-        public int Dormitorios { get; set; }
-
-        public string Descripcion { get; set; }
-
-        public double Precio { get; set; }
-
         public int HotelId { get; set; }
 
-        public string Imagen { get; set; }
-
         public bool Ocupada { get; set; }
+
+        public TipoHabitacionDto TipoHabitacion { get; set; }
     }
 }
