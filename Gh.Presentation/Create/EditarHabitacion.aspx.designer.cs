@@ -13,6 +13,15 @@ namespace Gh.Presentation.Create {
     public partial class EditarHabitacion {
         
         /// <summary>
+        /// TipoHabitacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel TipoHabitacion;
+        
+        /// <summary>
         /// Instrucciones control.
         /// </summary>
         /// <remarks>
