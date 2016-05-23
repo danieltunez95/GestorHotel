@@ -8,6 +8,8 @@ namespace Gh.Common
 
         public int IdHabitacion { get; set; }
 
+        public string IdPosHabitacion { get; set; }
+
         public int IdCliente { get; set; }
 
         public int Tipo { get; set; }
