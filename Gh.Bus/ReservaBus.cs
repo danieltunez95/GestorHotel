@@ -22,6 +22,11 @@ namespace Gh.Bus
             return dao.Add(reserva);
         }
 
+        public ReservaDto AddFromPos(ReservaDto reserva)
+        {
+            return dao.AddFromPos(reserva);
+        }
+
         public int Delete(ReservaDto reserva)
         {
             return dao.Delete(reserva);

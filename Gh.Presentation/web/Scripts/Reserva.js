@@ -57,8 +57,12 @@ function Restart() {
 function Reenviar(idPosicion) {
     RESERVA.push(PLANTA + "_" + idPosicion);
     document.getElementById(idPosicion).setAttribute("class", "celda seleccionada");
-    if (RESERVA.length >= HABITACIONES)
-        window.location = location.href.replace("Reserva", "Comprar") + "?habitaciones=" + RESERVA.join(",");
+    if (RESERVA.length >= HABITACIONES) {
+        var fechaInicio = document.getElementById("ContentPlaceHolder1_fechaInicioBox").value;
+        var fechaFinal = document.getElementById("ContentPlaceHolder1_fechaFinalBox").value;
+        window.location = location.href.replace("Reserva", "Comprar") + "?fechaInicio=" + fechaInicio + "&fechaFinal=" + fechaFinal + "&habitaciones=" + RESERVA.join(",");
+
+    }
 }
 
 var HOTEL;
