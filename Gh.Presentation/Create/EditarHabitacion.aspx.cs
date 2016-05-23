@@ -1,6 +1,7 @@
 ﻿using Gh.Bus;
 using Gh.Common;
 using System;
+using System.Collections.Generic;
 using System.Web.UI;
 
 namespace Gh.Presentation.Create
@@ -9,7 +10,15 @@ namespace Gh.Presentation.Create
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                FillDropDownTipoHabitacion();
+                List<TipoHabitacionDto> tiposdeHabitacion = Session["TipoHabitaciones"] as List<TipoHabitacionDto>;
+                this.DropDownTipoHabitacion.DataSource = tiposdeHabitacion;
+                this.DropDownTipoHabitacion.DataTextField = "Nombre";
+                this.DropDownTipoHabitacion.DataValueField = "Id";
+                this.DropDownTipoHabitacion.DataBind();
+            }
         }
 
         protected void createButton_Click(object sender, EventArgs e)
@@ -24,6 +33,14 @@ namespace Gh.Presentation.Create
             tipoHabitacion = tipoHabitacionBus.Add(tipoHabitacion);
 
             //Response.Redirect("~/Manage/Empleados.aspx");
+        }
+
+        protected void FillDropDownTipoHabitacion()
+        {
+            TipoHabitacionBus tipoHabitacionBus = new TipoHabitacionBus();
+            List<TipoHabitacionDto> tipoHabitaciones = tipoHabitacionBus.GetAll();
+
+            Session["TipoHabitaciones"] = tipoHabitaciones;
         }
     }
 }

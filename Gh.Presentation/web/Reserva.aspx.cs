@@ -80,7 +80,7 @@ namespace Gh.Presentation.web
                 // this.arrowUp.Visible = true;
                 // this.arrowDown.Visible = false;
                 double habitaciones = Math.Ceiling(personas / 2d);
-                nueroHabitacionesLabel.InnerHtml = "Seleccione " + habitaciones.ToString() + (habitaciones > 1 ? " habitaciones" : "habitacion");
+                nueroHabitacionesLabel.InnerHtml = "Seleccione " + habitaciones.ToString() + (habitaciones > 1 ? " habitaciones" : " habitación");
 
 
                 //imprimo la tabla invisible

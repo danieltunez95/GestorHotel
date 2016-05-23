@@ -83,6 +83,7 @@ namespace Gh.Presentation.Manage
             HotelBus hotelBus = new HotelBus();
             hotelActual = hotelBus.GetById(int.Parse(hotelList.SelectedValue));
             Session.Add("hotel", hotelActual);
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

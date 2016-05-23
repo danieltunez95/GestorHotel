@@ -366,7 +366,7 @@ WHERE Id = @Id";
            string commandText = @"SELECT count(*) 
 FROM reserva 
 WHERE IdHotel = @IdHotel
-AND FechaInicio >= GetDate() 
+AND FechaInicio <= GetDate() 
 AND FechaFinal >= GetDate()";
             List<SqlParameter> parameters = new List<SqlParameter>();
             CommandType commandType = CommandType.Text;
