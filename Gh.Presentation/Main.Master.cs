@@ -2,6 +2,7 @@
 using Gh.Common;
 using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.UI;
 
 namespace Gh.Presentation.Manage
@@ -37,8 +38,16 @@ namespace Gh.Presentation.Manage
                     this.hotelList.DataValueField = "Id";
                     this.hotelList.DataBind();
 
-                    if (hotelActual != null)
+                    if (Session["hotel"] == null && hoteles.Count != 0)
+                        hotelActual = hoteles[0];
+
+
+                    if (hotelActual != null) {
                         this.hotelList.SelectedValue = hotelActual.Id.ToString();
+                        Session["hotel"] = hotelActual;
+                        //reenvio a la misma pagina para refrescar sesion
+                        //Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri);
+                    }
                 }
 
 
