@@ -51,7 +51,7 @@ namespace Gh.Dao
             imagenParameter.DbType = DbType.String;
             imagenParameter.Direction = ParameterDirection.Input;
             imagenParameter.ParameterName = "@Imagen";
-            imagenParameter.Value = tipoHabitacion.Imagen;
+            imagenParameter.Value = tipoHabitacion.Imagen != null ? tipoHabitacion.Imagen : Convert.DBNull;
             parameters.Add(imagenParameter);
 
             // Precio
@@ -133,7 +133,7 @@ WHERE Id = @Id";
             idParameter.Value = id;
             parameters.Add(idParameter);
 
-            List<TipoHabitacionDto> tiposDeHabitacion = GetData(commandText, null);
+            List<TipoHabitacionDto> tiposDeHabitacion = GetData(commandText, parameters);
             TipoHabitacionDto tipoHabitacion = null;
 
             if (tiposDeHabitacion.Count == 1)
@@ -186,7 +186,7 @@ WHERE Id = @Id";
             imagenParameter.DbType = DbType.String;
             imagenParameter.Direction = ParameterDirection.Input;
             imagenParameter.ParameterName = "@Imagen";
-            imagenParameter.Value = tipoHabitacion.Imagen;
+            imagenParameter.Value = tipoHabitacion.Imagen != null ? tipoHabitacion.Imagen : Convert.DBNull;
             parameters.Add(imagenParameter);
 
             // Precio
@@ -217,9 +217,10 @@ WHERE Id = @Id";
                 Nombre = dr["Nombre"] != null ? (string)dr["Nombre"] : null,
                 MetrosCuadrados = dr["MetrosCuadrados"] != null ? (int?)dr["MetrosCuadrados"] : null,
                 Descripcion = dr["Descripcion"] != null ? (string)dr["Descripcion"] : null,
-                Imagen = dr["Imagen"] != null ? (string)dr["Imagen"] : null,
                 Precio = dr["Precio"] != null ? (decimal?)dr["Precio"] : null
             };
+            if (tipoHabitacion.Imagen != null)
+                tipoHabitacion.Imagen = (string)dr["Imagen"];
 
             return tipoHabitacion;
         }

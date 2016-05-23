@@ -8,8 +8,11 @@ namespace Gh.Presentation.Create
 {
     public partial class EditarHabitacion : Page
     {
+        TipoHabitacionBus tipoHabitacionBus = new TipoHabitacionBus();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            //TODO: Falta comprobar el text decimal, y comprobar fallos. hacer que las habitaciones se cambien cuando se seleccione.
             if (!IsPostBack)
             {
                 FillDropDownTipoHabitacion();
@@ -28,19 +31,81 @@ namespace Gh.Presentation.Create
             tipoHabitacion.MetrosCuadrados = Convert.ToInt32(this.MetrosCuadrados.Text);
             tipoHabitacion.Descripcion = this.Descripcion.Text;
             tipoHabitacion.Precio = Convert.ToDecimal(this.Precio.Text);
-
-            TipoHabitacionBus tipoHabitacionBus = new TipoHabitacionBus();
-            tipoHabitacion = tipoHabitacionBus.Add(tipoHabitacion);
-
-            //Response.Redirect("~/Manage/Empleados.aspx");
+            try
+            {
+                tipoHabitacion = tipoHabitacionBus.Add(tipoHabitacion);
+                //FillDropDownTipoHabitacion();
+                this.TipoHabitacion.Visible = false;
+                Response.Redirect(Request.RawUrl);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
         }
 
         protected void FillDropDownTipoHabitacion()
         {
-            TipoHabitacionBus tipoHabitacionBus = new TipoHabitacionBus();
             List<TipoHabitacionDto> tipoHabitaciones = tipoHabitacionBus.GetAll();
 
             Session["TipoHabitaciones"] = tipoHabitaciones;
+        }
+
+        protected void editarButton_Click(object sender, EventArgs e)
+        {
+            this.TipoHabitacion.Visible = true;
+            this.createButton.Visible = false;
+            this.editButton.Visible = true;
+            TipoHabitacionDto tipoHabitacion = tipoHabitacionBus.GetById(Convert.ToInt32(this.DropDownTipoHabitacion.SelectedValue));
+            this.NombreTipoHabitacion.Text = tipoHabitacion.Nombre;
+            this.Descripcion.Text = tipoHabitacion.Descripcion;
+            this.MetrosCuadrados.Text = tipoHabitacion.MetrosCuadrados.ToString();
+            this.Precio.Text = tipoHabitacion.Precio.ToString();
+        }
+
+        protected void crearButton_Click(object sender, EventArgs e)
+        {
+            this.TipoHabitacion.Visible = true;
+            this.createButton.Visible = true;
+            this.editButton.Visible = false;
+            this.NombreTipoHabitacion.Text = String.Empty;
+            this.Descripcion.Text = String.Empty;
+            this.MetrosCuadrados.Text = String.Empty;
+            this.Precio.Text = String.Empty;
+        }
+
+        protected void eliminarButton_Click(object sender, EventArgs e)
+        {
+            TipoHabitacionDto tipoHabitacion = tipoHabitacionBus.GetById(Convert.ToInt32(this.DropDownTipoHabitacion.SelectedValue));
+            try
+            {
+                tipoHabitacionBus.Delete(tipoHabitacion);
+                Response.Redirect(Request.RawUrl);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void editButton_Click(object sender, EventArgs e)
+        {
+            TipoHabitacionDto tipoHabitacion = new TipoHabitacionDto();
+            tipoHabitacion.Id = Convert.ToInt32(this.DropDownTipoHabitacion.SelectedValue);
+            tipoHabitacion.Nombre = this.NombreTipoHabitacion.Text;
+            tipoHabitacion.Descripcion = this.Descripcion.Text;
+            tipoHabitacion.MetrosCuadrados = Convert.ToInt32(this.MetrosCuadrados.Text);
+            tipoHabitacion.Precio = Convert.ToDecimal(this.Precio.Text);
+            try
+            {
+                tipoHabitacionBus.Update(tipoHabitacion);
+                this.TipoHabitacion.Visible = false;
+                Response.Redirect(Request.RawUrl);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
