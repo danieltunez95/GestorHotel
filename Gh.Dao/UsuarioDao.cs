@@ -112,8 +112,8 @@ AND Password = @Password";
             parameters.Add(passwordParameter);
 
             List<UsuarioDto> usuarios = GetData(commandText, parameters);
-
-            UsuarioDto usuario = usuarios.Count == 1 ? usuarios[0] : null;
+            //TODO: solo debería haber un usuario con el mismo nombre. Se debe comprobar el el método ADD
+            UsuarioDto usuario = usuarios.Count != 0 ? usuarios[0] : null;
 
             return usuario;
         }

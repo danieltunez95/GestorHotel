@@ -362,7 +362,7 @@ AND Planta = @Planta";
         protected override HabitacionDto MapDataReader(SqlDataReader dr)
         {
             // Habrá algo que no sea NULL, hablarlo con Dani.
-            CamaEnum IdCama = (CamaEnum)Enum.Parse(typeof(CamaEnum), dr["IdCama"].ToString());
+            //CamaEnum IdCama = (CamaEnum)Enum.Parse(typeof(CamaEnum), dr["IdCama"].ToString());
             HabitacionDto habitacion = new HabitacionDto()
             {
                 Id = Convert.ToInt32(dr["Id"]),
@@ -371,8 +371,8 @@ AND Planta = @Planta";
                 PosicionX = Convert.ToInt32(dr["PosicionX"]),
                 PosicionY = Convert.ToInt32(dr["PosicionY"])
             };
-            if (dr["TipoHabitacion"] != null)
-                habitacion.TipoHabitacion = new TipoHabitacionDto() { Id = Convert.ToInt32(dr["TipoHabitacion"]) };
+            //if (dr["TipoHabitacion"] != null)
+                //habitacion.TipoHabitacion = new TipoHabitacionDto() { Id = Convert.ToInt32(dr["TipoHabitacion"]) };
 
             return habitacion;
         }

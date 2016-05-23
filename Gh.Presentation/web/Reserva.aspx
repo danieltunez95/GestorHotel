@@ -3,7 +3,7 @@
 <%@ MasterType VirtualPath="~/Web/Web.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="/Style/hotelGrafico.css" rel="stylesheet" />
-    <script src="Scripts/Reserva.js?v=2"></script>
+    <script src="Scripts/Reserva.js?v=6"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="form-inline">
@@ -29,8 +29,5 @@
         <div class="col-lg-11">
             <asp:Panel ID="hotelTable" runat="server"></asp:Panel>
         </div>
-    </div>
-    <div class="row">
-        <asp:Button ID="finalizarButton" runat="server" Text="Finalizar" Style="visibility: hidden" OnClick="finalizarButton_Click" />
     </div>
 </asp:Content>

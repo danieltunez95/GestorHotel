@@ -55,12 +55,10 @@ function Restart() {
 }
 
 function Reenviar(idPosicion) {
-    //window.location.replace("habitacion.aspx?id=" + id);
-    RESERVA.push(idPosicion);
+    RESERVA.push(PLANTA + "_" + idPosicion);
     document.getElementById(idPosicion).setAttribute("class", "celda seleccionada");
-    if (document.getElementById("nueroHabitacionesLabel").innerHTML.indexOf(HABITACIONES) != -1) {
-        document.getElementById("finalizarButton").style.visibility = "visible";
-    }
+    if (RESERVA.length >= HABITACIONES)
+        window.location = location.href.replace("Reserva", "Comprar") + "?habitaciones=" + RESERVA.join(",");
 }
 
 var HOTEL;

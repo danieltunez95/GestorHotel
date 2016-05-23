@@ -131,6 +131,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="web\Comprar.aspx" />
     <Content Include="web\Habitacion.aspx" />
     <Content Include="web\Main.aspx" />
     <Content Include="web\Reserva.aspx" />
@@ -236,6 +237,13 @@
     </Compile>
     <Compile Include="Manage\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Comprar.aspx.cs">
+      <DependentUpon>Comprar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Comprar.aspx.designer.cs">
+      <DependentUpon>Comprar.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\Habitacion.aspx.cs">
       <DependentUpon>Habitacion.aspx</DependentUpon>

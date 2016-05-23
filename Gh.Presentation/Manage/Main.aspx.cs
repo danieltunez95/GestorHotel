@@ -17,7 +17,7 @@ namespace Gh.Presentation.Manage
 
             if (!IsPostBack && Session["hotel"] != null)
             {
-                HotelDto hotel = hotelBus.GetById(49);
+                HotelDto hotel = (HotelDto)Session["hotel"];
                 //Do everything
                 //Habitaciones disponibles
                 int habitaciones = 0;

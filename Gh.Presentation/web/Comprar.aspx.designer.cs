@@ -10,81 +10,96 @@
 namespace Gh.Presentation.web {
     
     
-    public partial class Reserva {
+    public partial class Comprar {
         
         /// <summary>
-        /// fechaInicioBox control.
+        /// emailBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fechaInicioBox;
+        protected global::System.Web.UI.WebControls.TextBox emailBox;
         
         /// <summary>
-        /// fechaFinalBox control.
+        /// contraseñaBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fechaFinalBox;
+        protected global::System.Web.UI.WebControls.TextBox contraseñaBox;
         
         /// <summary>
-        /// numeroPersonas control.
+        /// nombreBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox numeroPersonas;
+        protected global::System.Web.UI.WebControls.TextBox nombreBox;
         
         /// <summary>
-        /// verButton control.
+        /// apellidosBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button verButton;
+        protected global::System.Web.UI.WebControls.TextBox apellidosBox;
         
         /// <summary>
-        /// plantaActual control.
+        /// dniBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl plantaActual;
+        protected global::System.Web.UI.WebControls.TextBox dniBox;
         
         /// <summary>
-        /// nueroHabitacionesLabel control.
+        /// fechaNacimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nueroHabitacionesLabel;
+        protected global::System.Web.UI.WebControls.TextBox fechaNacimiento;
         
         /// <summary>
-        /// hotelTable control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel hotelTable;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// Master property.
+        /// TextBox3 control.
         /// </summary>
         /// <remarks>
-        /// Auto-generated property.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public new Gh.Presentation.Web.Web Master {
-            get {
-                return ((Gh.Presentation.Web.Web)(base.Master));
-            }
-        }
+        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        
+        /// <summary>
+        /// TextBox2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        
+        /// <summary>
+        /// finalizarButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button finalizarButton;
     }
 }

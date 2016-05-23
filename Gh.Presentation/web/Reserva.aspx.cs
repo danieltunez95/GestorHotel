@@ -25,7 +25,7 @@ namespace Gh.Presentation.web
             if (!IsPostBack)
             {
                 String nombre = ((Label)this.Master.FindControl("nombreHotel")).Text;
-                //hotel = hotelBus.GetByNombre(nombre);
+                hotel = hotelBus.GetByNombre(nombre);
             }
         }
 
@@ -103,16 +103,13 @@ namespace Gh.Presentation.web
                 script.Append("ANCHO=" + hotel.Ancho + ";");
                 script.Append("HABITACIONES=" + habitaciones + ";");
                 script.Append("</script>");
+
+                Response.Write(script.ToString());
             }
             catch
             {
                 Response.Write("Ha ocurrido un error en el formato de las fechas. Compruebe los datos");
             }
-        }
-
-        protected void finalizarButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
