@@ -1,15 +1,12 @@
 ﻿using Gh.Bus;
 using Gh.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Gh.Presentation.web
 {
-    public partial class Comprar : System.Web.UI.Page
+    public partial class Comprar : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,13 +26,13 @@ namespace Gh.Presentation.web
             persona.SegundoApellido = this.segundoApellidoBox.Text;
             persona.Telefono = this.telefonoBox.Text;
 
-            //PersonaBus personaBus = new PersonaBus();
-            //persona = personaBus.Add(persona);
+            PersonaBus personaBus = new PersonaBus();
+            persona = personaBus.Add(persona);
 
             ClienteDto cliente = new ClienteDto();
             cliente.Correo = this.emailBox.Text;
             cliente.Password = this.contraseñaBox.Text;
-            //cliente.Persona = persona;
+            cliente.Persona = persona;
 
             ClienteBus clienteBus = new ClienteBus();
             cliente = clienteBus.Add(cliente);

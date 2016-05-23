@@ -28,5 +28,11 @@ namespace Gh.Common
         public string Telefono { get; set; } // Plantearse hacerlo una lista o un objeto.
 
         public string Nif { get; set; }
+
+        public PoblacionDto Poblacion { get; set; }
+
+        public MunicipioDto Municipio { get; set; }
+
+        public PaisDto Pais { get; set; }
     }
 }

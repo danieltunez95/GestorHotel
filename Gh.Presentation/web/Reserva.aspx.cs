@@ -1,16 +1,13 @@
 ﻿using Gh.Bus;
 using Gh.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Gh.Presentation.web
 {
-    public partial class Reserva : System.Web.UI.Page
+    public partial class Reserva : Page
     {
         static HotelBus hotelBus = new HotelBus();
         static HabitacionBus habitacionBus = new HabitacionBus();

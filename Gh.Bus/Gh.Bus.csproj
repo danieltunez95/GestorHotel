@@ -45,6 +45,7 @@
     <Compile Include="HabitacionBus.cs" />
     <Compile Include="MunicipioBus.cs" />
     <Compile Include="PaisBus.cs" />
+    <Compile Include="PersonaBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinciaBus.cs" />
     <Compile Include="ReservaBus.cs" />

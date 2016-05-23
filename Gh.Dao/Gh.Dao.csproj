@@ -48,6 +48,7 @@
     <Compile Include="HabitacionDao.cs" />
     <Compile Include="MunicipioDao.cs" />
     <Compile Include="PaisDao.cs" />
+    <Compile Include="PersonaDao.cs" />
     <Compile Include="PoblacionDao.cs" />
     <Compile Include="ProvinciaDao.cs" />
     <Compile Include="ReservaDao.cs" />
