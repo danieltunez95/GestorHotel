@@ -11,7 +11,7 @@ namespace Gh.Presentation.web
 {
 
 
-    public partial class Panel
+    public partial class UserPanel
     {
     }
 }

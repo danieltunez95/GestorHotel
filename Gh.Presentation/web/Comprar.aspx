@@ -15,7 +15,9 @@
         <div class="form-group">
             <h2>Datos personales</h2>
             <asp:TextBox runat="server" ID="nombreBox" CssClass="form-control" placeholder="Nombre"></asp:TextBox>
-            <asp:TextBox runat="server" ID="apellidosBox" CssClass="form-control" placeholder="Apellidos"></asp:TextBox>
+            <asp:TextBox runat="server" ID="primerApellidoBox" CssClass="form-control" placeholder="Primer apellido"></asp:TextBox>
+            <asp:TextBox runat="server" ID="segundoApellidoBox" CssClass="form-control" placeholder="Segundo apellido"></asp:TextBox>
+            <asp:TextBox runat="server" ID="telefonoBox" CssClass="form-control" placeholder="Teléfono"></asp:TextBox>
             <asp:TextBox runat="server" ID="dniBox" CssClass="form-control" placeholder="DNI"></asp:TextBox>
             <asp:TextBox runat="server" ID="fechaNacimiento" TextMode="Date" CssClass="form-control" placeholder="Fecha de nacimiento (31/01/2016)"></asp:TextBox>
         </div>

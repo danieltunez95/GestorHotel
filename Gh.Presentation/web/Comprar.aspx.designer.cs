@@ -40,13 +40,31 @@ namespace Gh.Presentation.web {
         protected global::System.Web.UI.WebControls.TextBox nombreBox;
         
         /// <summary>
-        /// apellidosBox control.
+        /// primerApellidoBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox apellidosBox;
+        protected global::System.Web.UI.WebControls.TextBox primerApellidoBox;
+        
+        /// <summary>
+        /// segundoApellidoBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox segundoApellidoBox;
+        
+        /// <summary>
+        /// telefonoBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox telefonoBox;
         
         /// <summary>
         /// dniBox control.

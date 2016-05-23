@@ -134,7 +134,6 @@
     <Content Include="web\Comprar.aspx" />
     <Content Include="web\Habitacion.aspx" />
     <Content Include="web\Main.aspx" />
-    <Content Include="web\Panel.aspx" />
     <Content Include="web\Reserva.aspx" />
     <Content Include="web\Scripts\Reserva.js" />
     <Content Include="web\Sources\arrowDown.png" />
@@ -142,6 +141,7 @@
     <Content Include="web\Sources\hotel-demo-1.jpg" />
     <Content Include="web\Sources\hotel-demo-2.jpg" />
     <Content Include="web\Sources\hotel-demo-3.jpg" />
+    <Content Include="web\UserPanel.aspx" />
     <Content Include="web\Web.master" />
   </ItemGroup>
   <ItemGroup>
@@ -260,19 +260,19 @@
     <Compile Include="web\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="web\Panel.aspx.cs">
-      <DependentUpon>Panel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="web\Panel.aspx.designer.cs">
-      <DependentUpon>Panel.aspx</DependentUpon>
-    </Compile>
     <Compile Include="web\Reserva.aspx.cs">
       <DependentUpon>Reserva.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="web\Reserva.aspx.designer.cs">
       <DependentUpon>Reserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\UserPanel.aspx.cs">
+      <DependentUpon>UserPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\UserPanel.aspx.designer.cs">
+      <DependentUpon>UserPanel.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\Web.master.cs">
       <DependentUpon>Web.master</DependentUpon>

@@ -22,9 +22,20 @@ namespace Gh.Presentation.web
             HotelBus hotelBus = new HotelBus();
             HotelDto hotel = hotelBus.GetByNombre(nombre);
 
+            PersonaDto persona = new PersonaDto();
+            persona.Nif = this.dniBox.Text;
+            persona.Nombre = this.nombreBox.Text;
+            persona.PrimerApellido = this.primerApellidoBox.Text;
+            persona.SegundoApellido = this.segundoApellidoBox.Text;
+            persona.Telefono = this.telefonoBox.Text;
+
+            PersonaBus personaBus = new PersonaBus();
+            persona = personaBus.Add(persona);
+
             ClienteDto cliente = new ClienteDto();
             cliente.Correo = this.emailBox.Text;
             cliente.Password = this.contraseñaBox.Text;
+            cliente.Persona = persona;
 
             ClienteBus clienteBus = new ClienteBus();
             cliente = clienteBus.Add(cliente);
@@ -51,7 +62,7 @@ namespace Gh.Presentation.web
                 reservaBus.AddFromPos(reserva);
             }
 
-            Response.Redirect("/web/Panel.aspx");
+            Response.Redirect("/web/UserPanel.aspx");
         }
     }
 }
