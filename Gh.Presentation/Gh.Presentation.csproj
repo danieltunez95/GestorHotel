@@ -105,6 +105,7 @@
     <Content Include="Create\Main.aspx" />
     <Content Include="Create\scripts\CrearHotel.js" />
     <Content Include="Create\Setup.aspx" />
+    <Content Include="Manage\Login.aspx" />
     <Content Include="Style\hotelGrafico.css" />
     <Content Include="Manage\CreateEmpleado.aspx" />
     <Content Include="Manage\CreateTurno.aspx" />
@@ -203,6 +204,13 @@
     </Compile>
     <Compile Include="Manage\Empleados.aspx.designer.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>

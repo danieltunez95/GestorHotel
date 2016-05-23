@@ -56,18 +56,5 @@
             </div>
         </form>
     </asp:Panel>
-    <asp:Panel runat="server" ID="Login">
-        <div class="container center">
-            <form id="FormLogin" runat="server" class="form-signin">
-                <asp:Label runat="server" Text="Login" CssClass="loginTitle"></asp:Label>
-                <br />
-                <asp:TextBox runat="server" ID="Username" placeholder="Usuario" CssClass="form-control"></asp:TextBox>
-                <br />
-                <asp:TextBox runat="server" ID="Password" placeholder="Contraseña" CssClass="form-control" TextMode="Password"></asp:TextBox>
-                <br />
-                <asp:Button ID="loginButton" runat="server" CssClass="btn btn-success loginButton" Text="Log in" OnClick="loginButton_Click" />
-            </form>
-        </div>
-    </asp:Panel>
 </body>
 </html>

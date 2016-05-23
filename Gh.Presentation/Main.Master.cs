@@ -13,8 +13,7 @@ namespace Gh.Presentation.Manage
         protected void Page_Load(object sender, EventArgs e)
         {
             bool visible = Session["Usuario"] == null;
-            Menu.Visible = !visible;
-            Login.Visible = visible;
+
             if (Session["Usuario"] != null)
             {
                 HotelBus hotelBus = new HotelBus();
@@ -46,6 +45,8 @@ namespace Gh.Presentation.Manage
                 if (!hotelBus.HasAnyHotel() && Page.ToString().ToLower().IndexOf("setup") == -1)
                     Response.Redirect("/Create/Setup.aspx");
             }
+            else
+                Response.Redirect("/Manage/Login.aspx");
         }
 
         protected void IndexButton_Click(object sender, EventArgs e)
@@ -73,20 +74,6 @@ namespace Gh.Presentation.Manage
             HotelBus hotelBus = new HotelBus();
             hotelActual = hotelBus.GetById(int.Parse(hotelList.SelectedValue));
             Session.Add("hotel", hotelActual);
-        }
-
-        protected void loginButton_Click(object sender, EventArgs e)
-        {
-            UsuarioBus usuarioBus = new UsuarioBus();
-            string username = this.Username.Text;
-            string password = this.Password.Text;
-            UsuarioDto usuario = usuarioBus.Login(username, password);
-            if(usuario != null)
-            {
-                Session["Usuario"] = usuario;
-                Menu.Visible = true;
-                Login.Visible = false;
-            }
         }
     }
 }
