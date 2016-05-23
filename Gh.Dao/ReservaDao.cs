@@ -98,11 +98,11 @@ namespace Gh.Dao
 
             // Descuento
             SqlParameter descuentoParameter = new SqlParameter();
-            importeParameter.DbType = DbType.Decimal;
-            importeParameter.Direction = ParameterDirection.Input;
-            importeParameter.ParameterName = "@Descuento";
-            importeParameter.Value = reserva.Descuento != null ? reserva.Descuento : null;
-            parameters.Add(importeParameter);
+            descuentoParameter.DbType = DbType.Decimal;
+            descuentoParameter.Direction = ParameterDirection.Input;
+            descuentoParameter.ParameterName = "@Descuento";
+            descuentoParameter.Value = reserva.Descuento != null ? reserva.Descuento : null;
+            parameters.Add(descuentoParameter);
 
             // ImporteFinal
             SqlParameter importeFinalParameter = new SqlParameter();
