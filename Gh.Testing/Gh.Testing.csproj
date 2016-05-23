@@ -63,6 +63,7 @@
     <Compile Include="Gh.Dao.Tests\TurnoDaoTest.cs" />
     <Compile Include="Gh.Dao.Tests\ReservaDaoTest.cs" />
     <Compile Include="Gh.Dao.Tests\HabitacionDaoTest.cs" />
+    <Compile Include="Gh.Dao.Tests\ClienteDaoTest.cs" />
     <Compile Include="Gh.Dao.Tests\UsuarioDaoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,6 +100,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Gh.Dao.Tests\EmpleadoDaoOrderedTest.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Gh.Dao.Tests\ClienteDaoOrderedTest.orderedtest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Gh.Dao.Tests\UsuarioDaoOrderedTest.orderedtest">

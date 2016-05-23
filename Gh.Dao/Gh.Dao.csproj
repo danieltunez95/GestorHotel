@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AppConfigReader.cs" />
     <Compile Include="BaseDao.cs" />
+    <Compile Include="ClienteDao.cs" />
     <Compile Include="EmpleadoDao.cs" />
     <Compile Include="HabitacionDao.cs" />
     <Compile Include="MunicipioDao.cs" />
