@@ -99,6 +99,8 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Corporative\css\Pricing.css" />
+    <Content Include="Corporative\pricing.html" />
     <Content Include="Demo\Create\CrearHotel.aspx" />
     <Content Include="Demo\Create\Detalles.aspx" />
     <Content Include="Demo\Create\EditarHabitacion.aspx" />
@@ -106,6 +108,23 @@
     <Content Include="Demo\Create\scripts\CrearHotel.js" />
     <Content Include="Demo\Create\Setup.aspx" />
     <Content Include="Demo\Manage\Login.aspx" />
+    <Content Include="Corporative\css\bootstrap.css" />
+    <Content Include="Corporative\css\bootstrap.min.css" />
+    <Content Include="Corporative\css\stylish-portfolio.css" />
+    <Content Include="Corporative\font-awesome\css\font-awesome.css" />
+    <Content Include="Corporative\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Corporative\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Corporative\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Corporative\img\bg.jpg" />
+    <Content Include="Corporative\img\callout.jpg" />
+    <Content Include="Corporative\img\portfolio-1.jpg" />
+    <Content Include="Corporative\img\portfolio-2.jpg" />
+    <Content Include="Corporative\img\portfolio-3.jpg" />
+    <Content Include="Corporative\img\portfolio-4.jpg" />
+    <Content Include="Corporative\index.html" />
+    <Content Include="Corporative\js\bootstrap.js" />
+    <Content Include="Corporative\js\bootstrap.min.js" />
+    <Content Include="Corporative\js\jquery.js" />
     <Content Include="Style\hotelGrafico.css" />
     <Content Include="Demo\Manage\CreateEmpleado.aspx" />
     <Content Include="Demo\Manage\CreateTurno.aspx" />
@@ -126,6 +145,42 @@
     <Content Include="Demo\Manage\Users.aspx" />
     <Content Include="packages.config" />
     <Content Include="Main.Master" />
+    <Content Include="Corporative\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Corporative\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Corporative\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Corporative\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Corporative\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Corporative\font-awesome\less\core.less" />
+    <Content Include="Corporative\font-awesome\less\fixed-width.less" />
+    <Content Include="Corporative\font-awesome\less\font-awesome.less" />
+    <Content Include="Corporative\font-awesome\less\icons.less" />
+    <Content Include="Corporative\font-awesome\less\larger.less" />
+    <Content Include="Corporative\font-awesome\less\list.less" />
+    <Content Include="Corporative\font-awesome\less\mixins.less" />
+    <Content Include="Corporative\font-awesome\less\path.less" />
+    <Content Include="Corporative\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Corporative\font-awesome\less\spinning.less" />
+    <Content Include="Corporative\font-awesome\less\stacked.less" />
+    <Content Include="Corporative\font-awesome\less\variables.less" />
+    <Content Include="Corporative\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Corporative\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Corporative\font-awesome\scss\_core.scss" />
+    <Content Include="Corporative\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Corporative\font-awesome\scss\_icons.scss" />
+    <Content Include="Corporative\font-awesome\scss\_larger.scss" />
+    <Content Include="Corporative\font-awesome\scss\_list.scss" />
+    <Content Include="Corporative\font-awesome\scss\_mixins.scss" />
+    <Content Include="Corporative\font-awesome\scss\_path.scss" />
+    <Content Include="Corporative\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Corporative\font-awesome\scss\_spinning.scss" />
+    <Content Include="Corporative\font-awesome\scss\_stacked.scss" />
+    <Content Include="Corporative\font-awesome\scss\_variables.scss" />
+    <Content Include="Corporative\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Corporative\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Corporative\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Corporative\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Corporative\LICENSE" />
+    <Content Include="Corporative\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -301,7 +356,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Corporative\" />
     <Folder Include="Demo\Create\style\" />
     <Folder Include="Demo\Manage\Style\" />
     <Folder Include="Properties\" />
