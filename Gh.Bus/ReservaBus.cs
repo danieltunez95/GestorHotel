@@ -24,6 +24,9 @@ namespace Gh.Bus
 
         public ReservaDto AddFromPos(ReservaDto reserva)
         {
+            HabitacionBus habitacionBus = new HabitacionBus();
+            HabitacionDto habitacion = habitacionBus.GetByIdPos(reserva.IdPosHabitacion);
+            reserva.IdHabitacion = habitacion.Id;
             return dao.AddFromPos(reserva);
         }
 

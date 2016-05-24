@@ -140,12 +140,12 @@ namespace Gh.Dao
             idHotelParameter.Value = reserva.IdHotel;
             parameters.Add(idHotelParameter);
 
-            // IdPosHabitacion
+            // IdHabitacion
             SqlParameter idHabitacionParameter = new SqlParameter();
-            idHabitacionParameter.DbType = DbType.Int32;
+            idHabitacionParameter.DbType = DbType.String;
             idHabitacionParameter.Direction = ParameterDirection.Input;
-            idHabitacionParameter.ParameterName = "@IdPosHabitacion";
-            idHabitacionParameter.Value = reserva.IdPosHabitacion;
+            idHabitacionParameter.ParameterName = "@IdHabitacion";
+            idHabitacionParameter.Value = reserva.IdHabitacion;
             parameters.Add(idHabitacionParameter);
 
             // IdCliente

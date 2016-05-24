@@ -31,6 +31,7 @@ namespace Gh.Presentation.web
 
             ClienteDto cliente = new ClienteDto();
             cliente.Correo = this.emailBox.Text;
+            cliente.Username = this.emailBox.Text;
             cliente.Password = this.contraseñaBox.Text;
             cliente.Persona = persona;
 

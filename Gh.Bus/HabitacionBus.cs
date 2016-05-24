@@ -39,6 +39,11 @@ namespace Gh.Bus
             return dao.GetById(id);
         }
 
+        public HabitacionDto GetByIdPos(string idPos)
+        {
+            return dao.GetByIdPos(idPos);
+        }
+
         public int Update(HabitacionDto habitacion)
         {
             return dao.Update(habitacion);

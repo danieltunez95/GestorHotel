@@ -26,7 +26,7 @@ namespace Gh.Dao
             usernameParameter.DbType = DbType.String;
             usernameParameter.Direction = ParameterDirection.Input;
             usernameParameter.ParameterName = "@Username";
-            usernameParameter.Value = cliente.Username;
+            usernameParameter.Value = cliente.Username ?? Convert.DBNull;
             parameters.Add(usernameParameter);
 
             // Email
@@ -34,7 +34,7 @@ namespace Gh.Dao
             emailParameter.DbType = DbType.String;
             emailParameter.Direction = ParameterDirection.Input;
             emailParameter.ParameterName = "@Email";
-            emailParameter.Value = cliente.Correo;
+            emailParameter.Value = cliente.Correo ?? Convert.DBNull;
             parameters.Add(emailParameter);
 
             // Password
@@ -42,7 +42,7 @@ namespace Gh.Dao
             passwordParameter.DbType = DbType.String;
             passwordParameter.Direction = ParameterDirection.Input;
             passwordParameter.ParameterName = "@Password";
-            passwordParameter.Value = cliente.Password;
+            passwordParameter.Value = cliente.Password ?? Convert.DBNull;
             parameters.Add(passwordParameter);
 
             // Telefono
@@ -50,7 +50,7 @@ namespace Gh.Dao
             telefonoParameter.DbType = DbType.String;
             telefonoParameter.Direction = ParameterDirection.Input;
             telefonoParameter.ParameterName = "@Telefono";
-            telefonoParameter.Value = cliente.Telefono;
+            telefonoParameter.Value = cliente.Telefono ?? Convert.DBNull;
             parameters.Add(telefonoParameter);
 
             // IdPersona
@@ -58,7 +58,10 @@ namespace Gh.Dao
             idPersonaParameter.DbType = DbType.Int32;
             idPersonaParameter.Direction = ParameterDirection.Input;
             idPersonaParameter.ParameterName = "@IdPersona";
-            idPersonaParameter.Value = cliente.Persona.Id;
+            if (cliente.Persona != null)
+                idPersonaParameter.Value = cliente.Persona.Id;
+            else
+                idPersonaParameter.Value = Convert.DBNull;
             parameters.Add(idPersonaParameter);
 
             GetData(commandText, parameters, commandType);

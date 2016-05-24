@@ -173,6 +173,35 @@ WHERE TipoHabitacion = @TipoHabitacion";
             return habitaciones;
         }
 
+        public HabitacionDto GetByIdPos(string idPos)
+        {
+            string commandText = @"SELECT
+Id,
+IdPosicion,
+IdHotel,
+Planta,
+PosicionX,
+PosicionY,
+TipoHabitacion
+FROM Habitacion
+WHERE IdPosicion = @IdPosicion";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // IdPosicion
+            SqlParameter idPosicionParameter = new SqlParameter();
+            idPosicionParameter.DbType = DbType.String;
+            idPosicionParameter.Direction = ParameterDirection.Input;
+            idPosicionParameter.ParameterName = "@IdPosicion";
+            idPosicionParameter.Value = idPos;
+            parameters.Add(idPosicionParameter);
+
+            List<HabitacionDto> habitaciones = GetData(commandText, parameters);
+            HabitacionDto habitacion = null;
+            if (habitaciones.Count == 1)
+                habitacion = habitaciones[0];
+            return habitacion;
+        }
+
         public bool isBusy(int idHotel, int posicionX, int posicionY, int planta, DateTime fechaInicio, DateTime fechaFinal)
         {
             string commandText = @"SELECT
