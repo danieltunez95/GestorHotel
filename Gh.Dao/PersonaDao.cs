@@ -29,7 +29,7 @@ namespace Gh.Dao
             nombreParameter.DbType = DbType.String;
             nombreParameter.Direction = ParameterDirection.Input;
             nombreParameter.ParameterName = "@Nombre";
-            nombreParameter.Value = persona.Nombre;
+            nombreParameter.Value = persona.Nombre ?? Convert.DBNull;
             parameters.Add(nombreParameter);
 
             // PrimerApellido
@@ -37,7 +37,7 @@ namespace Gh.Dao
             primerApellidoParameter.DbType = DbType.String;
             primerApellidoParameter.Direction = ParameterDirection.Input;
             primerApellidoParameter.ParameterName = "@PrimerApellido";
-            primerApellidoParameter.Value = persona.PrimerApellido;
+            primerApellidoParameter.Value = persona.PrimerApellido ?? Convert.DBNull;
             parameters.Add(primerApellidoParameter);
 
             // SegundoApellido
@@ -45,7 +45,7 @@ namespace Gh.Dao
             segundoApellidoParameter.DbType = DbType.String;
             segundoApellidoParameter.Direction = ParameterDirection.Input;
             segundoApellidoParameter.ParameterName = "@SegundoApellido";
-            segundoApellidoParameter.Value = persona.SegundoApellido;
+            segundoApellidoParameter.Value = persona.SegundoApellido ?? Convert.DBNull;
             parameters.Add(segundoApellidoParameter);
 
             // Telefono
@@ -53,7 +53,7 @@ namespace Gh.Dao
             telefonoParameter.DbType = DbType.String;
             telefonoParameter.Direction = ParameterDirection.Input;
             telefonoParameter.ParameterName = "@Telefono";
-            telefonoParameter.Value = persona.Telefono;
+            telefonoParameter.Value = persona.Telefono ?? Convert.DBNull;
             parameters.Add(telefonoParameter);
 
             // Direccion
@@ -61,7 +61,7 @@ namespace Gh.Dao
             direccionParameter.DbType = DbType.String;
             direccionParameter.Direction = ParameterDirection.Input;
             direccionParameter.ParameterName = "@Direccion";
-            direccionParameter.Value = persona.Direccion;
+            direccionParameter.Value = persona.Direccion ?? Convert.DBNull;
             parameters.Add(direccionParameter);
 
             // Nif
@@ -69,7 +69,7 @@ namespace Gh.Dao
             nifParameter.DbType = DbType.String;
             nifParameter.Direction = ParameterDirection.Input;
             nifParameter.ParameterName = "@Nif";
-            nifParameter.Value = persona.Nif;
+            nifParameter.Value = persona.Nif ?? Convert.DBNull;
             parameters.Add(nifParameter);
 
             // FechaNacimiento
@@ -77,7 +77,7 @@ namespace Gh.Dao
             fechaNacimientoParameter.DbType = DbType.DateTime;
             fechaNacimientoParameter.Direction = ParameterDirection.Input;
             fechaNacimientoParameter.ParameterName = "@FechaNacimiento";
-            fechaNacimientoParameter.Value = persona.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
+            fechaNacimientoParameter.Value = persona.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss") ?? Convert.DBNull;
             parameters.Add(fechaNacimientoParameter);
 
             // IdPoblacion
@@ -224,7 +224,7 @@ WHERE Id = @Id";
             nombreParameter.DbType = DbType.String;
             nombreParameter.Direction = ParameterDirection.Input;
             nombreParameter.ParameterName = "@Nombre";
-            nombreParameter.Value = persona.Nombre;
+            nombreParameter.Value = persona.Nombre ?? Convert.DBNull;
             parameters.Add(nombreParameter);
 
             // PrimerApellido
@@ -232,7 +232,7 @@ WHERE Id = @Id";
             primerApellidoParameter.DbType = DbType.String;
             primerApellidoParameter.Direction = ParameterDirection.Input;
             primerApellidoParameter.ParameterName = "@PrimerApellido";
-            primerApellidoParameter.Value = persona.PrimerApellido;
+            primerApellidoParameter.Value = persona.PrimerApellido ?? Convert.DBNull;
             parameters.Add(primerApellidoParameter);
 
             // SegundoApellido
@@ -240,7 +240,7 @@ WHERE Id = @Id";
             segundoApellidoParameter.DbType = DbType.String;
             segundoApellidoParameter.Direction = ParameterDirection.Input;
             segundoApellidoParameter.ParameterName = "@SegundoApellido";
-            segundoApellidoParameter.Value = persona.SegundoApellido;
+            segundoApellidoParameter.Value = persona.SegundoApellido ?? Convert.DBNull;
             parameters.Add(segundoApellidoParameter);
 
             // Telefono
@@ -248,7 +248,7 @@ WHERE Id = @Id";
             telefonoParameter.DbType = DbType.String;
             telefonoParameter.Direction = ParameterDirection.Input;
             telefonoParameter.ParameterName = "@Telefono";
-            telefonoParameter.Value = persona.Telefono;
+            telefonoParameter.Value = persona.Telefono ?? Convert.DBNull;
             parameters.Add(telefonoParameter);
 
             // Direccion
@@ -256,7 +256,7 @@ WHERE Id = @Id";
             direccionParameter.DbType = DbType.String;
             direccionParameter.Direction = ParameterDirection.Input;
             direccionParameter.ParameterName = "@Direccion";
-            direccionParameter.Value = persona.Direccion;
+            direccionParameter.Value = persona.Direccion ?? Convert.DBNull;
             parameters.Add(direccionParameter);
 
             // Nif
@@ -264,7 +264,7 @@ WHERE Id = @Id";
             nifParameter.DbType = DbType.String;
             nifParameter.Direction = ParameterDirection.Input;
             nifParameter.ParameterName = "@Nif";
-            nifParameter.Value = persona.Nif;
+            nifParameter.Value = persona.Nif ?? Convert.DBNull;
             parameters.Add(nifParameter);
 
             // FechaNacimiento
@@ -272,7 +272,7 @@ WHERE Id = @Id";
             fechaNacimientoParameter.DbType = DbType.DateTime;
             fechaNacimientoParameter.Direction = ParameterDirection.Input;
             fechaNacimientoParameter.ParameterName = "@FechaNacimiento";
-            fechaNacimientoParameter.Value = persona.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
+            fechaNacimientoParameter.Value = persona.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss") ?? Convert.DBNull;
             parameters.Add(fechaNacimientoParameter);
 
             // IdPoblacion

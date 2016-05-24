@@ -35,7 +35,7 @@ namespace Gh.Dao
             metrosCuadradosParameter.DbType = DbType.Int32;
             metrosCuadradosParameter.Direction = ParameterDirection.Input;
             metrosCuadradosParameter.ParameterName = "@MetrosCuadrados";
-            metrosCuadradosParameter.Value = tipoHabitacion.MetrosCuadrados;
+            metrosCuadradosParameter.Value = tipoHabitacion.MetrosCuadrados ?? Convert.DBNull;
             parameters.Add(metrosCuadradosParameter);
 
             // Descripcion
@@ -43,7 +43,7 @@ namespace Gh.Dao
             descripcionParameter.DbType = DbType.String;
             descripcionParameter.Direction = ParameterDirection.Input;
             descripcionParameter.ParameterName = "@Descripcion";
-            descripcionParameter.Value = tipoHabitacion.Descripcion;
+            descripcionParameter.Value = tipoHabitacion.Descripcion ?? Convert.DBNull;
             parameters.Add(descripcionParameter);
 
             // Imagen
@@ -51,7 +51,7 @@ namespace Gh.Dao
             imagenParameter.DbType = DbType.String;
             imagenParameter.Direction = ParameterDirection.Input;
             imagenParameter.ParameterName = "@Imagen";
-            imagenParameter.Value = tipoHabitacion.Imagen != null ? tipoHabitacion.Imagen : Convert.DBNull;
+            imagenParameter.Value = tipoHabitacion.Imagen ?? Convert.DBNull;
             parameters.Add(imagenParameter);
 
             // Precio
@@ -59,7 +59,7 @@ namespace Gh.Dao
             precioParameter.DbType = DbType.Decimal;
             precioParameter.Direction = ParameterDirection.Input;
             precioParameter.ParameterName = "@Precio";
-            precioParameter.Value = tipoHabitacion.Precio;
+            precioParameter.Value = tipoHabitacion.Precio ?? Convert.DBNull;
             parameters.Add(precioParameter);
 
             GetData(commandText, parameters, commandType);
@@ -170,7 +170,7 @@ WHERE Id = @Id";
             metrosCuadradosParameter.DbType = DbType.Int32;
             metrosCuadradosParameter.Direction = ParameterDirection.Input;
             metrosCuadradosParameter.ParameterName = "@MetrosCuadrados";
-            metrosCuadradosParameter.Value = tipoHabitacion.MetrosCuadrados;
+            metrosCuadradosParameter.Value = tipoHabitacion.MetrosCuadrados ?? Convert.DBNull;
             parameters.Add(metrosCuadradosParameter);
 
             // Descripcion
@@ -178,7 +178,7 @@ WHERE Id = @Id";
             descripcionParameter.DbType = DbType.String;
             descripcionParameter.Direction = ParameterDirection.Input;
             descripcionParameter.ParameterName = "@Descripcion";
-            descripcionParameter.Value = tipoHabitacion.Descripcion;
+            descripcionParameter.Value = tipoHabitacion.Descripcion ?? Convert.DBNull;
             parameters.Add(descripcionParameter);
 
             // Imagen
@@ -186,7 +186,7 @@ WHERE Id = @Id";
             imagenParameter.DbType = DbType.String;
             imagenParameter.Direction = ParameterDirection.Input;
             imagenParameter.ParameterName = "@Imagen";
-            imagenParameter.Value = tipoHabitacion.Imagen != null ? tipoHabitacion.Imagen : Convert.DBNull;
+            imagenParameter.Value = tipoHabitacion.Imagen ?? Convert.DBNull;
             parameters.Add(imagenParameter);
 
             // Precio
@@ -194,7 +194,7 @@ WHERE Id = @Id";
             precioParameter.DbType = DbType.Decimal;
             precioParameter.Direction = ParameterDirection.Input;
             precioParameter.ParameterName = "@Precio";
-            precioParameter.Value = tipoHabitacion.Precio;
+            precioParameter.Value = tipoHabitacion.Precio ?? Convert.DBNull;
             parameters.Add(precioParameter);
 
             // AffectedRows

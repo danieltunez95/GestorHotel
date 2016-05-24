@@ -61,7 +61,7 @@ namespace Gh.Dao
             comentarioParameter.DbType = DbType.String;
             comentarioParameter.Direction = ParameterDirection.Input;
             comentarioParameter.ParameterName = "@Comentario";
-            comentarioParameter.Value = reserva.Comentario != null ? reserva.Comentario : Convert.DBNull;
+            comentarioParameter.Value = reserva.Comentario ?? Convert.DBNull;
             parameters.Add(comentarioParameter);
 
             // FechaInicio
@@ -93,7 +93,7 @@ namespace Gh.Dao
             importeParameter.DbType = DbType.Decimal;
             importeParameter.Direction = ParameterDirection.Input;
             importeParameter.ParameterName = "@Importe";
-            importeParameter.Value = reserva.Importe != null ? reserva.Importe : null;
+            importeParameter.Value = reserva.Importe ?? Convert.DBNull;
             parameters.Add(importeParameter);
 
             // Descuento
@@ -101,7 +101,7 @@ namespace Gh.Dao
             descuentoParameter.DbType = DbType.Decimal;
             descuentoParameter.Direction = ParameterDirection.Input;
             descuentoParameter.ParameterName = "@Descuento";
-            descuentoParameter.Value = reserva.Descuento != null ? reserva.Descuento : null;
+            descuentoParameter.Value = reserva.Descuento ?? Convert.DBNull;
             parameters.Add(descuentoParameter);
 
             // ImporteFinal
@@ -109,7 +109,7 @@ namespace Gh.Dao
             importeFinalParameter.DbType = DbType.Decimal;
             importeFinalParameter.Direction = ParameterDirection.Input;
             importeFinalParameter.ParameterName = "@ImporteFinal";
-            importeFinalParameter.Value = reserva.ImporteFinal != null ? reserva.ImporteFinal : null;
+            importeFinalParameter.Value = reserva.ImporteFinal ?? Convert.DBNull;
             parameters.Add(importeFinalParameter);
 
             GetData(commandText, parameters, commandType);
@@ -169,7 +169,7 @@ namespace Gh.Dao
             comentarioParameter.DbType = DbType.String;
             comentarioParameter.Direction = ParameterDirection.Input;
             comentarioParameter.ParameterName = "@Comentario";
-            comentarioParameter.Value = reserva.Comentario != null ? reserva.Comentario : Convert.DBNull;
+            comentarioParameter.Value = reserva.Comentario ?? Convert.DBNull;
             parameters.Add(comentarioParameter);
 
             // FechaInicio
@@ -201,7 +201,7 @@ namespace Gh.Dao
             importeParameter.DbType = DbType.Decimal;
             importeParameter.Direction = ParameterDirection.Input;
             importeParameter.ParameterName = "@Importe";
-            importeParameter.Value = reserva.Importe != null ? reserva.Importe : 0;
+            importeParameter.Value = reserva.Importe ?? 0;
             parameters.Add(importeParameter);
 
             // Descuento
@@ -209,7 +209,7 @@ namespace Gh.Dao
             descuentoParameter.DbType = DbType.Decimal;
             descuentoParameter.Direction = ParameterDirection.Input;
             descuentoParameter.ParameterName = "@Descuento";
-            descuentoParameter.Value = reserva.Descuento != null ? reserva.Descuento : 0;
+            descuentoParameter.Value = reserva.Descuento ?? 0;
             parameters.Add(descuentoParameter);
 
             // ImporteFinal
@@ -217,7 +217,7 @@ namespace Gh.Dao
             importeFinalParameter.DbType = DbType.Decimal;
             importeFinalParameter.Direction = ParameterDirection.Input;
             importeFinalParameter.ParameterName = "@ImporteFinal";
-            importeFinalParameter.Value = reserva.ImporteFinal != null ? reserva.ImporteFinal : 0;
+            importeFinalParameter.Value = reserva.ImporteFinal ?? 0;
             parameters.Add(importeFinalParameter);
 
             GetData(commandText, parameters, commandType);
@@ -362,7 +362,7 @@ WHERE Id = @Id";
             comentarioParameter.DbType = DbType.String;
             comentarioParameter.Direction = ParameterDirection.Input;
             comentarioParameter.ParameterName = "@Comentario";
-            comentarioParameter.Value = reserva.Comentario != null ? reserva.Comentario : Convert.DBNull;
+            comentarioParameter.Value = reserva.Comentario ?? Convert.DBNull;
             parameters.Add(comentarioParameter);
 
             // FechaInicio
@@ -394,7 +394,7 @@ WHERE Id = @Id";
             importeParameter.DbType = DbType.Decimal;
             importeParameter.Direction = ParameterDirection.Input;
             importeParameter.ParameterName = "@Importe";
-            importeParameter.Value = reserva.Importe != null ? reserva.Importe : null;
+            importeParameter.Value = reserva.Importe ?? Convert.DBNull;
             parameters.Add(importeParameter);
 
             // Descuento
@@ -402,7 +402,7 @@ WHERE Id = @Id";
             importeParameter.DbType = DbType.Decimal;
             importeParameter.Direction = ParameterDirection.Input;
             importeParameter.ParameterName = "@Descuento";
-            importeParameter.Value = reserva.Descuento != null ? reserva.Descuento : null;
+            importeParameter.Value = reserva.Descuento ?? Convert.DBNull;
             parameters.Add(importeParameter);
 
             // ImporteFinal
@@ -410,7 +410,7 @@ WHERE Id = @Id";
             importeFinalParameter.DbType = DbType.Decimal;
             importeFinalParameter.Direction = ParameterDirection.Input;
             importeFinalParameter.ParameterName = "@ImporteFinal";
-            importeFinalParameter.Value = reserva.ImporteFinal != null ? reserva.ImporteFinal : null;
+            importeFinalParameter.Value = reserva.ImporteFinal ?? Convert.DBNull;
             parameters.Add(importeFinalParameter);
 
             // AffectedRows
