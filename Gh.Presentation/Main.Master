@@ -28,10 +28,9 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="/Corporative/index.aspx#">Inicio</a></li>
-                            <li><a href="/Corporative/index.aspx#sobrenosotros">Sobre nosotros</a></li>
-                            <li><a href="/Corporative/index.aspx#contacto">Contacto</a></li>
-                            <li><a href="/Corporative/reserva.aspx">Reserva</a></li>
-                            <li><a href="/Web/main.aspx">DEMO</a></li>
+                            <li><a href="/Corporative/info.aspx">Sobre nosotros</a></li>
+                            <li><a href="/Corporative/contacto.aspx">Contacto</a></li>
+                            <li><a href="/Demo/web/main.aspx">DEMO</a></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->

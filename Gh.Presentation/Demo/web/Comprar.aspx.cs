@@ -25,7 +25,7 @@ namespace Gh.Presentation.web
             persona.PrimerApellido = this.primerApellidoBox.Text;
             persona.SegundoApellido = this.segundoApellidoBox.Text;
             persona.Telefono = this.telefonoBox.Text;
-
+            persona.FechaNacimiento = DateTime.Parse(this.fechaNacimiento.Text);
             PersonaBus personaBus = new PersonaBus();
             persona = personaBus.Add(persona);
 
@@ -59,7 +59,7 @@ namespace Gh.Presentation.web
                 reservaBus.AddFromPos(reserva);
             }
 
-            Response.Redirect("/web/UserPanel.aspx");
+            Response.Redirect("/Demo/web/UserPanel.aspx");
         }
     }
 }

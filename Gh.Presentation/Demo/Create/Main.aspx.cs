@@ -17,7 +17,7 @@ namespace Gh.Presentation.Create
 
         protected void habitacionesButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Create/EditarHabitacion.aspx");
+            Response.Redirect("~/Demo/Create/EditarHabitacion.aspx");
         }
 
         protected void detallesButton_Click(object sender, EventArgs e)

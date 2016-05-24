@@ -25,7 +25,7 @@ namespace Gh.Presentation.Manage
             if (usuario != null)
             {
                 Session["Usuario"] = usuario;
-                Response.Redirect("/Manage/Main.aspx");
+                Response.Redirect("/Demo/Manage/Main.aspx");
             }
         }
     }

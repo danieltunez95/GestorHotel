@@ -53,7 +53,7 @@ namespace Gh.Presentation.Create
         protected void crearHotelButton_Click(object sender, EventArgs e)
         {
             //TODO: Redirigir con parametro al encargado de finalizar la creacion y redirigir a Manage/Main.aspx
-            Response.Redirect("~/Manage/Main.aspx");
+            Response.Redirect("~/Demo/Manage/Main.aspx");
         }
 
         protected void crearPlantaButton_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace Gh.Presentation.Create
                 if (plantaActual > hotel.Plantas)
                 {
                     hotel = hotelBus.Add(hotel);
-                    Response.Redirect("/Manage/Main.aspx");
+                    Response.Redirect("/Demo/Manage/Main.aspx");
                 }
             }
             else

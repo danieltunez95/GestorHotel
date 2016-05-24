@@ -46,12 +46,12 @@ namespace Gh.Presentation.Manage
             EmpleadoBus empleadoBus = new EmpleadoBus();
             empleado = empleadoBus.Add(empleado);
 
-            Response.Redirect("~/Manage/Empleados.aspx");
+            Response.Redirect("~/Demo/Manage/Empleados.aspx");
         }
 
         protected void crearTurnoButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Manage/Turnos.aspx");
+            Response.Redirect("~/Demo/Manage/Turnos.aspx");
         }
     }
 }

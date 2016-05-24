@@ -1511,7 +1511,7 @@ $.ui.position = {
 		body = document.getElementsByTagName( "body" )[ 0 ],
 		div = document.createElement( "div" );
 
-	//Create a "fake body" for testing based on method used in jQuery.support
+	//Demo/Create a "fake body" for testing based on method used in jQuery.support
 	testElement = document.createElement( body ? "div" : "body" );
 	testElementStyle = {
 		visibility: "hidden",
@@ -5984,7 +5984,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 
 		var o = this.options;
 
-		//Create and append the visible helper
+		//Demo/Create and append the visible helper
 		this.helper = this._createHelper(event);
 
 		this.helper.addClass("ui-draggable-dragging");
@@ -13655,7 +13655,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 		//We only need to call refreshPositions, because the refreshItems call has been moved to mouseCapture
 		this.refreshPositions();
 
-		//Create and append the visible helper
+		//Demo/Create and append the visible helper
 		this.helper = this._createHelper(event);
 
 		//Cache the helper size
@@ -13709,7 +13709,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 			this.currentItem.hide();
 		}
 
-		//Create the placeholder
+		//Demo/Create the placeholder
 		this._createPlaceholder();
 
 		//Set a containment if given in the options
@@ -14291,7 +14291,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 			};
 		}
 
-		//Create the placeholder
+		//Demo/Create the placeholder
 		that.placeholder = $(o.placeholder.element.call(that.element, that.currentItem));
 
 		//Append it after the actual current item

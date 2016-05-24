@@ -1,22 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CrearHotel.aspx.cs" Inherits="Gh.Presentation.Create.CrearHotel" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Setup.aspx.cs" Inherits="Gh.Presentation.Create.Setup" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
     <link href="/Style/hotelGrafico.css" rel="stylesheet" />
-    <link href="/Style/bootstrap.min.css" rel="stylesheet" />
-    <script src="/Create/scripts/CrearHotel.js?v=1"></script>
-    <style type="text/css">
-        #Text1 {
-            margin-bottom: 0px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-<asp:Panel ID="datosPanel" runat="server">
+    <script src="/Demo/Create/scripts/CrearHotel.js?v=3"></script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+            <asp:Panel ID="datosPanel" runat="server">
             <div class="form-inline">
                 <div class="form-group">
                     <h1>Datos</h1>
@@ -74,8 +63,5 @@
             <asp:Button ID="crearHotelButton" runat="server" Text="Finalizar" Visible="false" OnClientClick="generarPlantilla();" OnClick="crearHotelButton_Click" />
 
         </asp:Panel>
-    </form>
+</asp:Content>
 
-
-</body>
-</html>

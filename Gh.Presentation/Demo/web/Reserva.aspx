@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web/Web.Master" AutoEventWireup="true" CodeBehind="Reserva.aspx.cs" Inherits="Gh.Presentation.web.Reserva" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Demo/web/web.Master" AutoEventWireup="true" CodeBehind="Reserva.aspx.cs" Inherits="Gh.Presentation.web.Reserva" %>
 
-<%@ MasterType VirtualPath="~/Web/Web.Master" %>
+<%@ MasterType VirtualPath="~/Demo/web/web.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="/Style/hotelGrafico.css" rel="stylesheet" />
-    <script src="Scripts/Reserva.js?v=8"></script>
+    <script src="Scripts/Reserva.js?v=9"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="form-inline">

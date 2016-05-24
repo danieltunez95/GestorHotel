@@ -32,7 +32,7 @@ namespace Gh.Presentation.Manage
             TurnoBus turnoBus = new TurnoBus();
             turnoBus.Add(turno);
 
-            Response.Redirect("~/Manage/Turnos.aspx");
+            Response.Redirect("~/Demo/Manage/Turnos.aspx");
         }
     }
 }

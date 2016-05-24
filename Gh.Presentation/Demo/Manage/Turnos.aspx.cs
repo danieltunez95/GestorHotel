@@ -19,7 +19,7 @@ namespace Gh.Presentation.Manage
 
         protected void crearTurnoButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Manage/CreateTurno.aspx");
+            Response.Redirect("~/Demo/Manage/Demo/CreateTurno.aspx");
         }
     }
 }

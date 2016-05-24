@@ -99,20 +99,20 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="Create\CrearHotel.aspx" />
-    <Content Include="Create\Detalles.aspx" />
-    <Content Include="Create\EditarHabitacion.aspx" />
-    <Content Include="Create\Main.aspx" />
-    <Content Include="Create\scripts\CrearHotel.js" />
-    <Content Include="Create\Setup.aspx" />
-    <Content Include="Manage\Login.aspx" />
+    <Content Include="Demo\Create\CrearHotel.aspx" />
+    <Content Include="Demo\Create\Detalles.aspx" />
+    <Content Include="Demo\Create\EditarHabitacion.aspx" />
+    <Content Include="Demo\Create\Main.aspx" />
+    <Content Include="Demo\Create\scripts\CrearHotel.js" />
+    <Content Include="Demo\Create\Setup.aspx" />
+    <Content Include="Demo\Manage\Login.aspx" />
     <Content Include="Style\hotelGrafico.css" />
-    <Content Include="Manage\CreateEmpleado.aspx" />
-    <Content Include="Manage\CreateTurno.aspx" />
-    <Content Include="Manage\CreateUser.aspx" />
-    <Content Include="Manage\Empleados.aspx" />
-    <Content Include="Manage\Main.aspx" />
-    <Content Include="Manage\Turnos.aspx" />
+    <Content Include="Demo\Manage\CreateEmpleado.aspx" />
+    <Content Include="Demo\Manage\CreateTurno.aspx" />
+    <Content Include="Demo\Manage\CreateUser.aspx" />
+    <Content Include="Demo\Manage\Empleados.aspx" />
+    <Content Include="Demo\Manage\Main.aspx" />
+    <Content Include="Demo\Manage\Turnos.aspx" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -123,7 +123,7 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Style\bootstrap.min.css" />
     <Content Include="Style\master.css" />
-    <Content Include="Manage\Users.aspx" />
+    <Content Include="Demo\Manage\Users.aspx" />
     <Content Include="packages.config" />
     <Content Include="Main.Master" />
     <None Include="Web.Debug.config">
@@ -132,91 +132,91 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="web\Comprar.aspx" />
-    <Content Include="web\Habitacion.aspx" />
-    <Content Include="web\Main.aspx" />
-    <Content Include="web\Reserva.aspx" />
-    <Content Include="web\Scripts\Reserva.js" />
-    <Content Include="web\Sources\arrowDown.png" />
-    <Content Include="web\Sources\arrowUp.png" />
-    <Content Include="web\Sources\hotel-demo-1.jpg" />
-    <Content Include="web\Sources\hotel-demo-2.jpg" />
-    <Content Include="web\Sources\hotel-demo-3.jpg" />
-    <Content Include="web\UserPanel.aspx" />
-    <Content Include="web\Web.master" />
+    <Content Include="Demo\web\Comprar.aspx" />
+    <Content Include="Demo\web\Habitacion.aspx" />
+    <Content Include="Demo\web\Main.aspx" />
+    <Content Include="Demo\web\Reserva.aspx" />
+    <Content Include="Demo\web\Scripts\Reserva.js" />
+    <Content Include="Demo\web\Sources\arrowDown.png" />
+    <Content Include="Demo\web\Sources\arrowUp.png" />
+    <Content Include="Demo\web\Sources\hotel-demo-1.jpg" />
+    <Content Include="Demo\web\Sources\hotel-demo-2.jpg" />
+    <Content Include="Demo\web\Sources\hotel-demo-3.jpg" />
+    <Content Include="Demo\web\UserPanel.aspx" />
+    <Content Include="Demo\web\Web.master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Create\CrearHotel.aspx.cs">
+    <Compile Include="Demo\Create\CrearHotel.aspx.cs">
       <DependentUpon>CrearHotel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Create\CrearHotel.aspx.designer.cs">
+    <Compile Include="Demo\Create\CrearHotel.aspx.designer.cs">
       <DependentUpon>CrearHotel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Create\Detalles.aspx.cs">
+    <Compile Include="Demo\Create\Detalles.aspx.cs">
       <DependentUpon>Detalles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Create\Detalles.aspx.designer.cs">
+    <Compile Include="Demo\Create\Detalles.aspx.designer.cs">
       <DependentUpon>Detalles.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Create\EditarHabitacion.aspx.cs">
+    <Compile Include="Demo\Create\EditarHabitacion.aspx.cs">
       <DependentUpon>EditarHabitacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Create\EditarHabitacion.aspx.designer.cs">
+    <Compile Include="Demo\Create\EditarHabitacion.aspx.designer.cs">
       <DependentUpon>EditarHabitacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Create\Main.aspx.cs">
+    <Compile Include="Demo\Create\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Create\Main.aspx.designer.cs">
+    <Compile Include="Demo\Create\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Create\Setup.aspx.cs">
+    <Compile Include="Demo\Create\Setup.aspx.cs">
       <DependentUpon>Setup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Create\Setup.aspx.designer.cs">
+    <Compile Include="Demo\Create\Setup.aspx.designer.cs">
       <DependentUpon>Setup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manage\CreateEmpleado.aspx.cs">
+    <Compile Include="Demo\Manage\CreateEmpleado.aspx.cs">
       <DependentUpon>CreateEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\CreateEmpleado.aspx.designer.cs">
+    <Compile Include="Demo\Manage\CreateEmpleado.aspx.designer.cs">
       <DependentUpon>CreateEmpleado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manage\CreateTurno.aspx.cs">
+    <Compile Include="Demo\Manage\CreateTurno.aspx.cs">
       <DependentUpon>CreateTurno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\CreateTurno.aspx.designer.cs">
+    <Compile Include="Demo\Manage\CreateTurno.aspx.designer.cs">
       <DependentUpon>CreateTurno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manage\Empleados.aspx.cs">
+    <Compile Include="Demo\Manage\Empleados.aspx.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\Empleados.aspx.designer.cs">
+    <Compile Include="Demo\Manage\Empleados.aspx.designer.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manage\Login.aspx.cs">
+    <Compile Include="Demo\Manage\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\Login.aspx.designer.cs">
+    <Compile Include="Demo\Manage\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manage\Main.aspx.cs">
+    <Compile Include="Demo\Manage\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\Main.aspx.designer.cs">
+    <Compile Include="Demo\Manage\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main.Master.cs">
@@ -226,67 +226,67 @@
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
-    <Compile Include="Manage\CreateUser.aspx.cs">
+    <Compile Include="Demo\Manage\CreateUser.aspx.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\CreateUser.aspx.designer.cs">
+    <Compile Include="Demo\Manage\CreateUser.aspx.designer.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manage\Turnos.aspx.cs">
+    <Compile Include="Demo\Manage\Turnos.aspx.cs">
       <DependentUpon>Turnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\Turnos.aspx.designer.cs">
+    <Compile Include="Demo\Manage\Turnos.aspx.designer.cs">
       <DependentUpon>Turnos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manage\Users.aspx.cs">
+    <Compile Include="Demo\Manage\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\Users.aspx.designer.cs">
+    <Compile Include="Demo\Manage\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
-    <Compile Include="web\Comprar.aspx.cs">
+    <Compile Include="Demo\web\Comprar.aspx.cs">
       <DependentUpon>Comprar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="web\Comprar.aspx.designer.cs">
+    <Compile Include="Demo\web\Comprar.aspx.designer.cs">
       <DependentUpon>Comprar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="web\Habitacion.aspx.cs">
+    <Compile Include="Demo\web\Habitacion.aspx.cs">
       <DependentUpon>Habitacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="web\Habitacion.aspx.designer.cs">
+    <Compile Include="Demo\web\Habitacion.aspx.designer.cs">
       <DependentUpon>Habitacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="web\Main.aspx.cs">
+    <Compile Include="Demo\web\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="web\Main.aspx.designer.cs">
+    <Compile Include="Demo\web\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="web\Reserva.aspx.cs">
+    <Compile Include="Demo\web\Reserva.aspx.cs">
       <DependentUpon>Reserva.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="web\Reserva.aspx.designer.cs">
+    <Compile Include="Demo\web\Reserva.aspx.designer.cs">
       <DependentUpon>Reserva.aspx</DependentUpon>
     </Compile>
-    <Compile Include="web\UserPanel.aspx.cs">
+    <Compile Include="Demo\web\UserPanel.aspx.cs">
       <DependentUpon>UserPanel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="web\UserPanel.aspx.designer.cs">
+    <Compile Include="Demo\web\UserPanel.aspx.designer.cs">
       <DependentUpon>UserPanel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="web\Web.master.cs">
+    <Compile Include="Demo\web\Web.master.cs">
       <DependentUpon>Web.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="web\Web.master.designer.cs">
+    <Compile Include="Demo\web\Web.master.designer.cs">
       <DependentUpon>Web.master</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -302,8 +302,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Corporative\" />
-    <Folder Include="Create\style\" />
-    <Folder Include="Manage\Style\" />
+    <Folder Include="Demo\Create\style\" />
+    <Folder Include="Demo\Manage\Style\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <PropertyGroup>

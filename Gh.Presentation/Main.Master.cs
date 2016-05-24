@@ -55,17 +55,17 @@ namespace Gh.Presentation.Manage
                     Response.Redirect("/Create/Setup.aspx");
             }
             else
-                Response.Redirect("/Manage/Login.aspx");
+                Response.Redirect("/Demo/Manage/Login.aspx");
         }
 
         protected void IndexButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Manage/Main.aspx");
+            Response.Redirect("~/Demo/Manage/Main.aspx");
         }
 
         protected void UsuariosButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Manage/Users.aspx");
+            Response.Redirect("~/Demo/Manage/Users.aspx");
         }
 
         protected void edicionButton_Click(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace Gh.Presentation.Manage
 
         protected void empleadosButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Manage/Empleados.aspx");
+            Response.Redirect("~/Demo/Manage/Empleados.aspx");
         }
 
         protected void hotelList_SelectedIndexChanged(object sender, EventArgs e)

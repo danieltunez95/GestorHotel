@@ -60,7 +60,7 @@ function Reenviar(idPosicion) {
     if (RESERVA.length >= HABITACIONES) {
         var fechaInicio = document.getElementById("ContentPlaceHolder1_fechaInicioBox").value;
         var fechaFinal = document.getElementById("ContentPlaceHolder1_fechaFinalBox").value;
-        window.location = location.href.replace("Reserva", "Comprar") + "?fechaInicio=" + fechaInicio + "&fechaFinal=" + fechaFinal + "&habitaciones=" + RESERVA.join(",");
+        window.location = location.href.replace("reserva", "Comprar") + "?fechaInicio=" + fechaInicio + "&fechaFinal=" + fechaFinal + "&habitaciones=" + RESERVA.join(",");
 
     }
 }

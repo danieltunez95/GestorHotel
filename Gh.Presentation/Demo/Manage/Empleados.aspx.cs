@@ -16,7 +16,7 @@ namespace Gh.Presentation.Manage
 
         protected void createEmployeeButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Manage/CreateEmpleado.aspx");
+            Response.Redirect("~/Demo/Manage/Demo/CreateEmpleado.aspx");
         }
     }
 }

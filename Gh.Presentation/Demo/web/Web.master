@@ -25,11 +25,11 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/Web/Main.aspx#">Inicio</a></li>
-                        <li><a href="/Web/Main.aspx#acercade">Acerca de</a></li>
-                        <li><a href="/Web/Main.aspx#contacto">Contacto</a></li>
-                        <li><a href="/Web/reserva.aspx">Reserva</a></li>
-                        <li><a href="/Manage/Main.aspx">Gestion</a></li>
+                        <li class="active"><a href="/Demo/web/Main.aspx#">Inicio</a></li>
+                        <li><a href="/Demo/web/Main.aspx#acercade">Acerca de</a></li>
+                        <li><a href="/Demo/web/Main.aspx#contacto">Contacto</a></li>
+                        <li><a href="/Demo/web/reserva.aspx">Reserva</a></li>
+                        <li><a href="/Demo/Manage/Main.aspx">Gestion</a></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
