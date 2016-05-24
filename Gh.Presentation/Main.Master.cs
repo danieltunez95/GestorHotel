@@ -52,7 +52,7 @@ namespace Gh.Presentation.Manage
 
 
                 if (!hotelBus.HasAnyHotel() && Page.ToString().ToLower().IndexOf("setup") == -1)
-                    Response.Redirect("/Create/Setup.aspx");
+                    Response.Redirect("/Demo/Create/Setup.aspx");
             }
             else
                 Response.Redirect("/Demo/Manage/Login.aspx");
@@ -70,7 +70,7 @@ namespace Gh.Presentation.Manage
 
         protected void edicionButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Create/Main.aspx");
+            Response.Redirect("~/Demo/Create/Main.aspx");
         }
 
         protected void empleadosButton_Click(object sender, EventArgs e)
