@@ -100,7 +100,8 @@ IdHotel,
 Planta,
 PosicionX,
 PosicionY,
-TipoHabitacion
+TipoHabitacion,
+'' Ocupada
 FROM Habitacion
 WHERE IdHotel = @Idhotel";
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -126,7 +127,8 @@ IdHotel,
 Planta,
 PosicionX,
 PosicionY,
-TipoHabitacion
+TipoHabitacion,
+'' Ocupada
 FROM Habitacion
 WHERE Id = @Id";
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -155,7 +157,8 @@ IdHotel,
 Planta,
 PosicionX,
 PosicionY,
-TipoHabitacion
+TipoHabitacion,
+'' Ocupada
 FROM Habitacion
 WHERE TipoHabitacion = @TipoHabitacion";
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -182,7 +185,8 @@ IdHotel,
 Planta,
 PosicionX,
 PosicionY,
-TipoHabitacion
+TipoHabitacion,
+'' Ocupada
 FROM Habitacion
 WHERE IdPosicion = @IdPosicion";
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -200,6 +204,52 @@ WHERE IdPosicion = @IdPosicion";
             if (habitaciones.Count == 1)
                 habitacion = habitaciones[0];
             return habitacion;
+        }
+
+        public List<HabitacionDto> GetAllByIdHotelWithOcupada(int idHotel, DateTime fechaInicio, DateTime fechaFinal)
+        {
+            string commandText = @"SELECT h.Id, 
+h.IdHotel, 
+h.Planta, 
+h.PosicionX, 
+h.PosicionY, 
+h.TipoHabitacion,
+CASE
+	WHEN r.FechaInicio >= @FechaInicio AND r.FechaFinal <= @FechaFinal THEN 1
+	ELSE 0
+END AS Ocupada
+FROM Habitacion h
+LEFT JOIN Reserva r ON r.IdHabitacion = h.id
+WHERE h.IdHotel = @IdHotel";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // IdHotel
+            SqlParameter idHotelParameter = new SqlParameter();
+            idHotelParameter.DbType = DbType.Int32;
+            idHotelParameter.Direction = ParameterDirection.Input;
+            idHotelParameter.ParameterName = "@IdHotel";
+            idHotelParameter.Value = idHotel;
+            parameters.Add(idHotelParameter);
+
+            // FechaInicio
+            SqlParameter fechaInicioParameter = new SqlParameter();
+            fechaInicioParameter.DbType = DbType.String;
+            fechaInicioParameter.Direction = ParameterDirection.Input;
+            fechaInicioParameter.ParameterName = "@FechaInicio";
+            fechaInicioParameter.Value = fechaInicio.ToString("yyyy-MM-dd HH:mm:ss");
+            parameters.Add(fechaInicioParameter);
+
+            // FechaFinal
+            SqlParameter fechaFinalParameter = new SqlParameter();
+            fechaFinalParameter.DbType = DbType.String;
+            fechaFinalParameter.Direction = ParameterDirection.Input;
+            fechaFinalParameter.ParameterName = "@FechaFinal";
+            fechaFinalParameter.Value = fechaFinal.ToString("yyyy-MM-dd HH:mm:ss");
+            parameters.Add(fechaFinalParameter);
+
+            List<HabitacionDto> habitaciones = GetData(commandText, parameters);
+
+            return habitaciones;
         }
 
         public bool isBusy(int idHotel, int posicionX, int posicionY, int planta, DateTime fechaInicio, DateTime fechaFinal)
@@ -390,8 +440,6 @@ AND Planta = @Planta";
 
         protected override HabitacionDto MapDataReader(SqlDataReader dr)
         {
-            // Habrá algo que no sea NULL, hablarlo con Dani.
-            //CamaEnum IdCama = (CamaEnum)Enum.Parse(typeof(CamaEnum), dr["IdCama"].ToString());
             HabitacionDto habitacion = new HabitacionDto()
             {
                 Id = Convert.ToInt32(dr["Id"]),
@@ -400,9 +448,10 @@ AND Planta = @Planta";
                 PosicionX = Convert.ToInt32(dr["PosicionX"]),
                 PosicionY = Convert.ToInt32(dr["PosicionY"])
             };
-            //if (dr["TipoHabitacion"] != null)
-                //habitacion.TipoHabitacion = new TipoHabitacionDto() { Id = Convert.ToInt32(dr["TipoHabitacion"]) };
-
+            if (!String.IsNullOrEmpty(Convert.ToString(dr["TipoHabitacion"])))
+                habitacion.TipoHabitacion = new TipoHabitacionDto() { Id = Convert.ToInt32(dr["TipoHabitacion"]) };
+            if (!String.IsNullOrEmpty(Convert.ToString(dr["Ocupada"])))
+                habitacion.Ocupada = Convert.ToBoolean(dr["Ocupada"]);
             return habitacion;
         }
     }

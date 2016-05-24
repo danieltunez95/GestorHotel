@@ -76,6 +76,7 @@ namespace Gh.Presentation.web
             {
                 fechaInicio = DateTime.Parse(this.fechaInicioBox.Text);
                 fechaFinal = DateTime.Parse(this.fechaFinalBox.Text);
+                hotel.Habitaciones = habitacionBus.GetAllByIdHotelWithOcupada(hotel.Id, fechaInicio, fechaFinal);
                 personas = int.Parse(numeroPersonas.Text);
                 // this.arrowUp.Visible = true;
                 // this.arrowDown.Visible = false;

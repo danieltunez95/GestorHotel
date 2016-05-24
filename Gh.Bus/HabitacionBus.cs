@@ -44,6 +44,11 @@ namespace Gh.Bus
             return dao.GetByIdPos(idPos);
         }
 
+        public List<HabitacionDto> GetAllByIdHotelWithOcupada(int idHotel,DateTime fechaInicio, DateTime fechaFinal)
+        {
+            return dao.GetAllByIdHotelWithOcupada(idHotel, fechaInicio, fechaFinal);
+        }
+
         public int Update(HabitacionDto habitacion)
         {
             return dao.Update(habitacion);
