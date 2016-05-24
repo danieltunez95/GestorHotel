@@ -21,6 +21,9 @@ namespace Gh.Presentation.Create
                 this.DropDownTipoHabitacion.DataTextField = "Nombre";
                 this.DropDownTipoHabitacion.DataValueField = "Id";
                 this.DropDownTipoHabitacion.DataBind();
+                bool mostrarBotones = tiposdeHabitacion.Count > 0;
+                this.editarButton.Visible = mostrarBotones;
+                this.eliminarButton.Visible = mostrarBotones;
             }
         }
 
@@ -30,7 +33,7 @@ namespace Gh.Presentation.Create
             tipoHabitacion.Nombre = this.NombreTipoHabitacion.Text;
             tipoHabitacion.MetrosCuadrados = Convert.ToInt32(this.MetrosCuadrados.Text);
             tipoHabitacion.Descripcion = this.Descripcion.Text;
-            tipoHabitacion.Precio = Convert.ToDecimal(this.Precio.Text);
+            tipoHabitacion.Precio = Convert.ToDecimal(this.Precio.Text.Replace(".", ","));
             try
             {
                 tipoHabitacion = tipoHabitacionBus.Add(tipoHabitacion);
@@ -53,14 +56,23 @@ namespace Gh.Presentation.Create
 
         protected void editarButton_Click(object sender, EventArgs e)
         {
-            this.TipoHabitacion.Visible = true;
-            this.createButton.Visible = false;
-            this.editButton.Visible = true;
-            TipoHabitacionDto tipoHabitacion = tipoHabitacionBus.GetById(Convert.ToInt32(this.DropDownTipoHabitacion.SelectedValue));
-            this.NombreTipoHabitacion.Text = tipoHabitacion.Nombre;
-            this.Descripcion.Text = tipoHabitacion.Descripcion;
-            this.MetrosCuadrados.Text = tipoHabitacion.MetrosCuadrados.ToString();
-            this.Precio.Text = tipoHabitacion.Precio.ToString();
+            try
+            {
+                this.TipoHabitacion.Visible = true;
+                this.createButton.Visible = false;
+                this.editButton.Visible = true;
+                TipoHabitacionDto tipoHabitacion = tipoHabitacionBus.GetById(Convert.ToInt32(this.DropDownTipoHabitacion.SelectedValue));
+                this.NombreTipoHabitacion.Text = tipoHabitacion.Nombre;
+                this.Descripcion.Text = tipoHabitacion.Descripcion;
+                this.MetrosCuadrados.Text = tipoHabitacion.MetrosCuadrados.ToString();
+                this.Precio.Attributes.Add("onkeydown", "javascript:return jsDecimals(event);");
+                this.Precio.Text = tipoHabitacion.Precio.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         protected void crearButton_Click(object sender, EventArgs e)
@@ -71,14 +83,16 @@ namespace Gh.Presentation.Create
             this.NombreTipoHabitacion.Text = String.Empty;
             this.Descripcion.Text = String.Empty;
             this.MetrosCuadrados.Text = String.Empty;
+            this.Precio.Attributes.Add("onkeydown", "javascript:return jsDecimals(event);");
             this.Precio.Text = String.Empty;
         }
 
         protected void eliminarButton_Click(object sender, EventArgs e)
         {
-            TipoHabitacionDto tipoHabitacion = tipoHabitacionBus.GetById(Convert.ToInt32(this.DropDownTipoHabitacion.SelectedValue));
+            
             try
             {
+                TipoHabitacionDto tipoHabitacion = tipoHabitacionBus.GetById(Convert.ToInt32(this.DropDownTipoHabitacion.SelectedValue));
                 tipoHabitacionBus.Delete(tipoHabitacion);
                 Response.Redirect(Request.RawUrl);
             }
@@ -90,14 +104,15 @@ namespace Gh.Presentation.Create
 
         protected void editButton_Click(object sender, EventArgs e)
         {
-            TipoHabitacionDto tipoHabitacion = new TipoHabitacionDto();
-            tipoHabitacion.Id = Convert.ToInt32(this.DropDownTipoHabitacion.SelectedValue);
-            tipoHabitacion.Nombre = this.NombreTipoHabitacion.Text;
-            tipoHabitacion.Descripcion = this.Descripcion.Text;
-            tipoHabitacion.MetrosCuadrados = Convert.ToInt32(this.MetrosCuadrados.Text);
-            tipoHabitacion.Precio = Convert.ToDecimal(this.Precio.Text);
+            
             try
             {
+                TipoHabitacionDto tipoHabitacion = new TipoHabitacionDto();
+                tipoHabitacion.Id = Convert.ToInt32(this.DropDownTipoHabitacion.SelectedValue);
+                tipoHabitacion.Nombre = this.NombreTipoHabitacion.Text;
+                tipoHabitacion.Descripcion = this.Descripcion.Text;
+                tipoHabitacion.MetrosCuadrados = Convert.ToInt32(this.MetrosCuadrados.Text);
+                tipoHabitacion.Precio = Convert.ToDecimal(this.Precio.Text.Replace(".", ","));
                 tipoHabitacionBus.Update(tipoHabitacion);
                 this.TipoHabitacion.Visible = false;
                 Response.Redirect(Request.RawUrl);

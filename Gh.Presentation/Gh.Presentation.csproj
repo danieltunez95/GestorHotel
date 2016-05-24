@@ -104,6 +104,7 @@
     <Content Include="Demo\Create\EditarHabitacion.aspx" />
     <Content Include="Demo\Create\Main.aspx" />
     <Content Include="Demo\Create\scripts\CrearHotel.js" />
+    <Content Include="Demo\Create\scripts\EditarHabitacion.js" />
     <Content Include="Demo\Create\Setup.aspx" />
     <Content Include="Demo\Manage\Login.aspx" />
     <Content Include="Style\hotelGrafico.css" />
