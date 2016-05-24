@@ -136,7 +136,7 @@ AND Password = @Password";
             usernameParameter.DbType = DbType.String;
             usernameParameter.Direction = ParameterDirection.Input;
             usernameParameter.ParameterName = "@Username";
-            usernameParameter.Value = usuario.Username;
+            usernameParameter.Value = usuario.Username ?? Convert.DBNull;
             parameters.Add(usernameParameter);
 
             // Password
@@ -144,7 +144,7 @@ AND Password = @Password";
             passwordParameter.DbType = DbType.String;
             passwordParameter.Direction = ParameterDirection.Input;
             passwordParameter.ParameterName = "@Password";
-            passwordParameter.Value = usuario.Password;
+            passwordParameter.Value = usuario.Password ?? Convert.DBNull;
             parameters.Add(passwordParameter);
 
             // Role
@@ -160,7 +160,7 @@ AND Password = @Password";
             minHourParameter.DbType = DbType.Double;
             minHourParameter.Direction = ParameterDirection.Input;
             minHourParameter.ParameterName = "@MinHour";
-            minHourParameter.Value = usuario.MinHour;
+            minHourParameter.Value = usuario.MinHour ?? Convert.DBNull;
             parameters.Add(minHourParameter);
 
             // MaxHour
@@ -168,7 +168,7 @@ AND Password = @Password";
             maxHourParameter.DbType = DbType.Double;
             maxHourParameter.Direction = ParameterDirection.Input;
             maxHourParameter.ParameterName = "@MaxHour";
-            maxHourParameter.Value = usuario.MaxHour;
+            maxHourParameter.Value = usuario.MaxHour ?? Convert.DBNull;
             parameters.Add(maxHourParameter);
 
             GetData(commandText, parameters, commandType);
@@ -197,7 +197,7 @@ AND Password = @Password";
             usernameParameter.DbType = DbType.String;
             usernameParameter.Direction = ParameterDirection.Input;
             usernameParameter.ParameterName = "@Username";
-            usernameParameter.Value = usuario.Username;
+            usernameParameter.Value = usuario.Username ?? Convert.DBNull;
             parameters.Add(usernameParameter);
 
             // Password
@@ -205,7 +205,7 @@ AND Password = @Password";
             passwordParameter.DbType = DbType.String;
             passwordParameter.Direction = ParameterDirection.Input;
             passwordParameter.ParameterName = "@Password";
-            passwordParameter.Value = usuario.Password;
+            passwordParameter.Value = usuario.Password ?? Convert.DBNull;
             parameters.Add(passwordParameter);
 
             // Role
@@ -221,7 +221,7 @@ AND Password = @Password";
             minHourParameter.DbType = DbType.Double;
             minHourParameter.Direction = ParameterDirection.Input;
             minHourParameter.ParameterName = "@MinHour";
-            minHourParameter.Value = usuario.MinHour;
+            minHourParameter.Value = usuario.MinHour ?? Convert.DBNull;
             parameters.Add(minHourParameter);
 
             // MaxHour
@@ -229,7 +229,7 @@ AND Password = @Password";
             maxHourParameter.DbType = DbType.Double;
             maxHourParameter.Direction = ParameterDirection.Input;
             maxHourParameter.ParameterName = "@MaxHour";
-            maxHourParameter.Value = usuario.MaxHour;
+            maxHourParameter.Value = usuario.MaxHour ?? Convert.DBNull;
             parameters.Add(maxHourParameter);
 
             // AffectedRows
