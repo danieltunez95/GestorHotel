@@ -438,6 +438,40 @@ AND Planta = @Planta";
             return Convert.ToInt32(affectedRowsParameter.Value);
         }
 
+        public int UpdateTipoHabitacion(int IdHotel, TipoHabitacionDto tipoHabitacion)
+        {
+            string commandText = "Habitacion_UpdateTipo";
+            CommandType commandType = CommandType.StoredProcedure;
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // IdHotel
+            SqlParameter idHotelParameter = new SqlParameter();
+            idHotelParameter.DbType = DbType.Int32;
+            idHotelParameter.Direction = ParameterDirection.Input;
+            idHotelParameter.ParameterName = "@IdHotel";
+            idHotelParameter.Value = IdHotel;
+            parameters.Add(idHotelParameter);
+
+            // TipoHabitacion
+            SqlParameter tipoHabitacionParameter = new SqlParameter();
+            tipoHabitacionParameter.DbType = DbType.Int32;
+            tipoHabitacionParameter.Direction = ParameterDirection.Input;
+            tipoHabitacionParameter.ParameterName = "@TipoHabitacion";
+            tipoHabitacionParameter.Value = tipoHabitacion.Id;
+            parameters.Add(tipoHabitacionParameter);
+
+            // AffectedRows
+            SqlParameter affectedRowsParameter = new SqlParameter();
+            affectedRowsParameter.DbType = DbType.Int32;
+            affectedRowsParameter.Direction = ParameterDirection.Output;
+            affectedRowsParameter.ParameterName = "@AffectedRows";
+            parameters.Add(affectedRowsParameter);
+
+            GetData(commandText, parameters, commandType);
+
+            return Convert.ToInt32(affectedRowsParameter.Value);
+        }
+
         protected override HabitacionDto MapDataReader(SqlDataReader dr)
         {
             HabitacionDto habitacion = new HabitacionDto()

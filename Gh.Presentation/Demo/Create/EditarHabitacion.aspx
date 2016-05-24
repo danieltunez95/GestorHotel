@@ -11,6 +11,10 @@
         <asp:Button ID="editarButton" CssClass="btn btn-info" runat="server" Text="Editar" OnClick="editarButton_Click" /> &nbsp;
         <asp:Button ID="crearButton" CssClass="btn btn-success" runat="server" Text="Crear" OnClick="crearButton_Click" /> &nbsp;
         <asp:Button ID="eliminarButton" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="eliminarButton_Click" />
+        <br />
+        <br />
+        <asp:Button ID="replicarTodasButton" CssClass="btn btn-group" runat="server" Text="Replicar en todas" OnClick="replicarTodasButton_Click" /> &nbsp;
+        <asp:Button ID="replicarSeleccionButton" CssClass="btn btn-group" runat="server" Text="Seleccionar habitaciones" OnClick="replicarSeleccionButton_Click" />
     </asp:Panel>
     <br />
     <br />

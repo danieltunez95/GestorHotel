@@ -12,7 +12,7 @@ namespace Gh.Presentation.Create
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //TODO: Falta comprobar el text decimal, y comprobar fallos. hacer que las habitaciones se cambien cuando se seleccione.
+            //TODO: Hacer que las habitaciones se cambien cuando se seleccione.
             if (!IsPostBack)
             {
                 FillDropDownTipoHabitacion();
@@ -24,6 +24,8 @@ namespace Gh.Presentation.Create
                 bool mostrarBotones = tiposdeHabitacion.Count > 0;
                 this.editarButton.Visible = mostrarBotones;
                 this.eliminarButton.Visible = mostrarBotones;
+                this.replicarTodasButton.Visible = mostrarBotones;
+                this.replicarSeleccionButton.Visible = mostrarBotones;
             }
         }
 
@@ -121,6 +123,29 @@ namespace Gh.Presentation.Create
             {
                 throw ex;
             }
+        }
+
+        protected void replicarTodasButton_Click(object sender, EventArgs e)
+        {
+            TipoHabitacionDto tipoHabitacion = tipoHabitacionBus.GetById(Convert.ToInt32(this.DropDownTipoHabitacion.SelectedValue));
+            HabitacionBus habitacionBus = new HabitacionBus();
+
+            HotelDto hotel = Session["hotel"] as HotelDto;
+            try
+            {
+                int result = habitacionBus.UpdateTipoHabitacion(hotel.Id, tipoHabitacion);
+                if (result != hotel.Habitaciones.Count)
+                    throw new Exception("No se actualizaron todas.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void replicarSeleccionButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -58,6 +58,24 @@ namespace Gh.Presentation.Create {
         protected global::System.Web.UI.WebControls.Button eliminarButton;
         
         /// <summary>
+        /// replicarTodasButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button replicarTodasButton;
+        
+        /// <summary>
+        /// replicarSeleccionButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button replicarSeleccionButton;
+        
+        /// <summary>
         /// TipoHabitacion control.
         /// </summary>
         /// <remarks>
