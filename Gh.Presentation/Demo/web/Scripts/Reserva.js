@@ -31,9 +31,10 @@ function PrintHotel(planta) {
     for (var i = 0; i < HOTEL.length; i++) {
         var habitacion = HOTEL[i].replace("[", "").replace("]", "").split(",");
         if (habitacion[0] == planta) {
-            document.getElementById(habitacion[2] + "_" + habitacion[1]).setAttribute("onClick", "Seleccionar(this.id)");
-            if (habitacion[3] == 0)
+            if (habitacion[3] == 0){
+                document.getElementById(habitacion[2] + "_" + habitacion[1]).setAttribute("onClick", "Seleccionar(this.id)");
                 document.getElementById(habitacion[2] + "_" + habitacion[1]).setAttribute("class", "celda libre");
+            }
             else
                 document.getElementById(habitacion[2] + "_" + habitacion[1]).setAttribute("class", "celda ocupada");
 
@@ -63,15 +64,27 @@ function Marcar(habitacion){
     var habitacionArray = habitacion.split("_");
     var celda = document.getElementById(habitacionArray[1] + "_" + habitacionArray[2]);
     celda.setAttribute("class", "celda seleccionada");
-    celda.setAttribute("onClick", "alert('Ya ha seleccionado esta habitación');");
 }
 
 function Seleccionar(idPosicion) {
     RESERVA.push(PLANTA + "_" + idPosicion);
-    document.getElementById(idPosicion).setAttribute("class", "celda seleccionada");
+    var celda = document.getElementById(idPosicion);
+    celda.setAttribute("class", "celda seleccionada");
+    celda.setAttribute("onClick", "Eliminar(this.id);");
     if (RESERVA.length >= HABITACIONES) {
         Reenviar();
     }
+}
+
+function Eliminar(idPosicion) {
+    for (var i = 0; i < RESERVA.length; i++)
+        if (RESERVA[i].substring(RESERVA[i].indexOf("_") + 1) == idPosicion){
+            RESERVA.splice(i, 1);
+            celda = document.getElementById(idPosicion)
+            celda.setAttribute("class", "celda libre");
+            celda.setAttribute("onClick", "Seleccionar(this.id);");
+        }
+
 }
 
 function Reenviar() {

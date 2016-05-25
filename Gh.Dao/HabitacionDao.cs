@@ -172,7 +172,7 @@ WHERE TipoHabitacion = @TipoHabitacion";
             parameters.Add(tipoHabitacionParameter);
 
             List<HabitacionDto> habitaciones = GetData(commandText, parameters);
-            
+
             return habitaciones;
         }
 
@@ -208,18 +208,29 @@ WHERE IdPosicion = @IdPosicion";
 
         public List<HabitacionDto> GetAllByIdHotelWithOcupada(int idHotel, DateTime fechaInicio, DateTime fechaFinal)
         {
-            string commandText = @"SELECT h.Id, 
-h.IdHotel, 
-h.Planta, 
-h.PosicionX, 
-h.PosicionY, 
-h.TipoHabitacion,
-CASE
-	WHEN r.FechaInicio >= @FechaInicio AND r.FechaFinal <= @FechaFinal THEN 1
-	ELSE 0
-END AS Ocupada
+            string commandText = @"
+SELECT  h.Id, 
+        h.IdHotel, 
+        h.Planta, 
+        h.PosicionX, 
+        h.PosicionY, 
+        h.TipoHabitacion,
+        CASE
+	        WHEN 
+                (
+                (r.FechaInicio <= @FechaInicio AND r.FechaFinal >= @FechaInicio)
+                OR    
+                (r.FechaInicio >= @FechaInicio AND r.FechaFinal <= @FechaFinal)
+                OR    
+                (r.FechaInicio <= @FechaFinal AND r.FechaFinal >= @FechaFinal)
+                OR    
+                (r.FechaInicio <= @FechaFinal AND r.FechaFinal >= @FechaFinal)
+                )
+            THEN 1
+	        ELSE 0
+        END AS Ocupada
 FROM Habitacion h
-LEFT JOIN Reserva r ON r.IdHabitacion = h.id
+        LEFT JOIN Reserva r ON r.IdHabitacion = h.id
 WHERE h.IdHotel = @IdHotel";
             List<SqlParameter> parameters = new List<SqlParameter>();
 
@@ -319,7 +330,7 @@ AND r.FechaFinal <= @FechaFinal";
             parameters.Add(fechaFinalParameter);
 
             string result = GetDataScalar(commandText, parameters, CommandType.Text);
-            
+
             return Convert.ToBoolean(Convert.ToInt32(result));
         }
 

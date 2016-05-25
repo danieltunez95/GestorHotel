@@ -11,7 +11,17 @@ namespace Gh.Presentation.Manage
         {
             HotelBus hotelBus = new HotelBus();
 
-            if (!IsPostBack && Session["hotel"] != null)
+            //TODO: Cojo el primero. Debería crearse un archivo de configuración para saber cual es el primero.
+            if (Session["Hotel"] == null)
+            {
+                HabitacionBus habitacionBus = new HabitacionBus();
+
+                HotelDto hotel = hotelBus.GetAll()[0];
+                hotel.Habitaciones = habitacionBus.GetAllByIdHotel(hotel);
+                Session["Hotel"] = hotel;
+            }
+
+            if (Session["hotel"] != null)
             {
                 HotelDto hotel = (HotelDto)Session["hotel"];
                 //Do everything
