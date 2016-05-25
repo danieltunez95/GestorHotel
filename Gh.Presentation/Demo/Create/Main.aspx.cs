@@ -12,12 +12,12 @@ namespace Gh.Presentation.Create
 
         protected void estructuraButton_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("/Demo/Create/Editar.aspx");
         }
 
         protected void habitacionesButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Demo/Create/EditarHabitacion.aspx");
+            Response.Redirect("/Demo/Create/EditarHabitacion.aspx");
         }
 
         protected void detallesButton_Click(object sender, EventArgs e)

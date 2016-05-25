@@ -103,6 +103,7 @@
     <Content Include="Corporative\pricing.html" />
     <Content Include="Demo\Create\CrearHotel.aspx" />
     <Content Include="Demo\Create\Detalles.aspx" />
+    <Content Include="Demo\Create\Editar.aspx" />
     <Content Include="Demo\Create\EditarHabitacion.aspx" />
     <Content Include="Demo\Create\Main.aspx" />
     <Content Include="Demo\Create\scripts\CrearHotel.js" />
@@ -218,6 +219,13 @@
     </Compile>
     <Compile Include="Demo\Create\Detalles.aspx.designer.cs">
       <DependentUpon>Detalles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\Create\Editar.aspx.cs">
+      <DependentUpon>Editar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demo\Create\Editar.aspx.designer.cs">
+      <DependentUpon>Editar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Demo\Create\EditarHabitacion.aspx.cs">
       <DependentUpon>EditarHabitacion.aspx</DependentUpon>
