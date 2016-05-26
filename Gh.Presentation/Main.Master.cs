@@ -63,6 +63,11 @@ namespace Gh.Presentation.Manage
             Response.Redirect("~/Demo/Manage/Main.aspx");
         }
 
+        protected void ClientesButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Demo/Manage/Clientes.aspx");
+        }
+
         protected void UsuariosButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Demo/Manage/Users.aspx");

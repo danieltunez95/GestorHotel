@@ -113,6 +113,33 @@ FROM Cliente";
             return clientes;
         }
 
+        public List<ClienteDto> GetAll(HotelDto hotel)
+        {
+            string commandText = @"SELECT
+Id,
+Username,
+Email,
+Password,
+Telefono,
+IdPersona
+FROM Cliente
+WHERE IdHotel = @IdHotel";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // IdHotel
+            SqlParameter idParameter = new SqlParameter();
+            idParameter.DbType = DbType.Int32;
+            idParameter.Direction = ParameterDirection.Input;
+            idParameter.ParameterName = "@IdHotel";
+            idParameter.Value = hotel.Id;
+            parameters.Add(idParameter);
+
+            List<ClienteDto> clientes = GetData(commandText, parameters);
+
+            return clientes;
+        }
+
         public ClienteDto GetById(int id)
         {
             string commandText = @"SELECT

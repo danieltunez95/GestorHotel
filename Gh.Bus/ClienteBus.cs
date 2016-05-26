@@ -28,6 +28,11 @@ namespace Gh.Bus
             return dao.GetAll();
         }
 
+        public List<ClienteDto> GetAll(HotelDto hotel)
+        {
+            return dao.GetAll(hotel);
+        }
+
         public ClienteDto GetById(int id)
         {
             return dao.GetById(id);
